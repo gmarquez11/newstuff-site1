@@ -671,7 +671,6 @@ html.gate-leaving .page, html:not(.gate-on) .page { opacity: 1; visibility: visi
   position: sticky; top: 0; height: 100vh;
   display: grid; place-items: center;
 }
-#tiles.tls-live .tls-railwrap { display: none; }
 #tiles.tls-live .tls-pane, #tiles.tls-live .tls-dot { will-change: transform, opacity; }
 @media (min-width: 821px) and (max-height: 740px) {
   #tiles.tls-live .device { transform: scale(0.87); }
@@ -794,43 +793,10 @@ html.gate-leaving .page, html:not(.gate-on) .page { opacity: 1; visibility: visi
 #tiles .tls-lrow:nth-child(4n+3) .thumb,
 #tiles .tls-brow:nth-child(4n+3) .thumb { background: linear-gradient(115deg, var(--wash-deep) 8%, var(--cell) 64%, var(--wash)); }
 
-/* ---- static fallback: composed grid + a rail of three mini screens ---- */
-#tiles .tls-railwrap { margin-top: clamp(28px, 5vw, 46px); }
-#tiles .tls-rail {
-  display: flex; gap: 14px; overflow-x: auto;
-  scroll-snap-type: x proximity; -webkit-overflow-scrolling: touch;
-  padding: 4px 2px 10px;
-}
-#tiles .tls-mini { flex: none; width: 190px; scroll-snap-align: start; }
-#tiles .tls-mini-scr {
-  border: 1px solid var(--rule); border-radius: 16px; background: var(--paper);
-  padding: 10px; height: 198px; overflow: hidden;
-  box-shadow: 0 12px 32px -20px rgba(0, 0, 0, 0.28);
-}
-#tiles .tls-mini-cap { margin-top: 8px; font-size: 12.5px; color: var(--dim); line-height: 1.4; }
-#tiles .tls-mini-chips { display: flex; gap: 4px; margin-bottom: 7px; }
-#tiles .tls-mc {
-  font-size: 8px; font-weight: 600; padding: 3px 8px; border-radius: 999px;
-  background: var(--cell); color: var(--dim);
-}
-#tiles .tls-mc-on { background: var(--accent); color: var(--on-accent); }
-#tiles .tls-mini-count { font-size: 8px; color: var(--dim); margin-bottom: 5px; }
-#tiles .tls-mini-grid { display: grid; grid-template-columns: repeat(4, 1fr); gap: 2px; }
-#tiles .tls-mini-grid .thumb { aspect-ratio: 1; border-radius: 3px; }
-#tiles .tls-mini-grid .thumb:nth-child(3n+2) { background: linear-gradient(150deg, var(--cell), var(--wash-deep) 88%); }
-#tiles .tls-mr { display: flex; align-items: center; gap: 7px; padding: 5.5px 2px; }
-#tiles .tls-mr + .tls-mr { border-top: 1px solid var(--rule); }
-#tiles .tls-mr .thumb { width: 22px; height: 22px; border-radius: 5px; flex: none; }
-#tiles .tls-mr-t { min-width: 0; display: grid; gap: 1px; }
-#tiles .tls-mr-t b { font-size: 8.5px; font-weight: 600; white-space: nowrap; overflow: hidden; text-overflow: ellipsis; }
-#tiles .tls-mr-t em { font-style: normal; font-size: 7.5px; color: var(--dim); white-space: nowrap; overflow: hidden; text-overflow: ellipsis; }
-#tiles .tls-mt { padding: 5.5px 2px; display: grid; gap: 3px; }
-#tiles .tls-mt + .tls-mt { border-top: 1px solid var(--rule); }
-#tiles .tls-mt b { font-size: 8.5px; font-weight: 600; }
-#tiles .tls-mt span { display: flex; gap: 3px; flex-wrap: wrap; }
-#tiles .tls-mt i {
-  font-style: normal; font-size: 7.5px; font-weight: 600; line-height: 1;
-  padding: 2.5px 6px; border-radius: 999px; background: var(--wash-deep); color: var(--ink);
+/* ---- static autoplay: the device cycles the pinch, List, and Labels ---- */
+#tiles.tls-auto .tls-pane, #tiles.tls-auto .tls-dot,
+#tiles.tls-auto .tls-count span, #tiles.tls-auto .tls-panes::before {
+  transition: opacity 0.55s ease, transform 0.55s ease;
 }
 
 
@@ -940,20 +906,8 @@ html.gate-leaving .page, html:not(.gate-on) .page { opacity: 1; visibility: visi
 .print-plaque p { font-size: 13.5px; line-height: 1.5; color: var(--dim); }
 .print-plaque b { color: var(--ink); font-weight: 600; }
 
-/* help points: three across, then the house rule */
-.print-points { grid-template-columns: repeat(3, minmax(0, 1fr)); gap: clamp(20px, 3vw, 28px); margin-bottom: clamp(26px, 4vw, 38px); }
-.print-house {
-  display: flex; gap: 16px; align-items: flex-start;
-  background: var(--wash); border: 1px dashed color-mix(in srgb, var(--accent) 45%, transparent);
-  border-radius: 16px; padding: clamp(18px, 3vw, 24px);
-}
-.print-house-ic {
-  flex: none; width: 40px; height: 40px; border-radius: 11px;
-  background: var(--wash-deep); color: var(--accent); display: grid; place-items: center;
-}
-.print-house b { display: block; font-size: 16px; font-weight: 600; margin-bottom: 3px; }
-.print-house p { font-size: 14.5px; line-height: 1.5; color: var(--dim); }
-.print-house .print-cal { margin-top: 6px; font-size: 12px; opacity: 0.85; }
+/* help points: three across */
+.print-points { grid-template-columns: repeat(3, minmax(0, 1fr)); gap: clamp(20px, 3vw, 28px); }
 
 @media (max-width: 860px) {
   #print .print-stage { grid-template-columns: minmax(0, 1fr); }

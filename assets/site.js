@@ -226,9 +226,46 @@
   /* chip flips at the midpoint of each CSS crossfade window */
   var THRESH = [0.22, 0.48, 0.69, 0.89];
 
+  /* static autoplay (phones): pinch beat, then List, then Labels */
+  var STOPS = [[0.63, "2"], [0.78, "3"], [0.97, "4"]];
+  var autoTimer = null, autoIdx = 0, autoIO = null;
+
+  function setStop(i) {
+    autoIdx = i;
+    root.style.setProperty("--tls-p", String(STOPS[i][0]));
+    root.setAttribute("data-tstage", STOPS[i][1]);
+  }
+  function startAuto() {
+    if (autoTimer || live || reduce.matches) return;
+    root.classList.add("tls-auto");
+    autoTimer = setInterval(function () { setStop((autoIdx + 1) % STOPS.length); }, 2400);
+  }
+  function stopAuto(keepClass) {
+    if (autoTimer) { clearInterval(autoTimer); autoTimer = null; }
+    if (!keepClass) root.classList.remove("tls-auto");
+  }
+  function armAutoObserver() {
+    if (autoIO || !("IntersectionObserver" in window)) return;
+    autoIO = new IntersectionObserver(function (entries) {
+      for (var i = 0; i < entries.length; i++) {
+        if (entries[i].isIntersecting) startAuto();
+        else stopAuto(true);
+      }
+    }, { rootMargin: "-12% 0px" });
+    autoIO.observe(runway);
+  }
+
+  function autoCheck() {
+    if (live || reduce.matches) return;
+    var vh = window.innerHeight || 1;
+    var r = runway.getBoundingClientRect();
+    if (r.bottom > vh * 0.12 && r.top < vh * 0.88) startAuto();
+    else stopAuto(true);
+  }
+
   function update() {
     ticking = false;
-    if (!live) return;
+    if (!live) { autoCheck(); return; }
     var vh = window.innerHeight || 1;
     var rect = runway.getBoundingClientRect();
     var total = rect.height - vh;
@@ -255,14 +292,19 @@
 
   function decide() {
     var want = mqWide.matches && !reduce.matches;
-    if (want === live) { if (live) schedule(); return; }
+    if (want === live) {
+      if (live) { schedule(); }
+      else if (reduce.matches) { stopAuto(); setStop(0); }
+      return;
+    }
     live = want;
     root.classList.toggle("tls-live", live);
     if (!live) {
-      root.style.removeProperty("--tls-p");
-      root.setAttribute("data-tstage", "0");
-      lastStage = "0"; lastP = -1;
+      lastStage = ""; lastP = -1;
+      setStop(0);
+      if (reduce.matches) { stopAuto(); }
     } else {
+      stopAuto();
       schedule();
     }
   }
@@ -277,6 +319,8 @@
     reduce.addListener(decide);
   }
   decide();
+  armAutoObserver();
+  autoCheck();
 })();
 
 
