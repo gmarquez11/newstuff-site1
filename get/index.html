@@ -1,0 +1,39 @@
+<!doctype html>
+<html lang="en" data-accent="clay">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Get QR Tiles</title>
+<meta name="description" content="QR Tiles is in TestFlight today. When it ships, this link will go straight to the App Store.">
+<meta name="robots" content="noindex">
+<link rel="icon" href="/favicon.svg" type="image/svg+xml">
+<link rel="apple-touch-icon" href="/apple-touch-icon.png">
+<link rel="stylesheet" href="/assets/tokens.css">
+<link rel="stylesheet" href="/assets/site.css">
+<script>
+(function () {
+  var d = document.documentElement, a = null;
+  try { a = localStorage.getItem("qrt-accent"); } catch (e) {}
+  if (a) { d.dataset.accent = a; }
+})();
+</script>
+<style>
+  .get { min-height: 100vh; display: grid; place-items: center; text-align: center; padding: 24px; }
+  .get .mark { margin: 0 auto 26px; }
+  .get h1 { font-size: clamp(30px, 5.5vw, 44px); letter-spacing: -0.02em; line-height: 1.1; margin-bottom: 14px; }
+  .get p { color: var(--dim); font-size: 17px; line-height: 1.55; max-width: 440px; margin: 0 auto 12px; }
+  .get .cta { margin-top: 22px; }
+</style>
+</head>
+<body>
+<main class="get">
+  <div>
+    <div class="mark" aria-hidden="true"><div class="o"><div class="m"><div class="i"></div></div></div></div>
+    <h1>Still in the works.</h1>
+    <p>QR Tiles is in TestFlight today, getting finished. Once it ships, this link will go straight to its App Store page.</p>
+    <p>Until then, the home page shows everything it does.</p>
+    <a class="cta" href="/">See how it works</a>
+  </div>
+</main>
+</body>
+</html>
