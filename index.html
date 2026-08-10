@@ -1,0 +1,1161 @@
+<!doctype html>
+<html lang="en" data-accent="clay">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>QR Tiles — never lose anything again</title>
+<meta name="description" content="Stick a QR code on a drawer. Scan it with your iPhone. Never lose anything again.">
+<meta property="og:title" content="QR Tiles — never lose anything again">
+<meta property="og:description" content="Stick a QR code on a drawer. Scan it with your iPhone. Never lose anything again.">
+<meta property="og:url" content="https://newstuff.app">
+<meta property="og:type" content="website">
+<link rel="icon" href="/favicon.svg" type="image/svg+xml">
+<link rel="stylesheet" href="/assets/tokens.css">
+<link rel="stylesheet" href="/assets/site.css">
+<script>
+(function () {
+  var d = document.documentElement, a = null;
+  try { a = localStorage.getItem("qrt-accent"); } catch (e) {}
+  if (a) { d.dataset.accent = a; } else { d.classList.add("gate-on"); }
+})();
+</script>
+<noscript><style>.reveal { opacity: 1; transform: none; }</style></noscript>
+</head>
+<body>
+<a class="skip-link" href="#main">Skip to content</a>
+
+<svg style="display:none" aria-hidden="true"><defs>
+<symbol id="i-qrcode-viewfinder" viewBox="0 0 24 24">
+  <path d="M3.3 8V6A2.7 2.7 0 0 1 6 3.3h2"/>
+  <path d="M16 3.3h2A2.7 2.7 0 0 1 20.7 6v2"/>
+  <path d="M20.7 16v2a2.7 2.7 0 0 1-2.7 2.7h-2"/>
+  <path d="M8 20.7H6A2.7 2.7 0 0 1 3.3 18v-2"/>
+  <rect x="8.2" y="8.2" width="3.1" height="3.1" rx=".8"/>
+  <rect x="14.55" y="14.55" width="1.35" height="1.35" rx=".4"/>
+  <path d="M15.1 9.3h.01M9.3 15.1h.01"/>
+</symbol>
+<symbol id="i-qrcode" viewBox="0 0 24 24">
+  <rect x="3.6" y="3.6" width="6.1" height="6.1" rx="1.2"/>
+  <rect x="14.3" y="3.6" width="6.1" height="6.1" rx="1.2"/>
+  <rect x="3.6" y="14.3" width="6.1" height="6.1" rx="1.2"/>
+  <rect x="6.05" y="6.05" width="1.2" height="1.2" rx=".3"/>
+  <rect x="16.75" y="6.05" width="1.2" height="1.2" rx=".3"/>
+  <rect x="6.05" y="16.75" width="1.2" height="1.2" rx=".3"/>
+  <rect x="14.3" y="14.3" width="1.3" height="1.3" rx=".3"/>
+  <rect x="18.9" y="18.9" width="1.3" height="1.3" rx=".3"/>
+  <path d="M20 15h.01M15 20h.01"/>
+</symbol>
+<symbol id="i-questionmark-circle" viewBox="0 0 24 24">
+  <circle cx="12" cy="12" r="9"/>
+  <path d="M9.2 9.05a2.9 2.9 0 0 1 5.63.97c0 1.93-2.9 2.9-2.9 2.9"/>
+  <path d="M11.93 16.65h.01"/>
+</symbol>
+<symbol id="i-chevron-right" viewBox="0 0 24 24"><path d="M9.6 5.8 15.8 12l-6.2 6.2"/></symbol>
+<symbol id="i-chevron-left" viewBox="0 0 24 24"><path d="M14.4 5.8 8.2 12l6.2 6.2"/></symbol>
+<symbol id="i-magnifyingglass" viewBox="0 0 24 24">
+  <circle cx="10.9" cy="10.9" r="6.85"/>
+  <path d="M15.75 15.75 20.7 20.7"/>
+</symbol>
+<symbol id="i-plus" viewBox="0 0 24 24"><path d="M12 5.2v13.6M5.2 12h13.6"/></symbol>
+<symbol id="i-xmark" viewBox="0 0 24 24"><path d="M6.4 6.4l11.2 11.2M17.6 6.4 6.4 17.6"/></symbol>
+<symbol id="i-checkmark" viewBox="0 0 24 24"><path d="M4.9 13.15l4.75 4.7L19.1 6.35"/></symbol>
+<symbol id="i-apple" viewBox="0 0 24 24">
+  <path fill="currentColor" stroke="none" d="M17.05 20.28c-.98.95-2.05.8-3.08.35-1.09-.46-2.09-.48-3.24 0-1.44.62-2.2.44-3.06-.35C2.79 15.25 3.51 7.59 9.05 7.31c1.35.07 2.29.74 3.08.8.79.05 2.28-.86 3.85-.73 1.31.11 2.5.62 3.28 1.72-3.24 1.94-2.71 6.21.79 7.66-.63 1.61-1.44 3.2-3 3.52zM12.03 7.25c-.15-2.23 1.66-4.07 3.74-4.25.29 2.58-2.34 4.5-3.74 4.25z"/>
+</symbol>
+<symbol id="i-arrow-right" viewBox="0 0 24 24"><path d="M4.65 12H19.2M13.45 6.1 19.35 12l-5.9 5.9"/></symbol>
+<symbol id="i-printer" viewBox="0 0 24 24">
+  <path d="M6.85 8.4V3.9h10.3v4.5"/>
+  <path d="M6.85 17.15H5.1a2.15 2.15 0 0 1-2.15-2.15v-4.45A2.15 2.15 0 0 1 5.1 8.4h13.8a2.15 2.15 0 0 1 2.15 2.15V15a2.15 2.15 0 0 1-2.15 2.15h-1.75"/>
+  <rect x="6.85" y="13.6" width="10.3" height="6.5" rx="1.05"/>
+  <circle cx="18.3" cy="11" r=".45"/>
+</symbol>
+<symbol id="i-doc-viewfinder" viewBox="0 0 24 24">
+  <path d="M3.3 8V6A2.7 2.7 0 0 1 6 3.3h2"/>
+  <path d="M16 3.3h2A2.7 2.7 0 0 1 20.7 6v2"/>
+  <path d="M20.7 16v2a2.7 2.7 0 0 1-2.7 2.7h-2"/>
+  <path d="M8 20.7H6A2.7 2.7 0 0 1 3.3 18v-2"/>
+  <path d="M13.05 7.35h-2.4A1.45 1.45 0 0 0 9.2 8.8v6.4a1.45 1.45 0 0 0 1.45 1.45h4.5a1.45 1.45 0 0 0 1.45-1.45v-4.1z"/>
+  <path d="M13.05 7.35v2.3a1.4 1.4 0 0 0 1.4 1.4h2.15"/>
+</symbol>
+<symbol id="i-testtube-2" viewBox="0 0 24 24">
+  <g transform="rotate(21 12 12)">
+    <path transform="translate(8.5 12)" d="M-3 -6.3h6M-2.15 -6.3v10.1a2.15 2.15 0 0 0 4.3 0v-10.1M-2.15 1.2h4.3"/>
+    <path transform="translate(15.5 12)" d="M-3 -6.3h6M-2.15 -6.3v10.1a2.15 2.15 0 0 0 4.3 0v-10.1M-2.15 1.2h4.3"/>
+  </g>
+</symbol>
+<symbol id="i-keyboard" viewBox="0 0 24 24">
+  <rect x="2.9" y="6.4" width="18.2" height="11.2" rx="2.1"/>
+  <path d="M6.2 9.6h.01M9.1 9.6h.01M12 9.6h.01M14.9 9.6h.01M17.8 9.6h.01M6.2 12.1h.01M9.1 12.1h.01M12 12.1h.01M14.9 12.1h.01M17.8 12.1h.01"/>
+  <path d="M8.4 14.6h7.2"/>
+</symbol>
+<symbol id="i-gearshape" viewBox="0 0 24 24">
+  <path d="M10.04 5.59L10.35 3.1L13.65 3.1L13.96 5.59L15.15 6.08L17.13 4.54L19.46 6.87L17.92 8.85L18.41 10.04L20.9 10.35L20.9 13.65L18.41 13.96L17.92 15.15L19.46 17.13L17.13 19.46L15.15 17.92L13.96 18.41L13.65 20.9L10.35 20.9L10.04 18.41L8.85 17.92L6.87 19.46L4.54 17.13L6.08 15.15L5.59 13.96L3.1 13.65L3.1 10.35L5.59 10.04L6.08 8.85L4.54 6.87L6.87 4.54L8.85 6.08Z"/>
+  <circle cx="12" cy="12" r="3.05"/>
+</symbol>
+<symbol id="i-camera" viewBox="0 0 24 24">
+  <path d="M2.95 16.75V9.4a2.3 2.3 0 0 1 2.3-2.3h2.6l1.45-2.17a1.55 1.55 0 0 1 1.29-.69h2.82a1.55 1.55 0 0 1 1.29.69L16.15 7.1h2.6a2.3 2.3 0 0 1 2.3 2.3v7.35a2.3 2.3 0 0 1-2.3 2.3H5.25a2.3 2.3 0 0 1-2.3-2.3z"/>
+  <circle cx="12" cy="12.8" r="3.5"/>
+</symbol>
+<symbol id="i-tray-and-arrow-down" viewBox="0 0 24 24">
+  <path d="M12 3.5v10.25"/>
+  <path d="M8.6 10.3 12 13.75l3.4-3.45"/>
+  <path d="M3.4 13.35v3.2a3.05 3.05 0 0 0 3.05 3.05h11.1a3.05 3.05 0 0 0 3.05-3.05v-3.2"/>
+  <path d="M3.4 13.35h3.55c.6 0 1 .3 1.2.85.5 1.3 1.75 2.15 3.85 2.15s3.35-.85 3.85-2.15c.2-.55.6-.85 1.2-.85h3.55"/>
+</symbol>
+<symbol id="i-sparkles" viewBox="0 0 24 24">
+  <path d="M9.7 7.5Q9.7 13.3 15.5 13.3Q9.7 13.3 9.7 19.1Q9.7 13.3 3.9 13.3Q9.7 13.3 9.7 7.5Z"/>
+  <path d="M16.9 3.5Q16.9 6.7 20.1 6.7Q16.9 6.7 16.9 9.9Q16.9 6.7 13.7 6.7Q16.9 6.7 16.9 3.5Z"/>
+</symbol>
+<symbol id="i-tag" viewBox="0 0 24 24">
+  <path d="M13.35 3.85 20.3 10.8a2.15 2.15 0 0 1 0 3.04l-6.46 6.46a2.15 2.15 0 0 1-3.04 0L3.85 13.35a2.1 2.1 0 0 1-.62-1.49V5.33A2.13 2.13 0 0 1 5.36 3.2h6.5c.56 0 1.1.23 1.49.65z"/>
+  <circle cx="7.6" cy="7.6" r="1.1"/>
+</symbol>
+<symbol id="i-slider-horizontal-3" viewBox="0 0 24 24">
+  <path d="M3.4 6.4h7M18.9 6.4h1.7M3.4 12h1.05M12.9 12h7.7M3.4 17.6h5.05M16.9 17.6h3.7"/>
+  <circle cx="14.65" cy="6.4" r="2.2"/>
+  <circle cx="8.65" cy="12" r="2.2"/>
+  <circle cx="12.65" cy="17.6" r="2.2"/>
+</symbol>
+<symbol id="i-mic" viewBox="0 0 24 24">
+  <rect x="9.4" y="3.3" width="5.2" height="10.1" rx="2.6"/>
+  <path d="M18.25 10.85v.95a6.25 6.25 0 0 1-12.5 0v-.95"/>
+  <path d="M12 18.05v2.7"/>
+</symbol>
+<symbol id="i-folder" viewBox="0 0 24 24">
+  <path d="M3.2 16.95V7A2.05 2.05 0 0 1 5.25 4.95h3.9a1.5 1.5 0 0 1 1.13.51l1.49 1.7a1.5 1.5 0 0 0 1.13.51h5.85A2.05 2.05 0 0 1 20.8 9.72v7.23a2.05 2.05 0 0 1-2.05 2.05H5.25a2.05 2.05 0 0 1-2.05-2.05z"/>
+</symbol>
+<symbol id="i-pencil" viewBox="0 0 24 24">
+  <path d="M16.75 4.1a2.4 2.4 0 0 1 3.4 3.4L8.1 19.55l-4.5 1.1 1.1-4.5z"/>
+</symbol>
+<symbol id="i-arrow-up-arrow-down" viewBox="0 0 24 24">
+  <path d="M7.9 19.6V4.5M4.35 8.05 7.9 4.5l3.55 3.55"/>
+  <path d="M16.1 4.4v15.1M12.55 15.95l3.55 3.55 3.55-3.55"/>
+</symbol>
+<symbol id="i-trash" viewBox="0 0 24 24">
+  <path d="M4 6.4h16"/>
+  <path d="M9.3 6.4V5.05A1.55 1.55 0 0 1 10.85 3.5h2.3a1.55 1.55 0 0 1 1.55 1.55V6.4"/>
+  <path d="M5.75 6.4l.78 12.3a2.05 2.05 0 0 0 2.05 1.92h6.84a2.05 2.05 0 0 0 2.05-1.92l.78-12.3"/>
+  <path d="M10.15 10.6v5.6M13.85 10.6v5.6"/>
+</symbol>
+<symbol id="i-square-grid-3x3" viewBox="0 0 24 24">
+  <rect x="3" y="3" width="4" height="4" rx="1"/><rect x="10" y="3" width="4" height="4" rx="1"/><rect x="17" y="3" width="4" height="4" rx="1"/>
+  <rect x="3" y="10" width="4" height="4" rx="1"/><rect x="10" y="10" width="4" height="4" rx="1"/><rect x="17" y="10" width="4" height="4" rx="1"/>
+  <rect x="3" y="17" width="4" height="4" rx="1"/><rect x="10" y="17" width="4" height="4" rx="1"/><rect x="17" y="17" width="4" height="4" rx="1"/>
+</symbol>
+<symbol id="i-line-3-horizontal-decrease-circle" viewBox="0 0 24 24">
+  <circle cx="12" cy="12" r="9"/>
+  <path d="M7.4 9.3h9.2M8.95 12h6.1M10.5 14.7h3"/>
+</symbol>
+<symbol id="i-arrow-down-doc" viewBox="0 0 24 24">
+  <path d="M13.15 3.4H7.05A2.1 2.1 0 0 0 4.95 5.5v13a2.1 2.1 0 0 0 2.1 2.1h9.9a2.1 2.1 0 0 0 2.1-2.1V9.25z"/>
+  <path d="M13.15 3.4v3.75a2.1 2.1 0 0 0 2.1 2.1h3.8"/>
+  <path d="M12 11v5.6M9.45 14.1 12 16.65l2.55-2.55"/>
+</symbol>
+<symbol id="i-arrow-counterclockwise" viewBox="0 0 24 24">
+  <path d="M3.5 12.15a8.5 8.5 0 1 0 8.5-8.5c-2.35 0-4.58.96-6.2 2.58L3.5 8.5"/>
+  <path d="M3.5 3.75v4.75h4.75"/>
+</symbol>
+<symbol id="i-internaldrive" viewBox="0 0 24 24">
+  <rect x="2.9" y="8.3" width="18.2" height="7.4" rx="1.9"/>
+  <circle cx="17.6" cy="12" r=".5"/>
+</symbol>
+<symbol id="i-person-2" viewBox="0 0 24 24">
+  <circle cx="9.15" cy="7.95" r="3.05"/>
+  <path d="M3.35 19.5v-.55a5.8 5.8 0 0 1 11.6 0v.55"/>
+  <path d="M15.95 5.05a3.05 3.05 0 0 1 0 6.1"/>
+  <path d="M20.65 19.5v-.55a5.8 5.8 0 0 0-4.3-5.6"/>
+</symbol>
+<symbol id="i-paintpalette-fill" viewBox="0 0 24 24">
+  <path fill="currentColor" stroke="none" fill-rule="evenodd" d="M12 2.9c-5.05 0-9.15 4.1-9.15 9.15 0 5.05 4.1 9.15 9.15 9.15.84 0 1.52-.68 1.52-1.52 0-.4-.15-.76-.4-1.03-.24-.27-.39-.62-.39-1.01 0-.84.68-1.52 1.52-1.52h1.79c2.81 0 5.09-2.28 5.09-5.09C21.13 6.6 17.03 2.9 12 2.9zM5.1 11.5a1.4 1.4 0 1 0 2.8 0 1.4 1.4 0 1 0-2.8 0zM8.1 7.4a1.4 1.4 0 1 0 2.8 0 1.4 1.4 0 1 0-2.8 0zM13.1 7.4a1.4 1.4 0 1 0 2.8 0 1.4 1.4 0 1 0-2.8 0zM16.1 11.5a1.4 1.4 0 1 0 2.8 0 1.4 1.4 0 1 0-2.8 0z"/>
+</symbol>
+<symbol id="i-square-and-arrow-up" viewBox="0 0 24 24">
+  <path d="M8.45 8.15H6.35A2.1 2.1 0 0 0 4.25 10.25v8.25a2.1 2.1 0 0 0 2.1 2.1h11.3a2.1 2.1 0 0 0 2.1-2.1v-8.25a2.1 2.1 0 0 0-2.1-2.1h-2.1"/>
+  <path d="M12 14.25V3.65"/>
+  <path d="M8.35 7.25 12 3.6l3.65 3.65"/>
+</symbol>
+<symbol id="i-lock" viewBox="0 0 24 24">
+  <rect x="5.2" y="10.55" width="13.6" height="9.85" rx="2.15"/>
+  <path d="M8.4 10.55V7.7a3.6 3.6 0 0 1 7.2 0v2.85"/>
+</symbol>
+<symbol id="i-iphone" viewBox="0 0 24 24">
+  <rect x="7.05" y="2.85" width="9.9" height="18.3" rx="2.6"/>
+  <path d="M10.7 5.5h2.6"/>
+</symbol>
+<symbol id="i-envelope" viewBox="0 0 24 24">
+  <rect x="2.9" y="5.15" width="18.2" height="13.7" rx="1.9"/>
+  <path d="M3.35 7.1l7.5 5.8a1.9 1.9 0 0 0 2.3 0l7.5-5.8"/>
+</symbol>
+<symbol id="i-photo" viewBox="0 0 24 24">
+  <rect x="2.9" y="4.9" width="18.2" height="14.2" rx="2.2"/>
+  <circle cx="8.35" cy="9.3" r="1.55"/>
+  <path d="M20.95 14.65l-3.3-3.55a1.5 1.5 0 0 0-2.2 0L5.7 19.05"/>
+</symbol>
+<symbol id="i-video" viewBox="0 0 24 24">
+  <rect x="2.9" y="6.65" width="12.7" height="10.7" rx="2.3"/>
+  <path d="M15.6 10.55l3.95-2.6a1 1 0 0 1 1.55.84v6.42a1 1 0 0 1-1.55.84l-3.95-2.6"/>
+</symbol>
+</defs></svg>
+
+<div id="gate" role="dialog" aria-modal="true" aria-label="Choose your color">
+  <div class="gate-inner">
+    <div class="mark" aria-hidden="true"><div class="o"><div class="m"><div class="i"></div></div></div></div>
+    <p class="gate-h">First — make it yours.</p>
+    <p class="gate-sub">QR Tiles wears one of six colors. Pick yours — the site follows.</p>
+    <div class="sw-row sw-lg">
+      <button class="sw" data-c="clay" aria-label="Clay" aria-pressed="false"><span class="sw-o"><span class="sw-m"><span class="sw-i"></span></span></span></button>
+      <button class="sw" data-c="ink" aria-label="Ink" aria-pressed="false"><span class="sw-o"><span class="sw-m"><span class="sw-i"></span></span></span></button>
+      <button class="sw" data-c="ocean" aria-label="Ocean" aria-pressed="false"><span class="sw-o"><span class="sw-m"><span class="sw-i"></span></span></span></button>
+      <button class="sw" data-c="sage" aria-label="Sage" aria-pressed="false"><span class="sw-o"><span class="sw-m"><span class="sw-i"></span></span></span></button>
+      <button class="sw" data-c="honey" aria-label="Honey" aria-pressed="false"><span class="sw-o"><span class="sw-m"><span class="sw-i"></span></span></span></button>
+      <button class="sw" data-c="plum" aria-label="Plum" aria-pressed="false"><span class="sw-o"><span class="sw-m"><span class="sw-i"></span></span></span></button>
+    </div>
+    <p class="gate-note">The app works the same way — the six icons at the bottom of Home recolor the app icon and the whole app.</p>
+    <button class="gate-skip" type="button">Skip — clay is classic</button>
+  </div>
+</div>
+
+<header class="hdr">
+  <a class="hdr-brand" href="/">
+    <span class="mark mark-sm" aria-hidden="true"><span class="o"><span class="m"><span class="i"></span></span></span></span>
+    QR Tiles
+  </a>
+  <span class="spacer"></span>
+  <div class="hdr-pick">
+    <button class="hdr-dot" aria-label="Change color" aria-expanded="false"><span class="d"></span></button>
+    <div class="hdr-pop">
+      <div class="sw-row sw-sm">
+        <button class="sw" data-c="clay" aria-label="Clay" aria-pressed="false"><span class="sw-o"><span class="sw-m"><span class="sw-i"></span></span></span></button>
+        <button class="sw" data-c="ink" aria-label="Ink" aria-pressed="false"><span class="sw-o"><span class="sw-m"><span class="sw-i"></span></span></span></button>
+        <button class="sw" data-c="ocean" aria-label="Ocean" aria-pressed="false"><span class="sw-o"><span class="sw-m"><span class="sw-i"></span></span></span></button>
+        <button class="sw" data-c="sage" aria-label="Sage" aria-pressed="false"><span class="sw-o"><span class="sw-m"><span class="sw-i"></span></span></span></button>
+        <button class="sw" data-c="honey" aria-label="Honey" aria-pressed="false"><span class="sw-o"><span class="sw-m"><span class="sw-i"></span></span></span></button>
+        <button class="sw" data-c="plum" aria-label="Plum" aria-pressed="false"><span class="sw-o"><span class="sw-m"><span class="sw-i"></span></span></span></button>
+      </div>
+    </div>
+  </div>
+  <a class="hdr-cta" href="https://apps.apple.com/app/id6799444682">
+    <svg class="ic ic-fill" viewBox="0 0 24 24" aria-hidden="true"><path d="M17.05 20.28c-.98.95-2.05.8-3.08.35-1.09-.46-2.09-.48-3.24 0-1.44.62-2.2.44-3.06-.35C2.79 15.25 3.51 7.59 9.05 7.31c1.35.07 2.29.74 3.08.8.79.05 2.28-.86 3.85-.73 1.31.11 2.5.62 3.28 1.72-3.24 1.94-2.71 6.21.79 7.66-.63 1.61-1.44 3.2-3 3.52zM12.03 7.25c-.15-2.23 1.66-4.07 3.74-4.25.29 2.58-2.34 4.5-3.74 4.25z"/></svg>
+    Get the app
+  </a>
+</header>
+
+<div class="page">
+<main id="main">
+<section id="hero" class="sec" aria-label="QR Tiles introduction">
+  <div class="sec-inner">
+    <div class="duo">
+      <div class="duo-copy">
+        <h1 class="h-display reveal">Stick a code on a drawer.
+          <em class="em-accent hero-l2">Never lose anything again.</em></h1>
+        <p class="lede reveal reveal-d1">Print sheets of QR stickers, photograph what's inside every drawer, bin, and box — then find anything by asking your phone.</p>
+        <div class="hero-cta reveal reveal-d2">
+          <a class="cta" href="https://apps.apple.com/app/id6799444682">
+            <svg class="ic ic-fill" aria-hidden="true"><use href="#i-apple"/></svg>
+            Get QR Tiles</a>
+          <span class="cta-note">Currently in family TestFlight — public release coming.</span>
+        </div>
+      </div>
+      <div class="duo-device reveal reveal-d1" role="img" aria-label="iPhone showing the QR Tiles Home screen: search, Tiles, Scan and Ask shortcuts, Organize, Data, and Sharing sections, and the six-color icon strip">
+        <div class="hero-float">
+          <div class="device"><div class="island"></div><div class="screen">
+            <div class="dvc-status"><span>9:41</span><span class="sig">
+              <i style="width:14px;height:9px;border:1px solid var(--ink);border-radius:2.5px;background:linear-gradient(90deg,var(--ink) 70%,transparent 70%)"></i></span>
+            </div>
+            <div class="dvc-nav"><span class="dvc-title">Cedar Lane</span>
+              <span class="dvc-actions"><svg class="ic" aria-hidden="true"><use href="#i-questionmark-circle"/></svg>
+              <svg class="ic" aria-hidden="true"><use href="#i-qrcode-viewfinder"/></svg></span></div>
+            <div class="dvc-body">
+              <div class="dvc-card hero-schard">
+                <div class="dvc-search"><svg class="ic" aria-hidden="true"><use href="#i-magnifyingglass"/></svg>Search tiles, labels, codes…</div>
+                <div class="hero-stat">8 tiles configured · 152 available</div>
+                <div class="hero-pills">
+                  <span class="hero-pill"><svg class="ic" aria-hidden="true"><use href="#i-square-grid-3x3"/></svg>Tiles</span>
+                  <span class="hero-pill"><svg class="ic" aria-hidden="true"><use href="#i-sparkles"/></svg>Ask</span>
+                </div>
+              </div>
+              <div class="dvc-card">
+                <div class="dvc-row"><svg class="ic" aria-hidden="true"><use href="#i-square-grid-3x3"/></svg>Tiles<svg class="ic chev" aria-hidden="true"><use href="#i-chevron-right"/></svg></div>
+                <div class="dvc-row"><svg class="ic" aria-hidden="true"><use href="#i-qrcode-viewfinder"/></svg>Scan<svg class="ic chev" aria-hidden="true"><use href="#i-chevron-right"/></svg></div>
+                <div class="dvc-row"><svg class="ic" aria-hidden="true"><use href="#i-sparkles"/></svg>Ask<svg class="ic chev" aria-hidden="true"><use href="#i-chevron-right"/></svg></div>
+              </div>
+              <div class="dvc-sec-h">Organize</div>
+              <div class="dvc-card">
+                <div class="dvc-row"><svg class="ic" aria-hidden="true"><use href="#i-folder"/></svg>Groups &amp; Zones<svg class="ic chev" aria-hidden="true"><use href="#i-chevron-right"/></svg></div>
+                <div class="dvc-row"><svg class="ic" aria-hidden="true"><use href="#i-printer"/></svg>Print<svg class="ic chev" aria-hidden="true"><use href="#i-chevron-right"/></svg></div>
+                <div class="dvc-row"><svg class="ic" aria-hidden="true"><use href="#i-line-3-horizontal-decrease-circle"/></svg>Filters<svg class="ic chev" aria-hidden="true"><use href="#i-chevron-right"/></svg></div>
+              </div>
+              <div class="dvc-sec-h">Data</div>
+              <div class="dvc-card">
+                <div class="dvc-row"><svg class="ic" aria-hidden="true"><use href="#i-arrow-down-doc"/></svg>Backup<svg class="ic chev" aria-hidden="true"><use href="#i-chevron-right"/></svg></div>
+              </div>
+              <div class="dvc-sec-h">Sharing</div>
+              <div class="dvc-card">
+                <div class="dvc-row"><svg class="ic" aria-hidden="true"><use href="#i-person-2"/></svg>Share</div>
+              </div>
+              <!-- the app's icon strip: six fixed colors, current accent ringed -->
+              <div class="hero-foot">
+                <div class="hero-strip">
+                  <span class="hero-it" data-c="clay"><span class="hero-io"><span class="hero-im"><span class="hero-ii"></span></span></span></span>
+                  <span class="hero-it" data-c="ink"><span class="hero-io"><span class="hero-im"><span class="hero-ii"></span></span></span></span>
+                  <span class="hero-it" data-c="ocean"><span class="hero-io"><span class="hero-im"><span class="hero-ii"></span></span></span></span>
+                  <span class="hero-it" data-c="sage"><span class="hero-io"><span class="hero-im"><span class="hero-ii"></span></span></span></span>
+                  <span class="hero-it" data-c="honey"><span class="hero-io"><span class="hero-im"><span class="hero-ii"></span></span></span></span>
+                  <span class="hero-it" data-c="plum"><span class="hero-io"><span class="hero-im"><span class="hero-ii"></span></span></span></span>
+                </div>
+                <div class="hero-ver">QR Tiles 1.0</div>
+              </div>
+            </div>
+          </div></div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+<section id="how" class="sec sec-alt" aria-label="How it works">
+  <div class="sec-inner">
+    <div class="sec-head reveal">
+      <p class="kicker"><svg class="ic" aria-hidden="true"><use href="#i-qrcode"/></svg> How it works</p>
+      <h2 class="h-sec">Print, scan, ask.</h2>
+      <p class="lede">A sheet of stickers, a few minutes of scanning, and every drawer can speak for itself.</p>
+    </div>
+
+    <ol class="how-steps" role="list">
+      <li class="how-step reveal reveal-d1">
+        <span class="how-num" aria-hidden="true">1</span>
+        <div class="how-card">
+          <div class="how-viz" aria-hidden="true">
+            <div class="how-sheet">
+              <div class="how-sheet-grid">
+                <span class="how-stk"><span class="qr"><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i class="off"></i><i></i><i></i><i></i><i class="off"></i><i class="off"></i><i class="off"></i><i class="off"></i><i></i><i></i><i class="off"></i><i class="off"></i><i class="off"></i><i class="off"></i><i></i><i class="off"></i><i></i><i class="off"></i><i class="off"></i><i></i><i class="off"></i><i></i><i></i><i class="off"></i><i class="off"></i><i></i><i></i><i class="off"></i><i class="off"></i><i class="off"></i><i></i><i class="off"></i><i></i><i></i><i class="off"></i><i></i><i class="off"></i><i class="off"></i><i></i></span><span class="how-code mono">K7PT2S</span></span>
+                <span class="how-stk"><span class="qr"><i></i><i></i><i></i><i></i><i class="off"></i><i></i><i></i><i></i><i></i><i></i><i></i><i class="off"></i><i></i><i></i><i></i><i class="off"></i><i class="off"></i><i></i><i class="off"></i><i class="off"></i><i class="off"></i><i></i><i></i><i class="off"></i><i></i><i class="off"></i><i class="off"></i><i></i><i></i><i class="off"></i><i></i><i class="off"></i><i></i><i class="off"></i><i></i><i></i><i></i><i class="off"></i><i class="off"></i><i class="off"></i><i></i><i class="off"></i><i></i><i></i><i></i><i></i><i class="off"></i><i class="off"></i><i class="off"></i></span><span class="how-code mono">P4NT9Q</span></span>
+                <span class="how-stk"><span class="qr"><i></i><i></i><i></i><i class="off"></i><i class="off"></i><i></i><i></i><i></i><i></i><i class="off"></i><i class="off"></i><i class="off"></i><i></i><i></i><i></i><i class="off"></i><i></i><i class="off"></i><i class="off"></i><i></i><i></i><i class="off"></i><i class="off"></i><i class="off"></i><i></i><i></i><i></i><i></i><i></i><i class="off"></i><i class="off"></i><i class="off"></i><i></i><i class="off"></i><i></i><i></i><i></i><i class="off"></i><i></i><i></i><i class="off"></i><i class="off"></i><i></i><i></i><i></i><i></i><i class="off"></i><i></i><i class="off"></i></span><span class="how-code mono">B8KE3W</span></span>
+                <span class="how-stk"><span class="qr"><i></i><i></i><i class="off"></i><i class="off"></i><i></i><i></i><i></i><i></i><i></i><i class="off"></i><i class="off"></i><i class="off"></i><i></i><i></i><i class="off"></i><i></i><i></i><i class="off"></i><i></i><i></i><i></i><i class="off"></i><i></i><i></i><i></i><i class="off"></i><i></i><i></i><i></i><i></i><i></i><i class="off"></i><i class="off"></i><i></i><i class="off"></i><i></i><i></i><i class="off"></i><i></i><i class="off"></i><i class="off"></i><i></i><i></i><i></i><i></i><i class="off"></i><i></i><i></i><i class="off"></i></span><span class="how-code mono">SP1CE6</span></span>
+                <span class="how-stk"><span class="qr"><i></i><i></i><i class="off"></i><i class="off"></i><i class="off"></i><i></i><i></i><i></i><i></i><i class="off"></i><i class="off"></i><i class="off"></i><i></i><i></i><i></i><i class="off"></i><i class="off"></i><i class="off"></i><i class="off"></i><i class="off"></i><i></i><i class="off"></i><i></i><i class="off"></i><i></i><i></i><i></i><i class="off"></i><i></i><i></i><i class="off"></i><i class="off"></i><i></i><i></i><i></i><i></i><i></i><i></i><i class="off"></i><i></i><i></i><i></i><i></i><i></i><i class="off"></i><i class="off"></i><i class="off"></i><i></i><i class="off"></i></span><span class="how-code mono">U2SNK7</span></span>
+                <span class="how-stk"><span class="qr"><i></i><i></i><i class="off"></i><i class="off"></i><i class="off"></i><i></i><i></i><i></i><i></i><i></i><i></i><i class="off"></i><i></i><i></i><i></i><i class="off"></i><i class="off"></i><i></i><i class="off"></i><i class="off"></i><i class="off"></i><i></i><i class="off"></i><i class="off"></i><i></i><i></i><i class="off"></i><i class="off"></i><i></i><i class="off"></i><i></i><i class="off"></i><i></i><i></i><i></i><i></i><i></i><i class="off"></i><i></i><i></i><i class="off"></i><i></i><i></i><i></i><i></i><i class="off"></i><i></i><i></i><i class="off"></i></span><span class="how-code mono">IS4LD2</span></span>
+                <span class="how-stk"><span class="qr"><i></i><i></i><i></i><i class="off"></i><i></i><i></i><i></i><i></i><i></i><i></i><i class="off"></i><i></i><i></i><i></i><i></i><i class="off"></i><i class="off"></i><i class="off"></i><i></i><i></i><i class="off"></i><i class="off"></i><i></i><i></i><i></i><i class="off"></i><i class="off"></i><i class="off"></i><i></i><i class="off"></i><i class="off"></i><i class="off"></i><i></i><i></i><i class="off"></i><i></i><i></i><i></i><i class="off"></i><i class="off"></i><i></i><i class="off"></i><i></i><i></i><i></i><i class="off"></i><i class="off"></i><i></i><i class="off"></i></span><span class="how-code mono">C0FE8R</span></span>
+                <span class="how-stk"><span class="qr"><i></i><i></i><i></i><i></i><i class="off"></i><i></i><i></i><i></i><i></i><i></i><i class="off"></i><i></i><i></i><i></i><i></i><i class="off"></i><i></i><i></i><i class="off"></i><i></i><i class="off"></i><i class="off"></i><i></i><i></i><i></i><i class="off"></i><i></i><i class="off"></i><i class="off"></i><i></i><i></i><i class="off"></i><i class="off"></i><i class="off"></i><i></i><i></i><i></i><i></i><i></i><i class="off"></i><i class="off"></i><i class="off"></i><i></i><i></i><i></i><i></i><i class="off"></i><i class="off"></i><i></i></span><span class="how-code mono">FR2DG5</span></span>
+              </div>
+            </div>
+          </div>
+          <div class="how-copy">
+            <h3>Print stickers</h3>
+            <p>The app mints sheets of unique QR codes on standard label stock. Stick them anywhere things hide.</p>
+          </div>
+        </div>
+      </li>
+
+      <li class="how-step reveal reveal-d2">
+        <span class="how-num" aria-hidden="true">2</span>
+        <div class="how-card">
+          <div class="how-viz" aria-hidden="true">
+            <div class="how-scan">
+              <div class="how-vf">
+                <i></i><i></i><i></i><i></i>
+                <span class="how-lab"><span class="qr"><i></i><i></i><i class="off"></i><i class="off"></i><i></i><i></i><i></i><i></i><i></i><i class="off"></i><i class="off"></i><i class="off"></i><i></i><i></i><i class="off"></i><i></i><i></i><i class="off"></i><i></i><i></i><i></i><i class="off"></i><i></i><i></i><i></i><i class="off"></i><i></i><i></i><i></i><i></i><i></i><i class="off"></i><i class="off"></i><i></i><i class="off"></i><i></i><i></i><i class="off"></i><i></i><i class="off"></i><i class="off"></i><i></i><i></i><i></i><i></i><i class="off"></i><i></i><i></i><i class="off"></i></span><span class="how-code mono">SP1CE6</span></span>
+                <span class="how-beam"></span>
+              </div>
+              <div class="how-chips">
+                <span class="chip on"><svg class="ic" aria-hidden="true"><use href="#i-checkmark"/></svg>Spice Drawer</span>
+                <span class="chip"><svg class="ic" aria-hidden="true"><use href="#i-camera"/></svg>2 photos</span>
+              </div>
+            </div>
+          </div>
+          <div class="how-copy">
+            <h3>Scan &amp; photograph</h3>
+            <p>First scan claims the sticker. Snap photos of what lives there — done in seconds per drawer.</p>
+          </div>
+        </div>
+      </li>
+
+      <li class="how-step reveal reveal-d3">
+        <span class="how-num" aria-hidden="true">3</span>
+        <div class="how-card">
+          <div class="how-viz" role="img" aria-label="Ask exchange. Question: Where are the pots? Answer: Pots are in Stove — Upper Drawer, in the Kitchen.">
+            <div class="how-askv">
+              <span class="how-q">Where are the pots?</span>
+              <span class="how-a">
+                Pots are in <b>Stove — Upper Drawer</b>, in the Kitchen.
+              </span>
+            </div>
+          </div>
+          <div class="how-copy">
+            <h3>Ask your phone</h3>
+            <p>“Where are the pots?” Search, browse photos, or just ask — the answer names the drawer and the room. Private, on your devices.</p>
+          </div>
+        </div>
+      </li>
+    </ol>
+
+    <div class="how-note reveal">
+      <div class="how-note-pill">
+        <span class="how-note-ic" aria-hidden="true"><svg class="ic"><use href="#i-plus"/></svg></span>
+        <p><b>You don't need stickers to start.</b> A tile can begin by hand — Tiles ▸ +, a title, a photo.</p>
+      </div>
+    </div>
+    <p class="how-fine reveal reveal-d1">Plain-word answers use Apple Intelligence and need a supported iPhone — search works on every iPhone.</p>
+  </div>
+</section>
+<section id="scan" class="sec" aria-label="Scanning stickers">
+  <div class="sec-inner">
+    <div class="duo">
+      <div class="duo-device reveal" role="img" aria-label="The scanner: a dark camera view locked onto a sticker's QR code, the caught code K7PT2S confirmed in a pill, and a field below for typing a code instead.">
+        <div class="device"><div class="island"></div><div class="screen">
+          <div class="dvc-status"><span>9:41</span><span class="sig">
+            <i style="width:14px;height:9px;border:1px solid var(--ink);border-radius:2.5px;background:linear-gradient(90deg,var(--ink) 70%,transparent 70%)"></i></span>
+          </div>
+          <div class="dvc-nav"><span class="dvc-title">Scan</span>
+            <span class="dvc-actions"><svg class="ic" aria-hidden="true"><use href="#i-questionmark-circle"/></svg>
+            <svg class="ic scan-x" aria-hidden="true"><use href="#i-xmark"/></svg></span></div>
+          <div class="dvc-body">
+            <!-- camera field: viewfinder locked on a drawer's sticker -->
+            <div class="scan-cam">
+              <div class="scan-scene"></div>
+              <div class="scan-focus">
+                <div class="scan-sticker">
+                  <div class="qr" aria-hidden="true">
+                    <i></i><i></i><i></i><i class="off"></i><i></i><i></i><i></i>
+                    <i></i><i class="off"></i><i></i><i class="off"></i><i></i><i class="off"></i><i></i>
+                    <i></i><i></i><i></i><i class="off"></i><i></i><i></i><i></i>
+                    <i class="off"></i><i class="off"></i><i class="off"></i><i></i><i class="off"></i><i class="off"></i><i class="off"></i>
+                    <i></i><i></i><i></i><i class="off"></i><i></i><i class="off"></i><i></i>
+                    <i></i><i class="off"></i><i></i><i class="off"></i><i class="off"></i><i></i><i class="off"></i>
+                    <i></i><i></i><i></i><i class="off"></i><i></i><i class="off"></i><i></i>
+                  </div>
+                  <div class="scan-code mono">K7PT2S</div>
+                </div>
+                <svg class="scan-ring" viewBox="0 0 128 128" aria-hidden="true" fill="none" stroke="currentColor" stroke-width="5" stroke-linecap="round">
+                  <path d="M10 34 V22 a12 12 0 0 1 12 -12 H34"/>
+                  <path d="M94 10 h12 a12 12 0 0 1 12 12 v12"/>
+                  <path d="M118 94 v12 a12 12 0 0 1 -12 12 h-12"/>
+                  <path d="M34 118 H22 a12 12 0 0 1 -12 -12 V94"/>
+                </svg>
+              </div>
+              <div class="scan-caught">
+                <span class="scan-pill"><svg class="ic" aria-hidden="true"><use href="#i-checkmark"/></svg><span class="mono">K7PT2S</span></span>
+              </div>
+            </div>
+            <div class="scan-entry">
+              <span class="scan-field">Or type a code (e.g. <span class="mono">SP1CE6</span>)</span>
+              <span class="scan-go">Go</span>
+            </div>
+          </div>
+        </div></div>
+      </div>
+      <div class="duo-copy">
+        <div class="sec-head reveal">
+          <span class="kicker"><svg class="ic" aria-hidden="true"><use href="#i-qrcode-viewfinder"/></svg>Scan</span>
+          <h2 class="h-sec">The first scan claims it.</h2>
+          <p class="lede">Stickers come off the sheet blank. The first scan turns one into a tile; from then on, scanning it opens it. No setup, no pairing — paper and a camera.</p>
+        </div>
+        <div class="points">
+          <div class="point reveal">
+            <svg class="ic" aria-hidden="true"><use href="#i-qrcode-viewfinder"/></svg>
+            <div><b>Point at any sticker.</b><p>The tile opens with its group around it, so Back lands among its neighbors.</p></div>
+          </div>
+          <div class="point reveal reveal-d1">
+            <svg class="ic" aria-hidden="true"><use href="#i-qrcode"/></svg>
+            <div><b>Blank stickers become tiles.</b><p>The first scan claims a fresh sticker — give it a title and a photo and it's set up.</p></div>
+          </div>
+          <div class="point reveal reveal-d2">
+            <svg class="ic" aria-hidden="true"><use href="#i-keyboard"/></svg>
+            <div><b>Or type the code.</b><p>The six characters printed under the QR work when the camera can't reach.</p></div>
+          </div>
+          <div class="point reveal reveal-d3">
+            <svg class="ic" aria-hidden="true"><use href="#i-gearshape"/></svg>
+            <div><b>Scans can do more.</b><p>Home ▸ Scan chooses what happens after — open the tile, focus the title, or jump to the camera.</p></div>
+          </div>
+          <div class="point reveal scan-d4">
+            <svg class="ic" aria-hidden="true"><use href="#i-tray-and-arrow-down"/></svg>
+            <div><b>Adopt strange codes.</b><p>Codes this home never printed can join — into Misc sheets or a batch you pick.</p></div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+<section id="tiles" class="sec" aria-label="Browse tiles" data-tstage="0">
+  <div class="sec-inner">
+    <div class="tls-runway">
+      <div class="tls-stage">
+        <div class="tls-frame">
+          <div class="tls-copy">
+            <div class="sec-head reveal">
+              <span class="kicker"><svg class="ic" aria-hidden="true"><use href="#i-square-grid-3x3"/></svg>Browse</span>
+              <h2 class="h-sec">Pinch until everything fits.</h2>
+              <p class="lede">Every tile lands on one page. Pinch decides how big the photos run — chips reread the same kitchen as a list, or label by label.</p>
+            </div>
+            <div class="points">
+              <div class="point reveal">
+                <svg class="ic" aria-hidden="true"><use href="#i-square-grid-3x3"/></svg>
+                <div><b>Pinch the photo grid.</b><p>It resizes until everything fits on one screen. Chips switch to List, Labels, and Video.</p></div>
+              </div>
+              <div class="point reveal reveal-d1">
+                <svg class="ic" aria-hidden="true"><use href="#i-magnifyingglass"/></svg>
+                <div><b>Search looks everywhere.</b><p>Titles, labels, codes — even words found in photos.</p></div>
+              </div>
+              <div class="point reveal reveal-d2">
+                <svg class="ic" aria-hidden="true"><use href="#i-line-3-horizontal-decrease-circle"/></svg>
+                <div><b>Filters narrow the view.</b><p>By zone or group, or tiles still missing a photo or title. Clear lives in the panel.</p></div>
+              </div>
+              <div class="point reveal reveal-d3">
+                <svg class="ic" aria-hidden="true"><use href="#i-plus"/></svg>
+                <div><b>New tiles start with +.</b><p>The tile opens ready for a title, labels, and photos.</p></div>
+              </div>
+            </div>
+          </div>
+          <div class="tls-devwrap reveal reveal-d1" aria-hidden="true">
+            <div class="device"><div class="island"></div><div class="screen">
+              <div class="dvc-status"><span>9:41</span><span class="sig">
+                <i style="width:14px;height:9px;border:1px solid var(--ink);border-radius:2.5px;background:linear-gradient(90deg,var(--ink) 70%,transparent 70%)"></i></span>
+              </div>
+              <div class="dvc-nav">
+                <span class="dvc-back"><svg class="ic"><use href="#i-chevron-left"/></svg>Cedar Lane</span>
+                <span class="dvc-title">Tiles</span>
+                <span class="dvc-actions">
+                  <svg class="ic"><use href="#i-questionmark-circle"/></svg>
+                  <svg class="ic"><use href="#i-plus"/></svg>
+                  <svg class="ic"><use href="#i-qrcode-viewfinder"/></svg>
+                </span>
+              </div>
+              <div class="dvc-body">
+                <div class="tls-srow">
+                  <div class="dvc-search tls-search"><svg class="ic"><use href="#i-magnifyingglass"/></svg>Search</div>
+                  <span class="chip on">Kitchen</span>
+                  <svg class="ic tls-filter"><use href="#i-line-3-horizontal-decrease-circle"/></svg>
+                </div>
+                <div class="dvc-chips tls-chips">
+                  <span class="chip tls-c-grid">Photo</span>
+                  <span class="chip tls-c-list">List</span>
+                  <span class="chip tls-c-labels">Labels</span>
+                  <span class="chip tls-c-video">Video</span>
+                </div>
+                <div class="tls-count"><span class="tls-count-tiles">8 tiles</span><span class="tls-count-labels">16 labels</span></div>
+                <!-- tiles browser panes: photo grid at 2/3/4 columns, list, labels -->
+                <div class="tls-panes">
+                  <div class="tls-pane tls-g tls-pane-g2">
+                    <div class="thumb"><span class="t-label">Stove — Upper Drawer</span><span class="t-code">K7PT2S</span></div>
+                    <div class="thumb"><span class="t-label">Pantry — Top Shelf</span><span class="t-code">P4NT9Q</span></div>
+                    <div class="thumb"><span class="t-label">Baking Cabinet</span><span class="t-code">B8KE3W</span></div>
+                    <div class="thumb"><span class="t-label">Spice Drawer</span><span class="t-code">SP1CE6</span></div>
+                    <div class="thumb"><span class="t-label">Under Sink</span><span class="t-code">U2SNK7</span></div>
+                    <div class="thumb"><span class="t-label">Island — Left Cabinet</span><span class="t-code">IS4LD2</span></div>
+                    <div class="thumb"><span class="t-label">Coffee Corner</span><span class="t-code">C0FE8R</span></div>
+                    <div class="thumb"><span class="t-label">Fridge — Deep Drawer</span><span class="t-code">FR2DG5</span></div>
+                  </div>
+                  <div class="tls-pane tls-g tls-pane-g3">
+                    <div class="thumb"><span class="t-label">Stove — Upper Drawer</span></div>
+                    <div class="thumb"><span class="t-label">Pantry — Top Shelf</span></div>
+                    <div class="thumb"><span class="t-label">Baking Cabinet</span></div>
+                    <div class="thumb"><span class="t-label">Spice Drawer</span></div>
+                    <div class="thumb"><span class="t-label">Under Sink</span></div>
+                    <div class="thumb"><span class="t-label">Island — Left Cabinet</span></div>
+                    <div class="thumb"><span class="t-label">Coffee Corner</span></div>
+                    <div class="thumb"><span class="t-label">Fridge — Deep Drawer</span></div>
+                  </div>
+                  <div class="tls-pane tls-g tls-pane-g4">
+                    <div class="thumb"></div><div class="thumb"></div><div class="thumb"></div><div class="thumb"></div>
+                    <div class="thumb"></div><div class="thumb"></div><div class="thumb"></div><div class="thumb"></div>
+                  </div>
+                  <div class="tls-pane tls-pane-list">
+                    <div class="dvc-card tls-card">
+                      <div class="tls-lrow"><span class="thumb tls-lthumb"></span><span class="tls-ltxt"><b>Stove — Upper Drawer</b><span class="tls-lmeta">Kitchen<i></i>Main Floor</span><span class="tls-llbl">Pots, Lids</span></span><svg class="ic tls-lchev"><use href="#i-chevron-right"/></svg></div>
+                      <div class="tls-lrow"><span class="thumb tls-lthumb"></span><span class="tls-ltxt"><b>Pantry — Top Shelf</b><span class="tls-lmeta">Kitchen<i></i>Main Floor</span><span class="tls-llbl">Slow cooker, Vases</span></span><svg class="ic tls-lchev"><use href="#i-chevron-right"/></svg></div>
+                      <div class="tls-lrow"><span class="thumb tls-lthumb"></span><span class="tls-ltxt"><b>Baking Cabinet</b><span class="tls-lmeta">Kitchen<i></i>Main Floor</span><span class="tls-llbl">Sheet pans, Cooling racks</span></span><svg class="ic tls-lchev"><use href="#i-chevron-right"/></svg></div>
+                      <div class="tls-lrow"><span class="thumb tls-lthumb"></span><span class="tls-ltxt"><b>Spice Drawer</b><span class="tls-lmeta">Kitchen<i></i>Main Floor</span><span class="tls-llbl">A–M, N–Z</span></span><svg class="ic tls-lchev"><use href="#i-chevron-right"/></svg></div>
+                      <div class="tls-lrow"><span class="thumb tls-lthumb"></span><span class="tls-ltxt"><b>Under Sink</b><span class="tls-lmeta">Kitchen<i></i>Main Floor</span><span class="tls-llbl">Dish soap, Sponges</span></span><svg class="ic tls-lchev"><use href="#i-chevron-right"/></svg></div>
+                      <div class="tls-lrow"><span class="thumb tls-lthumb"></span><span class="tls-ltxt"><b>Island — Left Cabinet</b><span class="tls-lmeta">Kitchen<i></i>Main Floor</span><span class="tls-llbl">Mixing bowls, Scale</span></span><svg class="ic tls-lchev"><use href="#i-chevron-right"/></svg></div>
+                      <div class="tls-lrow"><span class="thumb tls-lthumb"></span><span class="tls-ltxt"><b>Coffee Corner</b><span class="tls-lmeta">Kitchen<i></i>Main Floor</span><span class="tls-llbl">Filters, Beans</span></span><svg class="ic tls-lchev"><use href="#i-chevron-right"/></svg></div>
+                      <div class="tls-lrow"><span class="thumb tls-lthumb"></span><span class="tls-ltxt"><b>Fridge — Deep Drawer</b><span class="tls-lmeta">Kitchen<i></i>Main Floor</span><span class="tls-llbl">Cheese, Deli</span></span><svg class="ic tls-lchev"><use href="#i-chevron-right"/></svg></div>
+                    </div>
+                  </div>
+                  <div class="tls-pane tls-pane-lab">
+                    <div class="dvc-card tls-card">
+                      <div class="tls-brow"><span class="thumb tls-bthumb"></span><span class="tls-btxt"><b>Stove — Upper Drawer</b><span class="tls-btags"><i>Pots</i><i>Lids</i></span></span></div>
+                      <div class="tls-brow"><span class="thumb tls-bthumb"></span><span class="tls-btxt"><b>Pantry — Top Shelf</b><span class="tls-btags"><i>Slow cooker</i><i>Vases</i></span></span></div>
+                      <div class="tls-brow"><span class="thumb tls-bthumb"></span><span class="tls-btxt"><b>Baking Cabinet</b><span class="tls-btags"><i>Sheet pans</i><i>Cooling racks</i></span></span></div>
+                      <div class="tls-brow"><span class="thumb tls-bthumb"></span><span class="tls-btxt"><b>Spice Drawer</b><span class="tls-btags"><i>A–M</i><i>N–Z</i></span></span></div>
+                      <div class="tls-brow"><span class="thumb tls-bthumb"></span><span class="tls-btxt"><b>Under Sink</b><span class="tls-btags"><i>Dish soap</i><i>Sponges</i></span></span></div>
+                      <div class="tls-brow"><span class="thumb tls-bthumb"></span><span class="tls-btxt"><b>Island — Left Cabinet</b><span class="tls-btags"><i>Mixing bowls</i><i>Scale</i></span></span></div>
+                      <div class="tls-brow"><span class="thumb tls-bthumb"></span><span class="tls-btxt"><b>Coffee Corner</b><span class="tls-btags"><i>Filters</i><i>Beans</i></span></span></div>
+                      <div class="tls-brow"><span class="thumb tls-bthumb"></span><span class="tls-btxt"><b>Fridge — Deep Drawer</b><span class="tls-btags"><i>Cheese</i><i>Deli</i></span></span></div>
+                    </div>
+                  </div>
+                  <div class="tls-pinch"><span class="tls-dot tls-dot-a"></span><span class="tls-dot tls-dot-b"></span></div>
+                </div>
+              </div>
+            </div></div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="tls-railwrap reveal">
+      <div class="tls-rail">
+        <figure class="tls-mini">
+          <div class="tls-mini-scr" aria-hidden="true">
+            <div class="tls-mini-chips"><span class="tls-mc tls-mc-on">Photo</span><span class="tls-mc">List</span><span class="tls-mc">Labels</span><span class="tls-mc">Video</span></div>
+            <div class="tls-mini-count">8 tiles</div>
+            <div class="tls-mini-grid">
+              <span class="thumb"></span><span class="thumb"></span><span class="thumb"></span><span class="thumb"></span>
+              <span class="thumb"></span><span class="thumb"></span><span class="thumb"></span><span class="thumb"></span>
+            </div>
+          </div>
+          <figcaption class="tls-mini-cap">Pinched until all 8 fit</figcaption>
+        </figure>
+        <figure class="tls-mini">
+          <div class="tls-mini-scr" aria-hidden="true">
+            <div class="tls-mini-chips"><span class="tls-mc">Photo</span><span class="tls-mc tls-mc-on">List</span><span class="tls-mc">Labels</span><span class="tls-mc">Video</span></div>
+            <div class="tls-mini-rows">
+              <div class="tls-mr"><span class="thumb"></span><span class="tls-mr-t"><b>Stove — Upper Drawer</b><em>Pots, Lids</em></span></div>
+              <div class="tls-mr"><span class="thumb"></span><span class="tls-mr-t"><b>Pantry — Top Shelf</b><em>Slow cooker, Vases</em></span></div>
+              <div class="tls-mr"><span class="thumb"></span><span class="tls-mr-t"><b>Baking Cabinet</b><em>Sheet pans, Cooling racks</em></span></div>
+              <div class="tls-mr"><span class="thumb"></span><span class="tls-mr-t"><b>Spice Drawer</b><em>A–M, N–Z</em></span></div>
+            </div>
+          </div>
+          <figcaption class="tls-mini-cap">The same kitchen as a list</figcaption>
+        </figure>
+        <figure class="tls-mini">
+          <div class="tls-mini-scr" aria-hidden="true">
+            <div class="tls-mini-chips"><span class="tls-mc">Photo</span><span class="tls-mc">List</span><span class="tls-mc tls-mc-on">Labels</span><span class="tls-mc">Video</span></div>
+            <div class="tls-mini-tags">
+              <div class="tls-mt"><b>Stove — Upper Drawer</b><span><i>Pots</i><i>Lids</i></span></div>
+              <div class="tls-mt"><b>Baking Cabinet</b><span><i>Sheet pans</i><i>Cooling racks</i></span></div>
+              <div class="tls-mt"><b>Coffee Corner</b><span><i>Filters</i><i>Beans</i></span></div>
+            </div>
+          </div>
+          <figcaption class="tls-mini-cap">Labels, tile by tile</figcaption>
+        </figure>
+      </div>
+    </div>
+  </div>
+</section>
+<section id="ask" class="sec sec-alt" aria-label="Ask">
+  <div class="sec-inner">
+    <div class="sec-head reveal">
+      <span class="kicker"><svg class="ic" aria-hidden="true"><use href="#i-sparkles"/></svg>Ask</span>
+      <h2 class="h-sec">Ask like you'd ask a person.</h2>
+      <p class="lede">The answer comes back as a sentence that names the place — no results page to read. And Ask ships as a Shortcut, so a word to Siri or a press of the Action Button asks for you.</p>
+    </div>
+    <div class="duo">
+      <div class="duo-device reveal">
+        <!-- the Ask screen, mid-answer -->
+        <div class="ask-stage" role="img" aria-label="The Ask screen. Question: Where are the pots? Answer: Pots are in Stove — Upper Drawer, in the Kitchen.">
+          <div class="device"><div class="island"></div><div class="screen">
+            <div class="dvc-status"><span>9:41</span><span class="sig">
+              <i style="width:14px;height:9px;border:1px solid var(--ink);border-radius:2.5px;background:linear-gradient(90deg,var(--ink) 70%,transparent 70%)"></i></span>
+            </div>
+            <div class="dvc-nav">
+              <span class="dvc-back"><svg class="ic" aria-hidden="true"><use href="#i-chevron-left"/></svg>Home</span>
+              <span class="dvc-title">Ask</span>
+              <span class="dvc-actions"><svg class="ic" aria-hidden="true"><use href="#i-questionmark-circle"/></svg>
+              <svg class="ic" aria-hidden="true"><use href="#i-qrcode-viewfinder"/></svg></span>
+            </div>
+            <div class="dvc-body">
+              <div class="dvc-card ask-field">
+                <span class="ask-ph">Where are the pots?</span>
+                <span class="ask-typed">Where are the pots?</span>
+              </div>
+              <div class="dvc-btn ask-btn">
+                <span class="ask-btn-ic"><svg class="ic" aria-hidden="true"><use href="#i-sparkles"/></svg><svg class="ask-spin" viewBox="0 0 16 16" aria-hidden="true"><circle cx="8" cy="8" r="6" stroke-dasharray="27 11"/></svg></span>
+                Ask
+              </div>
+              <div class="dvc-card ask-ans">
+                <p>Pots are in Stove — Upper Drawer, in the Kitchen.</p>
+              </div>
+            </div>
+          </div></div>
+        </div>
+      </div>
+      <div class="duo-copy">
+        <div class="points">
+          <div class="point reveal"><svg class="ic" aria-hidden="true"><use href="#i-sparkles"/></svg><div><b>Ask in plain words.</b><p>“Where are the pots?” gets an answer naming the place — not a list of links.</p></div></div>
+          <div class="point reveal reveal-d1"><svg class="ic" aria-hidden="true"><use href="#i-tag"/></svg><div><b>Photos help answer.</b><p>Tags and text found in photos count as matches. If that guesses too much, switch it off in Ask's settings.</p></div></div>
+          <div class="point reveal reveal-d2"><svg class="ic" aria-hidden="true"><use href="#i-slider-horizontal-3"/></svg><div><b>Answers are tunable.</b><p>Pick how many places an answer names, or list style — one line per place.</p></div></div>
+          <div class="point reveal reveal-d3"><svg class="ic" aria-hidden="true"><use href="#i-mic"/></svg><div><b>Hands-free works.</b><p>Ask is a Shortcut too — Siri and the Action Button can run it.</p></div></div>
+        </div>
+        <p class="meta ask-note reveal reveal-d3">Plain-word answers use Apple Intelligence and need a supported iPhone — search works on every iPhone.</p>
+      </div>
+    </div>
+  </div>
+</section>
+<section id="print" class="sec" aria-label="How printing works">
+  <div class="sec-inner">
+    <div class="sec-head reveal">
+      <span class="kicker"><svg class="ic" aria-hidden="true"><use href="#i-printer"/></svg>Print</span>
+      <h2 class="h-sec">Stickers start on paper.</h2>
+      <p class="lede">The app makes two kinds of paper: sheets of small stickers ready to claim, and a bigger drawer label for any tile. Both leave as PDFs — AirPrint them, or share anywhere.</p>
+    </div>
+
+    <div class="print-stage">
+      <!-- a sheet mid-mint -->
+      <div class="print-card reveal">
+        <div class="print-tagbar">
+          <span class="print-tag">Sticker sheet</span>
+          <span class="print-tagmeta mono">R001 · 8 × 20</span>
+        </div>
+        <div class="print-sheetwrap" aria-hidden="true">
+          <div class="print-sheet">
+        <div class="print-cell reveal"><div class="qr"><i></i><i></i><i class="off"></i><i></i><i class="off"></i><i></i><i></i><i></i><i></i><i class="off"></i><i class="off"></i><i class="off"></i><i></i><i></i><i class="off"></i><i></i><i class="off"></i><i class="off"></i><i class="off"></i><i></i><i class="off"></i><i></i><i class="off"></i><i class="off"></i><i class="off"></i><i></i><i></i><i></i><i></i><i class="off"></i><i class="off"></i><i></i><i class="off"></i><i class="off"></i><i></i><i></i><i></i><i></i><i></i><i class="off"></i><i></i><i class="off"></i><i></i><i></i><i></i><i></i><i></i><i class="off"></i><i></i></div><span class="print-code mono">B8KE3W</span></div>
+        <div class="print-cell reveal" style="transition-delay:0.03s"><div class="qr"><i></i><i></i><i class="off"></i><i class="off"></i><i></i><i></i><i></i><i></i><i></i><i></i><i class="off"></i><i></i><i></i><i></i><i class="off"></i><i class="off"></i><i></i><i class="off"></i><i class="off"></i><i class="off"></i><i class="off"></i><i class="off"></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i class="off"></i><i></i><i></i><i></i><i class="off"></i><i class="off"></i><i class="off"></i><i></i><i></i><i></i><i></i><i></i><i></i><i class="off"></i><i></i><i class="off"></i></div><span class="print-code mono">B8KE4X</span></div>
+        <div class="print-cell reveal" style="transition-delay:0.05s"><div class="qr"><i></i><i></i><i></i><i class="off"></i><i></i><i></i><i></i><i></i><i></i><i class="off"></i><i class="off"></i><i></i><i></i><i></i><i class="off"></i><i class="off"></i><i></i><i class="off"></i><i class="off"></i><i class="off"></i><i class="off"></i><i class="off"></i><i class="off"></i><i class="off"></i><i class="off"></i><i class="off"></i><i></i><i></i><i></i><i></i><i class="off"></i><i class="off"></i><i class="off"></i><i></i><i></i><i></i><i></i><i></i><i class="off"></i><i></i><i class="off"></i><i></i><i></i><i></i><i class="off"></i><i class="off"></i><i></i><i class="off"></i><i class="off"></i></div><span class="print-code mono">C0FE2T</span></div>
+        <div class="print-cell reveal" style="transition-delay:0.08s"><div class="qr"><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i class="off"></i><i></i><i></i><i></i><i class="off"></i><i></i><i></i><i></i><i></i><i class="off"></i><i></i><i></i><i></i><i></i><i class="off"></i><i class="off"></i><i class="off"></i><i></i><i></i><i></i><i></i><i class="off"></i><i></i><i></i><i></i><i></i><i></i><i></i><i class="off"></i><i class="off"></i><i class="off"></i><i></i><i></i><i class="off"></i><i></i><i></i><i class="off"></i><i class="off"></i></div><span class="print-code mono">C0FE8R</span></div>
+        <div class="print-cell reveal" style="transition-delay:0.10s"><div class="qr"><i></i><i></i><i></i><i></i><i class="off"></i><i></i><i></i><i></i><i></i><i class="off"></i><i class="off"></i><i class="off"></i><i></i><i></i><i class="off"></i><i></i><i class="off"></i><i class="off"></i><i></i><i class="off"></i><i></i><i></i><i class="off"></i><i></i><i></i><i></i><i class="off"></i><i></i><i class="off"></i><i></i><i class="off"></i><i class="off"></i><i></i><i class="off"></i><i class="off"></i><i></i><i></i><i class="off"></i><i></i><i></i><i class="off"></i><i class="off"></i><i></i><i></i><i></i><i class="off"></i><i></i><i class="off"></i><i></i></div><span class="print-code mono">FR2DG5</span></div>
+        <div class="print-cell reveal" style="transition-delay:0.12s"><div class="qr"><i></i><i></i><i class="off"></i><i class="off"></i><i class="off"></i><i></i><i></i><i></i><i></i><i></i><i></i><i class="off"></i><i></i><i></i><i class="off"></i><i></i><i></i><i></i><i></i><i class="off"></i><i class="off"></i><i class="off"></i><i class="off"></i><i class="off"></i><i class="off"></i><i class="off"></i><i class="off"></i><i></i><i></i><i></i><i class="off"></i><i class="off"></i><i></i><i></i><i class="off"></i><i></i><i></i><i class="off"></i><i></i><i></i><i class="off"></i><i></i><i></i><i></i><i class="off"></i><i></i><i class="off"></i><i class="off"></i><i class="off"></i></div><span class="print-code mono">FR2DG8</span></div>
+        <div class="print-cell reveal" style="transition-delay:0.15s"><div class="qr"><i></i><i></i><i></i><i class="off"></i><i class="off"></i><i></i><i></i><i></i><i></i><i></i><i class="off"></i><i class="off"></i><i></i><i></i><i></i><i class="off"></i><i class="off"></i><i class="off"></i><i></i><i class="off"></i><i></i><i></i><i></i><i class="off"></i><i></i><i></i><i></i><i></i><i class="off"></i><i></i><i></i><i></i><i class="off"></i><i></i><i></i><i></i><i></i><i class="off"></i><i></i><i class="off"></i><i class="off"></i><i class="off"></i><i></i><i></i><i class="off"></i><i class="off"></i><i></i><i></i><i></i></div><span class="print-code mono">IS4LD2</span></div>
+        <div class="print-cell reveal" style="transition-delay:0.18s"><div class="qr"><i></i><i></i><i class="off"></i><i></i><i class="off"></i><i></i><i></i><i></i><i></i><i class="off"></i><i></i><i></i><i></i><i></i><i></i><i class="off"></i><i></i><i class="off"></i><i class="off"></i><i></i><i class="off"></i><i></i><i></i><i class="off"></i><i></i><i></i><i class="off"></i><i class="off"></i><i class="off"></i><i class="off"></i><i class="off"></i><i></i><i class="off"></i><i></i><i></i><i></i><i></i><i></i><i class="off"></i><i class="off"></i><i></i><i></i><i></i><i></i><i class="off"></i><i></i><i class="off"></i><i></i><i class="off"></i></div><span class="print-code mono">IS4LD7</span></div>
+        <div class="print-cell reveal" style="transition-delay:0.20s"><div class="qr"><i></i><i></i><i></i><i class="off"></i><i class="off"></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i class="off"></i><i class="off"></i><i class="off"></i><i class="off"></i><i></i><i></i><i class="off"></i><i></i><i></i><i class="off"></i><i></i><i class="off"></i><i></i><i class="off"></i><i></i><i class="off"></i><i></i><i class="off"></i><i class="off"></i><i class="off"></i><i></i><i></i><i></i><i class="off"></i><i></i><i></i><i></i><i class="off"></i><i></i><i></i><i class="off"></i><i></i><i></i><i class="off"></i><i></i></div><span class="print-code mono">J4RS7P</span></div>
+        <div class="print-cell print-hot reveal" style="transition-delay:0.23s"><div class="qr"><i></i><i></i><i></i><i class="off"></i><i class="off"></i><i></i><i></i><i></i><i></i><i class="off"></i><i class="off"></i><i class="off"></i><i></i><i></i><i class="off"></i><i class="off"></i><i class="off"></i><i class="off"></i><i></i><i></i><i></i><i></i><i class="off"></i><i class="off"></i><i></i><i class="off"></i><i class="off"></i><i class="off"></i><i></i><i></i><i class="off"></i><i></i><i class="off"></i><i></i><i></i><i></i><i></i><i class="off"></i><i class="off"></i><i></i><i class="off"></i><i></i><i></i><i></i><i></i><i></i><i class="off"></i><i class="off"></i><i class="off"></i></div><span class="print-code mono">K7PT2S</span></div>
+        <div class="print-cell reveal" style="transition-delay:0.25s"><div class="qr"><i></i><i></i><i class="off"></i><i></i><i></i><i></i><i></i><i></i><i></i><i class="off"></i><i class="off"></i><i class="off"></i><i></i><i></i><i class="off"></i><i></i><i class="off"></i><i class="off"></i><i class="off"></i><i class="off"></i><i></i><i></i><i></i><i></i><i class="off"></i><i class="off"></i><i></i><i></i><i class="off"></i><i class="off"></i><i class="off"></i><i class="off"></i><i></i><i class="off"></i><i class="off"></i><i></i><i></i><i></i><i class="off"></i><i></i><i></i><i></i><i></i><i></i><i class="off"></i><i class="off"></i><i class="off"></i><i class="off"></i><i class="off"></i></div><span class="print-code mono">K7PT3A</span></div>
+        <div class="print-cell reveal" style="transition-delay:0.28s"><div class="qr"><i></i><i></i><i class="off"></i><i class="off"></i><i class="off"></i><i></i><i></i><i></i><i></i><i class="off"></i><i class="off"></i><i class="off"></i><i></i><i></i><i></i><i class="off"></i><i></i><i></i><i class="off"></i><i class="off"></i><i class="off"></i><i></i><i class="off"></i><i class="off"></i><i class="off"></i><i class="off"></i><i class="off"></i><i></i><i></i><i class="off"></i><i></i><i class="off"></i><i class="off"></i><i></i><i></i><i></i><i></i><i class="off"></i><i class="off"></i><i></i><i></i><i></i><i></i><i></i><i></i><i class="off"></i><i></i><i class="off"></i><i class="off"></i></div><span class="print-code mono">L1DS3F</span></div>
+        <div class="print-cell reveal" style="transition-delay:0.30s"><div class="qr"><i></i><i></i><i class="off"></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i class="off"></i><i></i><i></i><i></i><i class="off"></i><i></i><i class="off"></i><i class="off"></i><i class="off"></i><i class="off"></i><i class="off"></i><i></i><i></i><i></i><i></i><i></i><i class="off"></i><i class="off"></i><i class="off"></i><i></i><i class="off"></i><i class="off"></i><i class="off"></i><i></i><i></i><i></i><i></i><i></i><i class="off"></i><i></i><i class="off"></i><i></i><i></i><i class="off"></i><i class="off"></i><i class="off"></i><i></i><i class="off"></i></div><span class="print-code mono">P4NT2V</span></div>
+        <div class="print-cell reveal" style="transition-delay:0.33s"><div class="qr"><i></i><i></i><i></i><i></i><i class="off"></i><i></i><i></i><i></i><i></i><i></i><i></i><i class="off"></i><i></i><i></i><i class="off"></i><i></i><i></i><i></i><i></i><i></i><i class="off"></i><i class="off"></i><i></i><i></i><i class="off"></i><i class="off"></i><i></i><i class="off"></i><i></i><i></i><i class="off"></i><i></i><i class="off"></i><i></i><i class="off"></i><i></i><i></i><i></i><i class="off"></i><i></i><i class="off"></i><i class="off"></i><i></i><i></i><i></i><i></i><i></i><i></i><i class="off"></i></div><span class="print-code mono">P4NT9Q</span></div>
+        <div class="print-cell reveal" style="transition-delay:0.35s"><div class="qr"><i></i><i></i><i></i><i class="off"></i><i></i><i></i><i></i><i></i><i></i><i class="off"></i><i class="off"></i><i></i><i></i><i></i><i class="off"></i><i></i><i></i><i class="off"></i><i class="off"></i><i></i><i class="off"></i><i class="off"></i><i class="off"></i><i></i><i class="off"></i><i class="off"></i><i class="off"></i><i></i><i class="off"></i><i></i><i></i><i class="off"></i><i></i><i class="off"></i><i></i><i></i><i></i><i></i><i></i><i></i><i class="off"></i><i class="off"></i><i></i><i></i><i></i><i></i><i class="off"></i><i class="off"></i><i class="off"></i></div><span class="print-code mono">SP1CE6</span></div>
+        <div class="print-cell reveal" style="transition-delay:0.38s"><div class="qr"><i></i><i></i><i class="off"></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i class="off"></i><i></i><i></i><i class="off"></i><i class="off"></i><i class="off"></i><i class="off"></i><i class="off"></i><i></i><i></i><i></i><i class="off"></i><i></i><i class="off"></i><i class="off"></i><i class="off"></i><i class="off"></i><i></i><i class="off"></i><i class="off"></i><i></i><i></i><i></i><i class="off"></i><i></i><i class="off"></i><i></i><i></i><i></i><i class="off"></i><i class="off"></i><i class="off"></i><i class="off"></i><i></i></div><span class="print-code mono">SP1CE9</span></div>
+        <div class="print-cell reveal" style="transition-delay:0.40s"><div class="qr"><i></i><i></i><i class="off"></i><i></i><i></i><i></i><i></i><i></i><i></i><i class="off"></i><i class="off"></i><i class="off"></i><i></i><i></i><i class="off"></i><i class="off"></i><i class="off"></i><i></i><i></i><i class="off"></i><i></i><i class="off"></i><i></i><i class="off"></i><i></i><i></i><i></i><i class="off"></i><i></i><i></i><i></i><i></i><i class="off"></i><i></i><i></i><i></i><i></i><i class="off"></i><i></i><i class="off"></i><i class="off"></i><i class="off"></i><i></i><i></i><i></i><i></i><i></i><i class="off"></i><i></i></div><span class="print-code mono">T0WL4R</span></div>
+        <div class="print-cell reveal" style="transition-delay:0.43s"><div class="qr"><i></i><i></i><i class="off"></i><i class="off"></i><i class="off"></i><i></i><i></i><i></i><i></i><i></i><i></i><i class="off"></i><i></i><i></i><i></i><i></i><i></i><i></i><i class="off"></i><i class="off"></i><i></i><i class="off"></i><i></i><i></i><i></i><i></i><i></i><i class="off"></i><i></i><i class="off"></i><i></i><i class="off"></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i class="off"></i><i></i><i></i><i></i><i></i><i></i><i class="off"></i><i class="off"></i><i class="off"></i></div><span class="print-code mono">U2SNK7</span></div>
+        <div class="print-cell reveal" style="transition-delay:0.45s"><div class="qr"><i></i><i></i><i class="off"></i><i class="off"></i><i class="off"></i><i></i><i></i><i></i><i></i><i></i><i class="off"></i><i></i><i></i><i></i><i class="off"></i><i class="off"></i><i class="off"></i><i></i><i></i><i class="off"></i><i class="off"></i><i class="off"></i><i class="off"></i><i class="off"></i><i class="off"></i><i class="off"></i><i class="off"></i><i></i><i class="off"></i><i class="off"></i><i></i><i class="off"></i><i class="off"></i><i></i><i></i><i></i><i></i><i class="off"></i><i class="off"></i><i class="off"></i><i class="off"></i><i class="off"></i><i></i><i></i><i class="off"></i><i></i><i class="off"></i><i class="off"></i><i></i></div><span class="print-code mono">U2SNK9</span></div>
+        <div class="print-cell reveal" style="transition-delay:0.48s"><div class="qr"><i></i><i></i><i></i><i></i><i class="off"></i><i></i><i></i><i></i><i></i><i class="off"></i><i class="off"></i><i></i><i></i><i></i><i></i><i class="off"></i><i class="off"></i><i class="off"></i><i class="off"></i><i></i><i></i><i class="off"></i><i class="off"></i><i class="off"></i><i></i><i class="off"></i><i></i><i></i><i></i><i></i><i class="off"></i><i></i><i class="off"></i><i></i><i class="off"></i><i></i><i></i><i></i><i></i><i></i><i class="off"></i><i></i><i></i><i></i><i class="off"></i><i class="off"></i><i class="off"></i><i></i><i class="off"></i></div><span class="print-code mono">W1SK8B</span></div>
+          </div>
+        </div>
+        <div class="print-plaque">
+          <p><b>One mint, one sheet.</b> 160 brand-new codes on 1 × ½ inch label stock, laid out alphabetically.</p>
+        </div>
+      </div>
+
+      <!-- the drawer-label designer's live preview -->
+      <div class="print-card reveal reveal-d1">
+        <div class="print-tagbar">
+          <span class="print-tag">Drawer label</span>
+          <span class="print-tagmeta"><svg class="ic" aria-hidden="true"><use href="#i-square-and-arrow-up"/></svg></span>
+        </div>
+        <div class="print-label">
+          <div class="print-l-qr qr" aria-hidden="true"><i></i><i></i><i></i><i class="off"></i><i class="off"></i><i></i><i></i><i></i><i></i><i></i><i></i><i class="off"></i><i></i><i></i><i></i><i></i><i></i><i class="off"></i><i></i><i></i><i></i><i></i><i class="off"></i><i></i><i></i><i class="off"></i><i class="off"></i><i></i><i class="off"></i><i class="off"></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i class="off"></i><i></i><i></i><i></i><i class="off"></i><i></i><i></i><i></i><i></i><i></i><i></i><i class="off"></i></div>
+          <div class="print-l-body">
+            <div class="print-l-title">Stove — Upper Drawer</div>
+            <span class="print-l-code mono">K7PT2S</span>
+            <div class="print-l-meta">Kitchen · Main Floor · Printed Aug 9, 2026</div>
+            <div class="print-l-rules">
+              <div class="print-l-rule">Pots</div>
+              <div class="print-l-rule">Lids</div>
+              <div class="print-l-rule" aria-hidden="true"></div>
+              <div class="print-l-rule" aria-hidden="true"></div>
+            </div>
+          </div>
+          <div class="print-l-photos" aria-hidden="true">
+            <div class="thumb"><span class="t-label">Pots</span></div>
+            <div class="thumb"><span class="t-label">Lids</span></div>
+          </div>
+        </div>
+        <div class="print-knobs">
+          <div class="print-krow">
+            <span class="print-klab">Copies per page</span>
+            <span class="print-seg"><span>1</span><span class="print-seg-on">2</span><span>4</span></span>
+          </div>
+          <div class="print-krow" role="group" aria-label="Label sections">
+            <button class="chip on print-knob" type="button" data-t="title" aria-pressed="true">Title</button>
+            <button class="chip on print-knob" type="button" data-t="qr" aria-pressed="true">QR code</button>
+            <button class="chip on print-knob" type="button" data-t="meta" aria-pressed="true">Group, zone &amp; date</button>
+            <button class="chip on print-knob" type="button" data-t="labels" aria-pressed="true">Labels</button>
+            <button class="chip on print-knob" type="button" data-t="photos" aria-pressed="true">Photos</button>
+          </div>
+        </div>
+        <div class="print-plaque">
+          <p><b>One tile, one label.</b> This designs the bigger drawer label for this tile — sticker sheets live in Home ▸ Print.</p>
+          <p><b>The preview is live.</b> Every switch redraws it instantly, and your choices stick for the next tile.</p>
+        </div>
+      </div>
+    </div>
+
+    <div class="points print-points">
+      <div class="point reveal">
+        <svg class="ic" aria-hidden="true"><use href="#i-doc-viewfinder"/></svg>
+        <div><b>Sheets mint new codes.</b><p>A sheet is a page of brand-new stickers. Print it, cut or peel, and stick them on containers — they stay blank until scanned.</p></div>
+      </div>
+      <div class="point reveal reveal-d1">
+        <svg class="ic" aria-hidden="true"><use href="#i-qrcode-viewfinder"/></svg>
+        <div><b>Scanning a blank adopts it.</b><p>The first scan of a new sticker turns it into a tile, ready for a title and photos.</p></div>
+      </div>
+      <div class="point reveal reveal-d2">
+        <svg class="ic" aria-hidden="true"><use href="#i-printer"/></svg>
+        <div><b>Drawer labels are per-tile.</b><p>Open any tile ▸ ••• ▸ Print Label for a single label with the tile's name — pick the layout live in the preview.</p></div>
+      </div>
+    </div>
+
+    <div class="print-house reveal reveal-d1">
+      <span class="print-house-ic" aria-hidden="true"><svg class="ic"><use href="#i-testtube-2"/></svg></span>
+      <div>
+        <b>Plain paper first.</b>
+        <p>House rule: print one page on plain paper and scan it before committing real label stock.</p>
+        <p class="print-cal">If rows drift, calibration lives on the Print screen — Row 1 top first, then pitch.</p>
+      </div>
+    </div>
+  </div>
+</section>
+<section id="organize" class="sec sec-alt" aria-label="Organize with zones, groups, and filters">
+  <div class="sec-inner">
+    <div class="sec-head reveal">
+      <p class="kicker"><svg class="ic" aria-hidden="true"><use href="#i-folder"/></svg>Organize</p>
+      <h2 class="h-sec">Rooms hold shelves. Shelves hold tiles.</h2>
+      <p class="lede">A home breaks into zones, zones hold groups, and every tile knows its shelf. Draw the map once — the whole app follows it.</p>
+    </div>
+    <div class="duo">
+      <div class="duo-device">
+        <div class="org-stage reveal">
+          <!-- Groups & Zones screen -->
+          <div class="device"><div class="island"></div><div class="screen">
+            <div class="dvc-status"><span>9:41</span><span class="sig">
+              <i style="width:14px;height:9px;border:1px solid var(--ink);border-radius:2.5px;background:linear-gradient(90deg,var(--ink) 70%,transparent 70%)"></i></span>
+            </div>
+            <div class="dvc-nav">
+              <span class="dvc-back"><svg class="ic" aria-hidden="true"><use href="#i-chevron-left"/></svg>Back</span>
+              <span class="dvc-title">Groups &amp; Zones</span>
+              <span class="dvc-actions"><span class="org-edit">Edit</span>
+                <svg class="ic" aria-hidden="true"><use href="#i-questionmark-circle"/></svg>
+                <svg class="ic" aria-hidden="true"><use href="#i-qrcode-viewfinder"/></svg></span>
+            </div>
+            <div class="dvc-body org-list">
+              <div class="dvc-sec-h">Main Floor</div>
+              <div class="dvc-card">
+                <div class="dvc-row org-row-on"><b>Kitchen</b>
+                  <svg class="org-grip" viewBox="0 0 14 10" aria-hidden="true"><path d="M1 1.5h12M1 5h12M1 8.5h12"/></svg></div>
+                <div class="dvc-row"><span>Pantry</span>
+                  <svg class="org-grip" viewBox="0 0 14 10" aria-hidden="true"><path d="M1 1.5h12M1 5h12M1 8.5h12"/></svg></div>
+                <div class="dvc-row"><span>Dining</span>
+                  <svg class="org-grip" viewBox="0 0 14 10" aria-hidden="true"><path d="M1 1.5h12M1 5h12M1 8.5h12"/></svg></div>
+              </div>
+              <div class="dvc-sec-h">Upstairs</div>
+              <div class="dvc-card">
+                <div class="dvc-row"><span class="org-add">Add group</span></div>
+              </div>
+              <div class="dvc-sec-h">Garage</div>
+              <div class="dvc-card">
+                <div class="dvc-row"><span class="org-add">Add group</span></div>
+              </div>
+              <p class="org-lfoot">Deleting a group leaves its tiles ungrouped. Deleting a zone keeps its groups.</p>
+            </div>
+          </div></div>
+          <!-- filter panel -->
+          <div class="org-panel reveal reveal-d2">
+            <div class="org-phead"><span class="org-ptitle">Filters</span><span class="org-clear">Clear</span></div>
+            <div class="org-slab"><span>Zones</span><svg class="ic org-cv" aria-hidden="true"><use href="#i-chevron-right"/></svg></div>
+            <div class="org-fcard">
+              <div class="org-frow"><span class="org-ck"></span><span class="org-fname">Main Floor</span><span class="org-fnum">8</span></div>
+              <div class="org-frow org-off"><span class="org-ck"></span><span class="org-fname">Upstairs</span><span class="org-fnum">0</span></div>
+              <div class="org-frow org-off"><span class="org-ck"></span><span class="org-fname">Garage</span><span class="org-fnum">0</span></div>
+            </div>
+            <div class="org-slab"><span>Groups</span><svg class="ic org-cv" aria-hidden="true"><use href="#i-chevron-right"/></svg></div>
+            <div class="org-fcard">
+              <div class="org-frow org-frow-on">
+                <span class="org-ck org-ck-on"><svg class="ic" aria-hidden="true"><use href="#i-checkmark"/></svg></span>
+                <span class="org-fname">Kitchen</span><span class="org-fnum">8</span>
+              </div>
+              <div class="org-frow org-off"><span class="org-ck"></span><span class="org-fname">Pantry</span><span class="org-fnum">0</span></div>
+              <div class="org-frow org-off"><span class="org-ck"></span><span class="org-fname">Dining</span><span class="org-fnum">0</span></div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="duo-copy">
+        <div class="points">
+          <div class="point reveal">
+            <svg class="ic" aria-hidden="true"><use href="#i-folder"/></svg>
+            <div><b>Zones hold groups.</b><p>A zone is a floor or a room; a group is the shelf, cabinet, or corner a tile lives in.</p></div>
+          </div>
+          <div class="point reveal reveal-d1">
+            <svg class="ic" aria-hidden="true"><use href="#i-pencil"/></svg>
+            <div><b>Names save themselves.</b><p>Tap a name, type, tap away — no Save button anywhere.</p></div>
+          </div>
+          <div class="point reveal reveal-d2">
+            <svg class="ic" aria-hidden="true"><use href="#i-arrow-up-arrow-down"/></svg>
+            <div><b>Edit to reorder.</b><p>Drag rows into the order you think in — lists everywhere follow it.</p></div>
+          </div>
+          <div class="point reveal reveal-d3">
+            <svg class="ic" aria-hidden="true"><use href="#i-trash"/></svg>
+            <div><b>Deletes stay gentle.</b><p>Deleting a group leaves its tiles ungrouped; deleting a zone keeps its groups.</p></div>
+          </div>
+        </div>
+        <p class="org-note meta reveal reveal-d3">The filter drawer reads the same map — check Kitchen, and the grid shows one room's shelves.</p>
+      </div>
+    </div>
+  </div>
+</section>
+<section id="data" class="sec" aria-label="Your data — backup and restore">
+  <div class="sec-inner">
+    <div class="sec-head reveal">
+      <p class="kicker"><svg class="ic" aria-hidden="true"><use href="#i-arrow-down-doc"/></svg>Your data</p>
+      <h2 class="h-sec">Your data can always leave.</h2>
+      <p class="lede">One tap builds a single zip — readable by any spreadsheet, restorable by the app. Save it to Files, iCloud Drive, or anywhere else.</p>
+    </div>
+    <div class="duo">
+      <div class="duo-copy">
+        <p class="data-flow-cap reveal">What Back Up Now builds</p>
+        <!-- backup zip fan-out -->
+        <div class="data-flow" role="img" aria-label="One backup zip fanning out into its files: media photos and videos, tiles.csv, groups.csv — plus every other table and a manifest.">
+          <div class="data-zipwrap reveal">
+            <span class="data-zipglyph"><svg viewBox="0 0 34 34" aria-hidden="true"><rect x="4" y="6" width="26" height="22" rx="5.5"/><path d="M17 6v3"/><path d="M17 11v8" stroke-dasharray="1.6 2.2"/><path d="M17 21.5v1.5"/><circle cx="17" cy="25.5" r="1.8" fill="none"/></svg></span>
+            <span class="data-zipname mono">QR Tiles Backup 2026-08-09.zip</span>
+          </div>
+          <svg class="data-fan reveal" viewBox="0 0 44 182" preserveAspectRatio="none" aria-hidden="true">
+            <circle cx="3" cy="91" r="2.5"/>
+            <path pathLength="1" d="M3 91 C 26 91, 18 19, 44 19"/>
+            <path pathLength="1" d="M3 91 C 26 91, 20 67, 44 67"/>
+            <path pathLength="1" d="M3 91 C 26 91, 20 115, 44 115"/>
+            <path pathLength="1" d="M3 91 C 26 91, 18 163, 44 163"/>
+          </svg>
+          <ul class="data-files">
+            <li class="data-file reveal data-fd1"><svg class="ic" aria-hidden="true"><use href="#i-photo"/></svg><span class="data-fname">media/1_0.jpg</span></li>
+            <li class="data-file reveal data-fd2"><svg class="ic" aria-hidden="true"><use href="#i-video"/></svg><span class="data-fname">media/2_0.mov</span></li>
+            <li class="data-file reveal data-fd3"><span class="data-fname">tiles.csv</span></li>
+            <li class="data-file reveal data-fd4"><span class="data-fname">groups.csv</span></li>
+          </ul>
+          <p class="data-more reveal data-fd5">…plus every other table as CSV, and a <span class="mono">manifest.json</span>.</p>
+        </div>
+        <div class="points data-points">
+          <div class="point reveal">
+            <svg class="ic" aria-hidden="true"><use href="#i-arrow-down-doc"/></svg>
+            <div><b>One zip holds everything.</b><p>Every photo and video, plus each table as a CSV any spreadsheet can open.</p></div>
+          </div>
+          <div class="point reveal reveal-d1">
+            <svg class="ic" aria-hidden="true"><use href="#i-arrow-counterclockwise"/></svg>
+            <div><b>Restore fills an empty app.</b><p>It never overwrites — if this home already has data, restore refuses.</p></div>
+          </div>
+          <div class="point reveal reveal-d2">
+            <svg class="ic" aria-hidden="true"><use href="#i-trash"/></svg>
+            <div><b>Recently Deleted waits 30 days.</b><p>Deleted tiles keep their space until the purge — rescue anything in that window.</p></div>
+          </div>
+          <div class="point reveal reveal-d3">
+            <svg class="ic" aria-hidden="true"><use href="#i-internaldrive"/></svg>
+            <div><b>Tap the media number.</b><p>It opens a tile-by-tile breakdown of where the megabytes live.</p></div>
+          </div>
+        </div>
+      </div>
+      <div class="duo-device reveal reveal-d1">
+        <!-- Data screen -->
+        <div class="device" role="img" aria-label="The Data screen: counts for 8 tiles, 3 groups, 12 photos, 2 videos, 16 labels, and 16 blank stickers; Media on iCloud at 34.5 megabytes; Back Up Now; Restore from Backup; Recently Deleted.">
+          <div class="island"></div>
+          <div class="screen">
+            <div class="dvc-status"><span>9:41</span><span class="sig"><i style="width:14px;height:9px;border:1px solid var(--ink);border-radius:2.5px;background:linear-gradient(90deg,var(--ink) 70%,transparent 70%)"></i></span></div>
+            <div class="dvc-nav">
+              <span class="dvc-back"><svg class="ic" aria-hidden="true"><use href="#i-chevron-left"/></svg>Cedar Lane</span>
+              <span class="dvc-title">Data</span>
+              <span class="dvc-actions"><svg class="ic" aria-hidden="true"><use href="#i-questionmark-circle"/></svg><svg class="ic" aria-hidden="true"><use href="#i-qrcode-viewfinder"/></svg></span>
+            </div>
+            <div class="dvc-body">
+              <div class="data-stats">
+                <div class="data-stat"><svg class="ic" aria-hidden="true"><use href="#i-square-grid-3x3"/></svg><b>8</b><span>Tiles</span></div>
+                <div class="data-stat"><svg class="ic" aria-hidden="true"><use href="#i-folder"/></svg><b>3</b><span>Groups</span></div>
+                <div class="data-stat"><svg class="ic" aria-hidden="true"><use href="#i-photo"/></svg><b>12</b><span>Photos</span></div>
+                <div class="data-stat"><svg class="ic" aria-hidden="true"><use href="#i-video"/></svg><b>2</b><span>Videos</span></div>
+                <div class="data-stat"><svg class="ic" aria-hidden="true"><use href="#i-tag"/></svg><b>16</b><span>Labels</span></div>
+                <div class="data-stat"><svg class="ic" aria-hidden="true"><use href="#i-qrcode"/></svg><b>152</b><span>Blank stickers</span></div>
+              </div>
+              <div class="dvc-card">
+                <div class="dvc-row">
+                  <svg class="ic" aria-hidden="true"><use href="#i-internaldrive"/></svg>
+                  <span class="data-2l"><span>Media on iCloud</span><small>Photos 26.4 MB · Videos 8.1 MB</small></span>
+                  <span class="val">34.5 MB</span>
+                  <svg class="ic chev" aria-hidden="true"><use href="#i-chevron-right"/></svg>
+                </div>
+              </div>
+              <div class="data-grp">
+                <div class="dvc-sec-h">Backup</div>
+                <div class="dvc-card"><div class="dvc-row data-act"><svg class="ic" aria-hidden="true"><use href="#i-arrow-down-doc"/></svg>Back Up Now</div></div>
+                <p class="data-note">One zip with every photo and video plus all data as CSV files any spreadsheet can open. Save it to Files, iCloud Drive, or anywhere else.</p>
+              </div>
+              <div class="data-grp">
+                <div class="dvc-card"><div class="dvc-row data-act"><svg class="ic" aria-hidden="true"><use href="#i-arrow-counterclockwise"/></svg>Restore from Backup</div></div>
+              </div>
+              <div class="data-grp">
+                <div class="dvc-card"><div class="dvc-row"><svg class="ic" aria-hidden="true"><use href="#i-trash"/></svg>Recently Deleted<span class="val">2</span><svg class="ic chev" aria-hidden="true"><use href="#i-chevron-right"/></svg></div></div>
+                <p class="data-note">Deleted tiles wait here for 30 days, then their space is reclaimed.</p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+<section id="share" class="sec sec-alt share-sec" aria-label="Share with your household">
+  <div class="sec-inner">
+    <div class="share-duo">
+      <div class="share-copy reveal">
+        <div class="sec-head">
+          <p class="kicker"><svg class="ic" aria-hidden="true"><use href="#i-person-2"/></svg>Share</p>
+          <h2 class="h-sec">One home. Everyone finds things.</h2>
+          <p class="lede">Invite the people you live with — the same tiles, on every phone.</p>
+        </div>
+        <div class="points">
+          <div class="point">
+            <svg class="ic" aria-hidden="true"><use href="#i-envelope"/></svg>
+            <div><b>Invites start at Home ▸ Share.</b>
+              <p>Name your home, read what sharing means, then send the invite over Messages.</p></div>
+          </div>
+          <div class="point">
+            <svg class="ic" aria-hidden="true"><use href="#i-square-grid-3x3"/></svg>
+            <div><b>Changes show up for everyone.</b>
+              <p>Add a photo to the Spice Drawer and the whole household sees it — tiles, photos, and labels stay in sync.</p></div>
+          </div>
+          <div class="point">
+            <svg class="ic" aria-hidden="true"><use href="#i-lock"/></svg>
+            <div><b>Shared through your iCloud.</b>
+              <p>A private iCloud share, only between the people you invite — through your iCloud, never through us.</p></div>
+          </div>
+        </div>
+      </div>
+
+      <!-- the same Tiles screen, owner and invited member -->
+      <div class="share-stage reveal reveal-d1" role="img" aria-label="Two iPhones side by side showing the same Cedar Lane kitchen tiles — yours and your household's — joined by a soft arc.">
+        <svg class="share-arc" viewBox="0 0 200 36" preserveAspectRatio="none" aria-hidden="true">
+          <path class="share-arc-base" d="M0 25 Q100 -14 200 25" pathLength="200"/>
+          <path class="share-arc-pulse" d="M0 25 Q100 -14 200 25" pathLength="200"/>
+        </svg>
+        <span class="share-sync" aria-hidden="true"><svg class="ic"><use href="#i-arrow-up-arrow-down"/></svg></span>
+        <div class="share-col">
+          <span class="share-tag share-tag-you">You</span>
+          <div class="share-ph">
+            <div class="device"><div class="island"></div><div class="screen">
+              <div class="dvc-status"><span>9:41</span><span class="sig">
+                <i style="width:14px;height:9px;border:1px solid var(--ink);border-radius:2.5px;background:linear-gradient(90deg,var(--ink) 70%,transparent 70%)"></i></span>
+              </div>
+              <div class="dvc-nav"><span class="dvc-title">Cedar Lane (Shared)</span>
+                <span class="dvc-actions"><svg class="ic"><use href="#i-questionmark-circle"/></svg>
+                <svg class="ic"><use href="#i-qrcode-viewfinder"/></svg></span></div>
+              <div class="dvc-body">
+                <div class="dvc-search"><svg class="ic"><use href="#i-magnifyingglass"/></svg>Search tiles</div>
+                <div class="dvc-chips"><span class="chip on">Photo</span><span class="chip">List</span><span class="chip">Labels</span></div>
+                <div class="share-grid">
+                  <div class="thumb"><span class="t-code">K7PT2S</span><span class="t-label">Stove — Upper Drawer</span></div>
+                  <div class="thumb"><span class="t-code">P4NT9Q</span><span class="t-label">Pantry — Top Shelf</span></div>
+                  <div class="thumb"><span class="t-code">B8KE3W</span><span class="t-label">Baking Cabinet</span></div>
+                  <div class="thumb"><span class="t-code">SP1CE6</span><span class="t-label">Spice Drawer</span></div>
+                  <div class="thumb"><span class="t-code">U2SNK7</span><span class="t-label">Under Sink</span></div>
+                  <div class="thumb"><span class="t-code">IS4LD2</span><span class="t-label">Island — Left Cabinet</span></div>
+                  <div class="thumb"><span class="t-code">C0FE8R</span><span class="t-label">Coffee Corner</span></div>
+                  <div class="thumb"><span class="t-code">FR2DG5</span><span class="t-label">Fridge — Deep Drawer</span></div>
+                </div>
+              </div>
+            </div></div>
+          </div>
+        </div>
+
+        <div class="share-col">
+          <span class="share-tag share-tag-house"><svg class="ic" aria-hidden="true"><use href="#i-person-2"/></svg>Your household</span>
+          <div class="share-ph">
+            <div class="device"><div class="island"></div><div class="screen">
+              <div class="dvc-status"><span>9:41</span><span class="sig">
+                <i style="width:14px;height:9px;border:1px solid var(--ink);border-radius:2.5px;background:linear-gradient(90deg,var(--ink) 70%,transparent 70%)"></i></span>
+              </div>
+              <div class="dvc-nav"><span class="dvc-title">Cedar Lane (Shared)</span>
+                <span class="dvc-actions"><svg class="ic"><use href="#i-questionmark-circle"/></svg>
+                <svg class="ic"><use href="#i-qrcode-viewfinder"/></svg></span></div>
+              <div class="dvc-body">
+                <div class="dvc-search"><svg class="ic"><use href="#i-magnifyingglass"/></svg>Search tiles</div>
+                <div class="dvc-chips"><span class="chip on">Photo</span><span class="chip">List</span><span class="chip">Labels</span></div>
+                <div class="share-grid">
+                  <div class="thumb"><span class="t-code">K7PT2S</span><span class="t-label">Stove — Upper Drawer</span></div>
+                  <div class="thumb"><span class="t-code">P4NT9Q</span><span class="t-label">Pantry — Top Shelf</span></div>
+                  <div class="thumb"><span class="t-code">B8KE3W</span><span class="t-label">Baking Cabinet</span></div>
+                  <div class="thumb"><span class="t-code">SP1CE6</span><span class="t-label">Spice Drawer</span></div>
+                  <div class="thumb"><span class="t-code">U2SNK7</span><span class="t-label">Under Sink</span></div>
+                  <div class="thumb"><span class="t-code">IS4LD2</span><span class="t-label">Island — Left Cabinet</span></div>
+                  <div class="thumb"><span class="t-code">C0FE8R</span><span class="t-label">Coffee Corner</span></div>
+                  <div class="thumb"><span class="t-code">FR2DG5</span><span class="t-label">Fridge — Deep Drawer</span></div>
+                </div>
+              </div>
+            </div></div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+<section id="personal" class="sec" aria-label="Personalize — pick your color">
+  <div class="sec-inner">
+    <div class="sec-head reveal">
+      <p class="kicker"><svg class="ic ic-fill" aria-hidden="true"><use href="#i-paintpalette-fill"/></svg>Make it yours</p>
+      <h2 class="h-sec">The icon color is the app color.</h2>
+      <p class="lede">Pick a color in the app and the icon, buttons, toggles — everything — follows. The six icons at the bottom of Home recolor the app icon and the whole app.</p>
+    </div>
+    <div class="close-demo reveal reveal-d1">
+      <div class="mark close-appicon" aria-hidden="true"><div class="o"><div class="m"><div class="i"></div></div></div></div>
+      <div class="sw-row sw-lg" role="group" aria-label="Pick your color">
+        <button class="sw" data-c="clay" aria-label="Clay" aria-pressed="false"><span class="sw-o"><span class="sw-m"><span class="sw-i"></span></span></span></button>
+        <button class="sw" data-c="ink" aria-label="Ink" aria-pressed="false"><span class="sw-o"><span class="sw-m"><span class="sw-i"></span></span></span></button>
+        <button class="sw" data-c="ocean" aria-label="Ocean" aria-pressed="false"><span class="sw-o"><span class="sw-m"><span class="sw-i"></span></span></span></button>
+        <button class="sw" data-c="sage" aria-label="Sage" aria-pressed="false"><span class="sw-o"><span class="sw-m"><span class="sw-i"></span></span></span></button>
+        <button class="sw" data-c="honey" aria-label="Honey" aria-pressed="false"><span class="sw-o"><span class="sw-m"><span class="sw-i"></span></span></span></button>
+        <button class="sw" data-c="plum" aria-label="Plum" aria-pressed="false"><span class="sw-o"><span class="sw-m"><span class="sw-i"></span></span></span></button>
+      </div>
+    </div>
+    <p class="close-wink reveal reveal-d2">This page followed you the moment you picked <span data-accent-name>clay</span>.</p>
+  </div>
+</section>
+<section id="privacy" class="sec sec-alt" aria-label="Privacy">
+  <div class="sec-inner">
+    <div class="sec-head reveal">
+      <p class="kicker"><svg class="ic" aria-hidden="true"><use href="#i-lock"/></svg>Private</p>
+      <h2 class="h-sec">Your stuff is nobody's business.</h2>
+      <p class="lede">No accounts, no tracking, no ads. The policy is short because the app simply does not collect much.</p>
+    </div>
+    <div class="points close-pp reveal reveal-d1">
+      <div class="point">
+        <svg class="ic" aria-hidden="true"><use href="#i-lock"/></svg>
+        <div><b>On your device, in your iCloud.</b>
+        <p>Tiles, photos, and videos live on your iPhone and sync to your own private iCloud under your Apple ID. Nothing is stored on our servers — we cannot read, access, or recover your data.</p></div>
+      </div>
+      <div class="point">
+        <svg class="ic" aria-hidden="true"><use href="#i-iphone"/></svg>
+        <div><b>Everything runs on the phone.</b>
+        <p>Scanning, text recognition, and Ask work on-device — your questions and your inventory are never sent to us or to any third-party service.</p></div>
+      </div>
+      <div class="point">
+        <svg class="ic" aria-hidden="true"><use href="#i-arrow-down-doc"/></svg>
+        <div><b>Your media stays yours.</b>
+        <p>Photos and videos you add never leave your device and your iCloud — and Backup builds one zip whenever you want a copy out.</p></div>
+      </div>
+    </div>
+    <a class="close-priv-link reveal reveal-d2" href="/privacy/">Read the privacy policy<svg class="ic" aria-hidden="true"><use href="#i-arrow-right"/></svg></a>
+  </div>
+</section>
+<section id="get" class="sec" aria-label="Get QR Tiles">
+  <div class="sec-inner close-get reveal">
+    <div class="mark close-getmark" aria-hidden="true"><div class="o"><div class="m"><div class="i"></div></div></div></div>
+    <h2 class="close-get-h">Never lose anything again.</h2>
+    <p class="lede close-get-lede">One sheet of stickers is enough to start.</p>
+    <div class="close-get-cta">
+      <a class="cta" href="https://apps.apple.com/app/id6799444682"><svg class="ic ic-fill" aria-hidden="true"><use href="#i-apple"/></svg>Get QR Tiles</a>
+      <span class="cta-note">Currently in family TestFlight — public release coming.</span>
+    </div>
+    <p class="meta close-get-meta">Free while in TestFlight</p>
+  </div>
+</section>
+</main>
+
+<footer class="foot">
+  <div class="foot-inner">
+    <div class="foot-top">
+      <span class="mark mark-sm" aria-hidden="true"><span class="o"><span class="m"><span class="i"></span></span></span></span>
+      <span class="foot-name">QR Tiles</span>
+      <div class="sw-row sw-sm" role="group" aria-label="Site color">
+        <button class="sw" data-c="clay" aria-label="Clay" aria-pressed="false"><span class="sw-o"><span class="sw-m"><span class="sw-i"></span></span></span></button>
+        <button class="sw" data-c="ink" aria-label="Ink" aria-pressed="false"><span class="sw-o"><span class="sw-m"><span class="sw-i"></span></span></span></button>
+        <button class="sw" data-c="ocean" aria-label="Ocean" aria-pressed="false"><span class="sw-o"><span class="sw-m"><span class="sw-i"></span></span></span></button>
+        <button class="sw" data-c="sage" aria-label="Sage" aria-pressed="false"><span class="sw-o"><span class="sw-m"><span class="sw-i"></span></span></span></button>
+        <button class="sw" data-c="honey" aria-label="Honey" aria-pressed="false"><span class="sw-o"><span class="sw-m"><span class="sw-i"></span></span></span></button>
+        <button class="sw" data-c="plum" aria-label="Plum" aria-pressed="false"><span class="sw-o"><span class="sw-m"><span class="sw-i"></span></span></span></button>
+      </div>
+    </div>
+    <nav class="foot-links" aria-label="Site">
+      <a href="/help/">Help</a>
+      <a href="/privacy/">Privacy</a>
+      <a href="/terms/">Terms</a>
+      <a href="/support/">Support</a>
+    </nav>
+    <p class="foot-fine">© 2026 New Stuff · For iPhone</p>
+  </div>
+</footer>
+</div>
+
+<script src="/assets/site.js"></script>
+</body>
+</html>

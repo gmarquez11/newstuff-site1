@@ -1,0 +1,172 @@
+<!doctype html>
+<html lang="en" data-accent="clay">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Help — QR Tiles</title>
+<meta name="description" content="The QR Tiles user guide — setup, printing stickers, scanning, organizing, Ask, and backup.">
+<link rel="icon" href="/favicon.svg" type="image/svg+xml">
+<link rel="stylesheet" href="/assets/tokens.css">
+<link rel="stylesheet" href="/assets/site.css">
+<script>
+(function () {
+  var d = document.documentElement, a = null;
+  try { a = localStorage.getItem("qrt-accent"); } catch (e) {}
+  if (a) { d.dataset.accent = a; }
+})();
+</script>
+</head>
+<body>
+<a class="skip-link" href="#main">Skip to content</a>
+
+<style>
+.hdr-static { position: sticky; opacity: 1; transform: none; }
+</style>
+<header class="hdr on hdr-static">
+  <a class="hdr-brand" href="/">
+    <span class="mark mark-sm" aria-hidden="true"><span class="o"><span class="m"><span class="i"></span></span></span></span>
+    QR Tiles
+  </a>
+  <span class="spacer"></span>
+  <div class="hdr-pick">
+    <button class="hdr-dot" aria-label="Change color" aria-expanded="false"><span class="d"></span></button>
+    <div class="hdr-pop">
+      <div class="sw-row sw-sm">
+        <button class="sw" data-c="clay" aria-label="Clay" aria-pressed="false"><span class="sw-o"><span class="sw-m"><span class="sw-i"></span></span></span></button>
+        <button class="sw" data-c="ink" aria-label="Ink" aria-pressed="false"><span class="sw-o"><span class="sw-m"><span class="sw-i"></span></span></span></button>
+        <button class="sw" data-c="ocean" aria-label="Ocean" aria-pressed="false"><span class="sw-o"><span class="sw-m"><span class="sw-i"></span></span></span></button>
+        <button class="sw" data-c="sage" aria-label="Sage" aria-pressed="false"><span class="sw-o"><span class="sw-m"><span class="sw-i"></span></span></span></button>
+        <button class="sw" data-c="honey" aria-label="Honey" aria-pressed="false"><span class="sw-o"><span class="sw-m"><span class="sw-i"></span></span></span></button>
+        <button class="sw" data-c="plum" aria-label="Plum" aria-pressed="false"><span class="sw-o"><span class="sw-m"><span class="sw-i"></span></span></span></button>
+      </div>
+    </div>
+  </div>
+  <a class="hdr-cta" href="https://apps.apple.com/app/id6799444682">
+    <svg class="ic ic-fill" viewBox="0 0 24 24" aria-hidden="true"><path d="M17.05 20.28c-.98.95-2.05.8-3.08.35-1.09-.46-2.09-.48-3.24 0-1.44.62-2.2.44-3.06-.35C2.79 15.25 3.51 7.59 9.05 7.31c1.35.07 2.29.74 3.08.8.79.05 2.28-.86 3.85-.73 1.31.11 2.5.62 3.28 1.72-3.24 1.94-2.71 6.21.79 7.66-.63 1.61-1.44 3.2-3 3.52zM12.03 7.25c-.15-2.23 1.66-4.07 3.74-4.25.29 2.58-2.34 4.5-3.74 4.25z"/></svg>
+    Get the app
+  </a>
+</header>
+
+<main id="main" class="prose">
+  <h1>Help</h1>
+  <p class="prose-date">The QR Tiles user guide</p>
+
+  <p>Stick a QR code on a drawer, cabinet, or bin. Point the app at it, and that container's "tile" opens: a title, a list of what lives inside, and photos or videos. Search everything, ask out loud, and never dig through five bins for the air pump again.</p>
+
+  <nav aria-label="On this page">
+    <ul>
+      <li><a href="#getting-started">Getting started</a></li>
+      <li><a href="#scanning">Scanning</a></li>
+      <li><a href="#organizing">Organizing</a></li>
+      <li><a href="#photos-videos">Photos &amp; videos</a></li>
+      <li><a href="#tile-pages">Tile pages</a></li>
+      <li><a href="#search-ask">Search, Ask &amp; Siri</a></li>
+      <li><a href="#batches">Batches</a></li>
+      <li><a href="#box-labels">Printing a box label</a></li>
+      <li><a href="#sharing">Household sharing</a></li>
+      <li><a href="#recently-deleted">Recently Deleted</a></li>
+      <li><a href="#icon-color">App icon &amp; color</a></li>
+      <li><a href="#your-data">Backup &amp; your data</a></li>
+      <li><a href="#faq">FAQ</a></li>
+    </ul>
+  </nav>
+
+  <h2 id="getting-started">Getting started</h2>
+  <ol>
+    <li><strong>Create your first tile.</strong> Tiles ▸ <strong>+</strong>. Give it a title ("Garage — Red Toolbox"), add labels for what's inside, snap a photo. You don't need stickers to start.</li>
+    <li><strong>Print stickers when ready.</strong> Home ▸ Print ▸ <em>Mint a 160-label sheet</em>. Print the PDF onto R001-class label stock (Spartan Industrial R001 / OL1930 equivalent — 1" × ½" labels, 8 × 20 per sheet), stick codes on containers, then scan each one to set it up. <strong>Always print the first sheet on plain paper</strong> and confirm your phone scans it before using real label stock.</li>
+    <li><strong>Calibrate if needed.</strong> If printed codes don't line up with the die-cut labels, adjust <em>Row 1 top</em> and <em>Row pitch</em> in Print ▸ Calibration, using a plain-paper overlay against a window.</li>
+  </ol>
+  <p>A 7-step tour runs on first launch; replay it anytime from the bottom of Home.</p>
+
+  <h2 id="scanning">Scanning</h2>
+  <p>The scan button rides the top-right corner of every screen. Tap it — or use the Action Button or Back Tap via the "Scan QR Tiles" shortcut — and point at any sticker:</p>
+  <ul>
+    <li><strong>Known code</strong> — the tile opens, on top of its group's Tiles view, so Back lands among its neighbors.</li>
+    <li><strong>Blank sticker from your sheets</strong> — "set up this drawer": claim it.</li>
+    <li><strong>A code from anywhere else</strong> — adopt it into your inventory; adopted codes are kept reprintable in automatic "Misc" batches.</li>
+    <li>No camera handy? Type the 6-character code instead.</li>
+  </ul>
+  <p>Home ▸ Scan holds the behavior settings: what happens after scanning a set-up tile, straight-to-camera after claiming a blank sticker, auto-adopting unknown codes, and which batch adoptions join.</p>
+  <p>QR Tiles also has its own section in the iOS Controls gallery, with Scan and Ask controls (Settings ▸ Action Button, or Control Center ▸ edit).</p>
+
+  <h2 id="organizing">Organizing</h2>
+  <p><strong>Groups</strong> are places ("Kitchen", "Master Closet"); <strong>zones</strong> are areas of the house ("Upstairs"). Manage both in Home ▸ Groups &amp; Zones; assign a tile's group on its page.</p>
+  <p>The Tiles browser has four views — <strong>Photo</strong>, <strong>List</strong>, <strong>Labels</strong> (every written label, A–Z — the house's index), and <strong>Video</strong>. Pinch the photo grid to resize it; it stops enlarging at one tile per row and stops shrinking once everything fits the screen. Captions hide at small sizes.</p>
+  <p>The filter button (top right of the chips) narrows by group or zone, finds tiles <strong>without photos</strong> or <strong>untitled</strong> (great for finishing setup), and changes sort order. The ⊗ inside the search field clears the text, Cancel ends the search, and Clear inside the panel resets filters. Filter panel sections and zero-count rows are configurable under Home ▸ Organize ▸ Filters.</p>
+
+  <h2 id="photos-videos">Photos &amp; videos</h2>
+  <ul>
+    <li>Add from the camera or your library on any tile. Text visible in photos becomes searchable automatically.</li>
+    <li>Tap a photo to view full screen; swipe up or down to dismiss; long press for reorder and delete options.</li>
+    <li>Videos play inline — great for "how to" clips (how the bottle warmer works, where the water shutoff is).</li>
+  </ul>
+
+  <h2 id="tile-pages">Tile pages</h2>
+  <p>Photos fill the width and swipe sideways; long-press and drag to reorder. The group lives as a small dropdown under the title, organized by zone. Typing a title suggests existing titles; picking one fills in the group too (only if the tile had none). The sticker code sits at the bottom with a Share Link button.</p>
+
+  <h2 id="search-ask">Search, Ask &amp; Siri</h2>
+  <p>The card at the top of Home searches everything; type a question and tap <strong>Ask</strong> for a plain-words answer right there — "where are the pots?"</p>
+  <p>On iPhones with Apple Intelligence the answer is conversational; on other iPhones the app matches keywords — either way it searches titles, labels, and photo text. Ask preferences (answer length, list style, photo-tag matching, Apple Intelligence) live under Home ▸ Ask.</p>
+  <p>Say <strong>"Ask QR Tiles"</strong> to Siri to get answers without opening the app. Tiles also appear in iPhone <strong>Spotlight</strong> search.</p>
+
+  <h2 id="batches">Batches</h2>
+  <p>Every sheet you mint is a batch. Tap one in Home ▸ Print to see its stats — how many codes are <strong>claimed</strong> (set up on a real container) and how many stickers are still <strong>blank</strong> and waiting — plus the full code list (claimed codes jump straight to their tiles) and the sheet PDF for reprinting. Adopted codes live in automatic "Misc" batches here too.</p>
+
+  <h2 id="box-labels">Printing a box label</h2>
+  <p>On any tile, tap the printer icon. Choose copies per page (1, 2, or 4), which sections to include (title, QR, details, labels, blank handwriting lines, photos), and where photos sit (above, left, right, below). The preview updates live; share to AirPrint when happy. Your layout choices are remembered.</p>
+
+  <h2 id="sharing">Household sharing (QR Tiles+)</h2>
+  <p>With a subscription, share your inventory with family: they see and edit the same tiles, synced through iCloud. (During beta, sharing is included free.)</p>
+
+  <h2 id="recently-deleted">Recently Deleted</h2>
+  <p>Deleted tiles, photos, and videos wait 30 days in Home ▸ Backup ▸ Recently Deleted, then remove themselves. Restore anytime in that window.</p>
+
+  <h2 id="icon-color">App icon &amp; color</h2>
+  <p>The six icons above the version number on Home change the home-screen icon <em>and</em> the app's whole accent color, live. (This site works the same way — the dot in the header.)</p>
+
+  <h2 id="your-data">Backup &amp; your data</h2>
+  <p>Everything lives on your device and in your personal iCloud — nothing on our servers. The app syncs to your private iCloud automatically; a fresh sign-in on a new device brings the whole home down. Deleting the app (and its iCloud data) removes everything. Details in the <a href="/privacy/">Privacy policy</a>.</p>
+  <p>Home ▸ Backup builds one zip: every photo and video plus all data as CSV files any spreadsheet opens. Restore fills an empty app only, so it can never overwrite existing data.</p>
+
+  <h2 id="faq">FAQ</h2>
+  <h3>Do I need special stickers?</h3>
+  <p>For sticker sheets, R001-class stock. Box labels print on plain paper or any full/half sheet.</p>
+  <h3>What if a sticker gets damaged?</h3>
+  <p>Stick any blank code on the container, then on the tile: ⋯ ▸ Manage Stickers ▸ Attach — scan the new code, detach the old one. The tile keeps everything. (Codes can also be moved between tiles the same way when you reorganize.)</p>
+  <h3>Does it work offline?</h3>
+  <p>Yes — everything except iCloud sync works with no connection at all.</p>
+  <h3>iPhone only?</h3>
+  <p>Yes, currently.</p>
+
+  <hr>
+  <p>Can't find what you need? Head to <a href="/support/">Support</a> — you'll hear back from a human.</p>
+</main>
+
+<footer class="foot">
+  <div class="foot-inner">
+    <div class="foot-top">
+      <span class="mark mark-sm" aria-hidden="true"><span class="o"><span class="m"><span class="i"></span></span></span></span>
+      <span class="foot-name">QR Tiles</span>
+      <div class="sw-row sw-sm" role="group" aria-label="Site color">
+        <button class="sw" data-c="clay" aria-label="Clay" aria-pressed="false"><span class="sw-o"><span class="sw-m"><span class="sw-i"></span></span></span></button>
+        <button class="sw" data-c="ink" aria-label="Ink" aria-pressed="false"><span class="sw-o"><span class="sw-m"><span class="sw-i"></span></span></span></button>
+        <button class="sw" data-c="ocean" aria-label="Ocean" aria-pressed="false"><span class="sw-o"><span class="sw-m"><span class="sw-i"></span></span></span></button>
+        <button class="sw" data-c="sage" aria-label="Sage" aria-pressed="false"><span class="sw-o"><span class="sw-m"><span class="sw-i"></span></span></span></button>
+        <button class="sw" data-c="honey" aria-label="Honey" aria-pressed="false"><span class="sw-o"><span class="sw-m"><span class="sw-i"></span></span></span></button>
+        <button class="sw" data-c="plum" aria-label="Plum" aria-pressed="false"><span class="sw-o"><span class="sw-m"><span class="sw-i"></span></span></span></button>
+      </div>
+    </div>
+    <nav class="foot-links" aria-label="Site">
+      <a href="/help/">Help</a>
+      <a href="/privacy/">Privacy</a>
+      <a href="/terms/">Terms</a>
+      <a href="/support/">Support</a>
+    </nav>
+    <p class="foot-fine">© 2026 New Stuff · For iPhone</p>
+  </div>
+</footer>
+
+<script src="/assets/site.js"></script>
+</body>
+</html>

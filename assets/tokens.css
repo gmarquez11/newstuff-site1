@@ -1,0 +1,69 @@
+/* QR Tiles — design tokens. Mirrors the app's Theme.swift + AppIconView.swift. */
+
+:root {
+  color-scheme: light dark;
+
+  /* surfaces + ink (light) */
+  --paper: #FAF8F4;
+  --card: #FFFFFF;
+  --ink: #262320;
+  --dim: #8A8378;
+  --rule: #E8E2D9;
+  --rule-strong: #DFD9CF;
+  --cell: #EEEBE5;
+  --bezel: #14110F;
+
+  /* accent — the visitor's pick drives the whole site, like the app */
+  --accent: #B8563A;
+  --on-accent: #FFFFFF;
+  --wash: color-mix(in srgb, var(--accent) 7%, var(--paper));
+  --wash-deep: color-mix(in srgb, var(--accent) 14%, var(--paper));
+}
+
+@media (prefers-color-scheme: dark) {
+  :root {
+    --paper: #211E1B;
+    --card: #2A2622;
+    --ink: #E8E4DF;
+    --dim: #9A9288;
+    --rule: #3A342E;
+    --rule-strong: #453E36;
+    --cell: #332E29;
+    --bezel: #000000;
+    --accent: #CC6B47;
+  }
+}
+
+/* The six app-icon accents. Tapping a swatch sets data-accent on <html>. */
+[data-accent="clay"]  { --accent: #B8563A; --on-accent: #FFFFFF; }
+[data-accent="ink"]   { --accent: #262320; --on-accent: #FFFFFF; }
+[data-accent="ocean"] { --accent: #3E6E8E; --on-accent: #FFFFFF; }
+[data-accent="sage"]  { --accent: #5F7A5A; --on-accent: #FFFFFF; }
+[data-accent="honey"] { --accent: #C9862D; --on-accent: #FFFFFF; }
+[data-accent="plum"]  { --accent: #6E4A78; --on-accent: #FFFFFF; }
+
+@media (prefers-color-scheme: dark) {
+  [data-accent="clay"]  { --accent: #CC6B47; --on-accent: #FFFFFF; }
+  [data-accent="ink"]   { --accent: #E8E4DF; --on-accent: #211E1B; }
+  [data-accent="ocean"] { --accent: #5E8FAF; --on-accent: #FFFFFF; }
+  [data-accent="sage"]  { --accent: #7E9A78; --on-accent: #FFFFFF; }
+  [data-accent="honey"] { --accent: #D9A04A; --on-accent: #211E1B; }
+  [data-accent="plum"]  { --accent: #8E6A98; --on-accent: #FFFFFF; }
+}
+
+/* Per-swatch colors (a swatch always shows its own color, not the page accent) */
+.sw[data-c="clay"]  { --sw: #B8563A; }
+.sw[data-c="ink"]   { --sw: #262320; }
+.sw[data-c="ocean"] { --sw: #3E6E8E; }
+.sw[data-c="sage"]  { --sw: #5F7A5A; }
+.sw[data-c="honey"] { --sw: #C9862D; }
+.sw[data-c="plum"]  { --sw: #6E4A78; }
+
+@media (prefers-color-scheme: dark) {
+  .sw[data-c="clay"]  { --sw: #CC6B47; }
+  .sw[data-c="ink"]   { --sw: #E8E4DF; }
+  .sw[data-c="ocean"] { --sw: #5E8FAF; }
+  .sw[data-c="sage"]  { --sw: #7E9A78; }
+  .sw[data-c="honey"] { --sw: #D9A04A; }
+  .sw[data-c="plum"]  { --sw: #8E6A98; }
+}
