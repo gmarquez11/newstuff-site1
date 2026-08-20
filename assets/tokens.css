@@ -1,4 +1,4 @@
-/* QR Tiles — design tokens. Mirrors the app's Theme.swift + AppIconView.swift. */
+/* QR Tiles — design tokens. Mirrors the app icon's palette; see the accent note below. */
 
 :root {
   color-scheme: light dark;
@@ -13,7 +13,22 @@
   --cell: #EEEBE5;
   --bezel: #14110F;
 
-  /* accent — the visitor's pick drives the whole site, like the app */
+  /* accent — the visitor's pick drives the whole site, like the app.
+
+     These are the ICON's colours, and the app's accent is no longer the same
+     value. The app derives its accent by darkening the icon tile to 88%:
+     clay's tile #B8563A becomes the app accent #A24C33. The icon artwork is
+     deliberately left alone, which is what keeps the home-screen icon stable.
+
+     The two answer to different bars. An accent tints buttons, toggles and
+     glyphs, so it owes WCAG's 3:1 for UI components; an icon is artwork on a
+     home screen and owes nothing. Honey shipped at 2.71:1, which is what
+     forced the split.
+
+     So: mirror the icon values here, and do not "sync" this file to the app's
+     accent in either direction. Darkening these recuts the icon and the
+     marketing assets for nothing; lightening the app's accent to match puts
+     honey back under the contrast bar. */
   --accent: #B8563A;
   --on-accent: #FFFFFF;
   --wash: color-mix(in srgb, var(--accent) 7%, var(--paper));
