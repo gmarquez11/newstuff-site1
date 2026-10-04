@@ -1,0 +1,122 @@
+/* QR Tiles — design tokens. Mirrors the app icon's palette; see the accent note below. */
+
+:root {
+  /* light-dark() below resolves against this, so a subtree that forces
+     color-scheme: light or dark gets that scheme's tokens, not the page's. */
+  color-scheme: light dark;
+
+  /* surfaces + ink — light value first, dark second */
+  --paper: light-dark(#FAF8F4, #211E1B);
+  --card: light-dark(#FFFFFF, #2A2622);
+  --ink: light-dark(#262320, #E8E4DF);
+  --dim: light-dark(#8A8378, #9A9288);
+  --rule: light-dark(#E8E2D9, #3A342E);
+  --rule-strong: light-dark(#DFD9CF, #453E36);
+  --cell: light-dark(#EEEBE5, #332E29);
+  --bezel: light-dark(#14110F, #000000);
+
+  /* accent — the visitor's pick drives the whole site, like the app.
+
+     These are the ICON's colours. The app derives its accent by darkening the
+     icon tile to 88% (clay's tile #B8563A is the app accent #A24C33), and the
+     icon artwork stays as drawn so the home-screen icon stays stable.
+
+     The two answer to different bars: an accent tints buttons, toggles and
+     glyphs, so it owes WCAG's 3:1 for UI components; an icon is artwork on a
+     home screen and owes nothing (honey's tile measures 2.71:1, under the bar
+     an accent owes). Mirror the icon values here and never "sync" this file to
+     the app's accent in either direction. */
+  --accent: light-dark(#B8563A, #CC6B47);
+  --accent-ink: light-dark(#A24C33, #D27D5D);
+  --accent-ink-surface: light-dark(#B45439, #D07756);
+  --accent-ink-surface-lg: light-dark(#B8563A, #CC6B47);
+  --on-accent: #FFFFFF;
+  --wash: color-mix(in srgb, var(--accent) 7%, var(--paper));
+  --wash-deep: color-mix(in srgb, var(--accent) 14%, var(--paper));
+}
+
+/* The six app-icon accents. Tapping a swatch sets data-accent on <html>.
+   Only ink and honey need a different --on-accent in dark. */
+[data-accent="clay"]  { --accent: light-dark(#B8563A, #CC6B47); --on-accent: #FFFFFF; }
+[data-accent="ink"]   { --accent: light-dark(#262320, #E8E4DF); --on-accent: light-dark(#FFFFFF, #211E1B); }
+[data-accent="ocean"] { --accent: light-dark(#3E6E8E, #5E8FAF); --on-accent: #FFFFFF; }
+[data-accent="sage"]  { --accent: light-dark(#5F7A5A, #7E9A78); --on-accent: #FFFFFF; }
+[data-accent="honey"] { --accent: light-dark(#C9862D, #D9A04A); --on-accent: light-dark(#FFFFFF, #211E1B); }
+[data-accent="plum"]  { --accent: light-dark(#6E4A78, #8E6A98); --on-accent: #FFFFFF; }
+
+/* The accent as TEXT, derived — not chosen. The hero pill's glyph keeps
+   --accent; its word takes this, because --accent on --wash-deep clears WCAG's
+   4.5:1 for text in only four of the twelve accent/appearance pairings, and
+   clay in light — the default, and the first thing a visitor sees — is 3.74.
+
+   This is the app's Theme.swift textInk(from:on:towardBlack:) ported, not its
+   answers copied. If the accent already clears 4.5:1 on its ground it is used
+   unchanged; otherwise it steps 2% at a time toward black in light and toward
+   white in dark — both poles neutral, so hue and saturation hold and only
+   value moves — and stops at the FIRST value that clears.
+
+   The ground is this site's own --wash-deep, which is paler than the app's, so
+   the answers are the site's own: eight rows move where the app's two do, and
+   honey in light steps to 0.70 where the app stops at 0.80. Every value below
+   is that function's output over hexes already in this file. Nothing here is
+   picked by eye, and re-deriving is the only way to change one.
+     clay  #A24C33 4.57 · #D27D5D 4.52    ink   #262320 11.22 · #E8E4DF 8.96
+     ocean #3C6A88 4.56 · #6E9AB7 4.56    sage  #546B4F  4.66 · #839E7D 4.59
+     honey #8D5E1F 4.62 · #D9A04A  5.56   plum  #6E4A78  5.53 · #A588AD 4.56 */
+[data-accent="clay"]  { --accent-ink: light-dark(#A24C33, #D27D5D); }
+[data-accent="ink"]   { --accent-ink: light-dark(#262320, #E8E4DF); }
+[data-accent="ocean"] { --accent-ink: light-dark(#3C6A88, #6E9AB7); }
+[data-accent="sage"]  { --accent-ink: light-dark(#546B4F, #839E7D); }
+[data-accent="honey"] { --accent-ink: light-dark(#8D5E1F, #D9A04A); }
+[data-accent="plum"]  { --accent-ink: light-dark(#6E4A78, #A588AD); }
+
+/* Accent text that sits directly on --paper or --card — the hero pill's own
+   ground is --wash-deep and --accent-ink already answers for it, but body and
+   mockup text laid straight on a surface is a harder case --accent-ink was
+   never solved for: on --paper alone it spans 5.17-14.73, over-corrected by
+   as much as four times the bar it needs to clear.
+
+   Bound the way Theme.swift binds a family to an appearance (:350-358): the
+   HARDER of the two surfaces carries the derivation, and the easier one is
+   then checked rather than assumed. In light that is --paper, darker than
+   --card; in dark it is --card, lighter than --paper. Same textInk port as
+   --accent-ink — 2% steps toward black in light, toward white in dark, first
+   value that clears 4.5:1 — run against the binding ground and confirmed
+   against the other ground in every cell below. Six of twelve move; the rest
+   are the accent itself, untouched. Numbers are ratio-on-paper / ratio-on-card
+   for light, ratio-on-card / ratio-on-paper for dark:
+     clay  #B45439 4.64/4.92 · #D07756 4.61/5.10    ink   #262320 14.73/15.63 · #E8E4DF 11.86/13.11
+     ocean #3E6E8E  5.17/5.49 · #6493B2 4.55/5.02    sage  #5D7858  4.61/4.89 · #7E9A78 4.85/5.36
+     honey #996622  4.63/4.91 · #D9A04A 6.49/7.17    plum  #6E4A78  6.79/7.21 · #A285AB 4.63/5.12
+   Nothing here is picked by eye, and re-deriving is the only way to change one. */
+[data-accent="clay"]  { --accent-ink-surface: light-dark(#B45439, #D07756); }
+[data-accent="ink"]   { --accent-ink-surface: light-dark(#262320, #E8E4DF); }
+[data-accent="ocean"] { --accent-ink-surface: light-dark(#3E6E8E, #6493B2); }
+[data-accent="sage"]  { --accent-ink-surface: light-dark(#5D7858, #7E9A78); }
+[data-accent="honey"] { --accent-ink-surface: light-dark(#996622, #D9A04A); }
+[data-accent="plum"]  { --accent-ink-surface: light-dark(#6E4A78, #A285AB); }
+
+/* The same family, at the bar large display type actually answers to. The
+   hero's .em-accent is 68px/700 — WCAG's large-text threshold is 24px/700 (or
+   18.66px/400) — so 1.4.3 asks 3:1 of it, not 4.5:1. Solved exactly like
+   --accent-ink-surface above, same binding surfaces, same port, only the bar
+   changes — which means only the cell that bar actually fails moves:
+     clay  #B8563A 4.47/4.74 · #CC6B47 4.12/4.55    ink   #262320 14.73/15.63 · #E8E4DF 11.86/13.11
+     ocean #3E6E8E  5.17/5.49 · #5E8FAF 4.31/4.76    sage  #5F7A5A  4.48/4.75 · #7E9A78 4.85/5.36
+     honey #C1812B  3.07/3.26 · #D9A04A 6.49/7.17    plum  #6E4A78  6.79/7.21 · #8E6A98 3.34/3.68
+   Eleven of twelve are the accent, unchanged — honey in light is the one cell
+   the 3:1 bar actually forces, #C9862D to #C1812B, a 4% step. */
+[data-accent="clay"]  { --accent-ink-surface-lg: light-dark(#B8563A, #CC6B47); }
+[data-accent="ink"]   { --accent-ink-surface-lg: light-dark(#262320, #E8E4DF); }
+[data-accent="ocean"] { --accent-ink-surface-lg: light-dark(#3E6E8E, #5E8FAF); }
+[data-accent="sage"]  { --accent-ink-surface-lg: light-dark(#5F7A5A, #7E9A78); }
+[data-accent="honey"] { --accent-ink-surface-lg: light-dark(#C1812B, #D9A04A); }
+[data-accent="plum"]  { --accent-ink-surface-lg: light-dark(#6E4A78, #8E6A98); }
+
+/* Per-swatch colors (a swatch always shows its own color, not the page accent) */
+.sw[data-c="clay"]  { --sw: light-dark(#B8563A, #CC6B47); }
+.sw[data-c="ink"]   { --sw: light-dark(#262320, #E8E4DF); }
+.sw[data-c="ocean"] { --sw: light-dark(#3E6E8E, #5E8FAF); }
+.sw[data-c="sage"]  { --sw: light-dark(#5F7A5A, #7E9A78); }
+.sw[data-c="honey"] { --sw: light-dark(#C9862D, #D9A04A); }
+.sw[data-c="plum"]  { --sw: light-dark(#6E4A78, #8E6A98); }
