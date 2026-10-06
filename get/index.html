@@ -3,9 +3,8 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<title>QR Tiles</title>
-<meta name="description" content="Under construction. This site is being rebuilt.">
-<meta name="robots" content="noindex">
+<title>Get the app — QR Tiles</title>
+<meta name="description" content="QR Tiles is coming to the App Store for iPhone, and is in beta on TestFlight now.">
 <link rel="icon" href="/favicon.svg" type="image/svg+xml">
 <link rel="apple-touch-icon" href="/apple-touch-icon.png">
 <link rel="stylesheet" href="/assets/tokens.css">
@@ -17,27 +16,66 @@
   if (a) { d.dataset.accent = a; }
 })();
 </script>
-<style>
-  .get { min-height: 100vh; min-height: 100dvh; display: grid; grid-template-rows: 1fr auto; place-items: center; text-align: center; padding: 24px; }
-  .get .mark { margin: 0 auto 26px; }
-  .get h1 { font-size: clamp(30px, 5.5vw, 44px); letter-spacing: -0.02em; line-height: 1.1; margin-bottom: 14px; }
-  .get p { color: var(--dim); font-size: 17px; line-height: 1.55; max-width: 440px; margin: 0 auto 12px; }
-  .get footer { display: flex; justify-content: center; gap: 18px; font-size: 14px; }
-  .get footer a { color: var(--dim); text-decoration: none; }
-  .get footer a:hover { color: var(--accent); }
-</style>
 </head>
 <body>
-<main class="get">
-  <div>
-    <div class="mark" aria-hidden="true"><div class="o"><div class="m"><div class="i"></div></div></div></div>
-    <h1>Under construction.</h1>
-    <p>This site is being rebuilt.</p>
+<a class="skip-link" href="#main">Skip to content</a>
+
+<header class="hdr on hdr-static">
+  <a class="hdr-brand" href="/">
+    <span class="mark mark-sm" aria-hidden="true"><span class="o"><span class="m"><span class="i"></span></span></span></span>
+    QR Tiles
+  </a>
+  <span class="spacer"></span>
+  <div class="hdr-pick">
+    <button class="hdr-dot" aria-label="Change color" aria-expanded="false"><span class="d"></span></button>
+    <div class="hdr-pop">
+      <div class="sw-row sw-sm">
+        <button class="sw" data-c="clay" aria-label="Clay" aria-pressed="false"><span class="sw-o"><span class="sw-m"><span class="sw-i"></span></span></span></button><button class="sw" data-c="ink" aria-label="Ink" aria-pressed="false"><span class="sw-o"><span class="sw-m"><span class="sw-i"></span></span></span></button><button class="sw" data-c="ocean" aria-label="Ocean" aria-pressed="false"><span class="sw-o"><span class="sw-m"><span class="sw-i"></span></span></span></button><button class="sw" data-c="sage" aria-label="Sage" aria-pressed="false"><span class="sw-o"><span class="sw-m"><span class="sw-i"></span></span></span></button><button class="sw" data-c="honey" aria-label="Honey" aria-pressed="false"><span class="sw-o"><span class="sw-m"><span class="sw-i"></span></span></span></button><button class="sw" data-c="plum" aria-label="Plum" aria-pressed="false"><span class="sw-o"><span class="sw-m"><span class="sw-i"></span></span></span></button>
+      </div>
+    </div>
   </div>
-  <footer>
-    <a href="/privacy/">Privacy</a>
-    <a href="/terms/">Terms</a>
-  </footer>
+  <a class="hdr-cta" href="/get/">Get the app</a>
+</header>
+
+<main id="main" class="prose">
+  <h1>Get QR Tiles</h1>
+  <p class="prose-date">For iPhone</p>
+
+  <p>QR Tiles is coming to the App Store. Until then it is in beta on TestFlight.</p>
+
+  <h2>Joining the beta</h2>
+  <p>If you have a TestFlight invitation, open it on your iPhone and tap <strong>Accept</strong>, then <strong>Install</strong>. TestFlight keeps the app up to date as new builds arrive.</p>
+
+  <h2>What you need</h2>
+  <ul>
+    <li>An iPhone running iOS 27 or later.</li>
+    <li>iCloud, if you want your tiles on more than one device or want to share a home.</li>
+    <li>For Apple Intelligence answers in Ask, an iPhone that supports Apple Intelligence. Ask works on every iPhone without it.</li>
+  </ul>
+
+  <h2>Plans</h2>
+  <p>Basic is free, with unlimited tiles, QR codes and printing. Plus adds household sharing. Pro adds hosted answers in Ask and lists of tiles. The owner subscribes; the people you invite never pay.</p>
 </main>
+
+<footer class="foot">
+  <div class="foot-inner">
+    <div class="foot-top">
+      <span class="mark mark-sm" aria-hidden="true"><span class="o"><span class="m"><span class="i"></span></span></span></span>
+      <span class="foot-name">QR Tiles</span>
+      <div class="sw-row sw-sm" role="group" aria-label="Site color">
+        <button class="sw" data-c="clay" aria-label="Clay" aria-pressed="false"><span class="sw-o"><span class="sw-m"><span class="sw-i"></span></span></span></button><button class="sw" data-c="ink" aria-label="Ink" aria-pressed="false"><span class="sw-o"><span class="sw-m"><span class="sw-i"></span></span></span></button><button class="sw" data-c="ocean" aria-label="Ocean" aria-pressed="false"><span class="sw-o"><span class="sw-m"><span class="sw-i"></span></span></span></button><button class="sw" data-c="sage" aria-label="Sage" aria-pressed="false"><span class="sw-o"><span class="sw-m"><span class="sw-i"></span></span></span></button><button class="sw" data-c="honey" aria-label="Honey" aria-pressed="false"><span class="sw-o"><span class="sw-m"><span class="sw-i"></span></span></span></button><button class="sw" data-c="plum" aria-label="Plum" aria-pressed="false"><span class="sw-o"><span class="sw-m"><span class="sw-i"></span></span></span></button>
+      </div>
+    </div>
+    <nav class="foot-links" aria-label="Site">
+      <a href="/help/">Help</a>
+      <a href="/privacy/">Privacy</a>
+      <a href="/terms/">Terms</a>
+      <a href="/support/">Support</a>
+    </nav>
+    <p class="foot-fine">© 2026 New Stuff · For iPhone</p>
+  </div>
+</footer>
+
+<script src="/assets/site.js"></script>
 </body>
 </html>

@@ -3,9 +3,8 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<title>QR Tiles</title>
-<meta name="description" content="Under construction. This site is being rebuilt.">
-<meta name="robots" content="noindex">
+<title>QR Tiles — know what's inside without opening it</title>
+<meta name="description" content="Stick a QR tile on any box, bin or drawer, photograph what's inside, and find it later by scanning, searching or asking. For iPhone.">
 <link rel="icon" href="/favicon.svg" type="image/svg+xml">
 <link rel="apple-touch-icon" href="/apple-touch-icon.png">
 <link rel="stylesheet" href="/assets/tokens.css">
@@ -17,27 +16,252 @@
   if (a) { d.dataset.accent = a; }
 })();
 </script>
-<style>
-  .get { min-height: 100vh; min-height: 100dvh; display: grid; grid-template-rows: 1fr auto; place-items: center; text-align: center; padding: 24px; }
-  .get .mark { margin: 0 auto 26px; }
-  .get h1 { font-size: clamp(30px, 5.5vw, 44px); letter-spacing: -0.02em; line-height: 1.1; margin-bottom: 14px; }
-  .get p { color: var(--dim); font-size: 17px; line-height: 1.55; max-width: 440px; margin: 0 auto 12px; }
-  .get footer { display: flex; justify-content: center; gap: 18px; font-size: 14px; }
-  .get footer a { color: var(--dim); text-decoration: none; }
-  .get footer a:hover { color: var(--accent); }
-</style>
 </head>
 <body>
-<main class="get">
-  <div>
-    <div class="mark" aria-hidden="true"><div class="o"><div class="m"><div class="i"></div></div></div></div>
-    <h1>Under construction.</h1>
-    <p>This site is being rebuilt.</p>
+<a class="skip-link" href="#main">Skip to content</a>
+
+<header class="hdr">
+  <a class="hdr-brand" href="/">
+    <span class="mark mark-sm" aria-hidden="true"><span class="o"><span class="m"><span class="i"></span></span></span></span>
+    QR Tiles
+  </a>
+  <span class="spacer"></span>
+  <div class="hdr-pick">
+    <button class="hdr-dot" aria-label="Change color" aria-expanded="false"><span class="d"></span></button>
+    <div class="hdr-pop">
+      <div class="sw-row sw-sm">
+        <button class="sw" data-c="clay" aria-label="Clay" aria-pressed="false"><span class="sw-o"><span class="sw-m"><span class="sw-i"></span></span></span></button>
+        <button class="sw" data-c="ink" aria-label="Ink" aria-pressed="false"><span class="sw-o"><span class="sw-m"><span class="sw-i"></span></span></span></button>
+        <button class="sw" data-c="ocean" aria-label="Ocean" aria-pressed="false"><span class="sw-o"><span class="sw-m"><span class="sw-i"></span></span></span></button>
+        <button class="sw" data-c="sage" aria-label="Sage" aria-pressed="false"><span class="sw-o"><span class="sw-m"><span class="sw-i"></span></span></span></button>
+        <button class="sw" data-c="honey" aria-label="Honey" aria-pressed="false"><span class="sw-o"><span class="sw-m"><span class="sw-i"></span></span></span></button>
+        <button class="sw" data-c="plum" aria-label="Plum" aria-pressed="false"><span class="sw-o"><span class="sw-m"><span class="sw-i"></span></span></span></button>
+      </div>
+    </div>
   </div>
-  <footer>
-    <a href="/privacy/">Privacy</a>
-    <a href="/terms/">Terms</a>
-  </footer>
+  <a class="hdr-cta" href="/get/">Get the app</a>
+</header>
+
+<main id="main">
+
+<section class="sec hero">
+  <div class="sec-inner duo">
+    <div class="duo-copy">
+      <span class="mark" aria-hidden="true"><span class="o"><span class="m"><span class="i"></span></span></span></span>
+      <h1 class="h-display">Know what's inside without opening it.</h1>
+      <p class="lede">Stick a QR tile on any box, bin or drawer. Photograph what's inside. Later, scan it, search for it, or just ask where you put it.</p>
+      <p class="hero-cta"><a class="cta" href="/get/">Get the app</a><span class="cta-note">Coming soon to the App Store · For iPhone</span></p>
+    </div>
+    <div class="duo-device">
+      <div class="device"><div class="island" aria-hidden="true"></div><div class="screen">
+        <picture><source srcset="/assets/screens/home-dark.jpg" media="(prefers-color-scheme: dark)"><img class="shot" src="/assets/screens/home-light.jpg" alt="The QR Tiles Home screen: recent tiles, counts of tiles and photos, and quick actions." width="600" height="1303"></picture>
+      </div></div>
+    </div>
+  </div>
+</section>
+
+<section class="sec sec-alt" aria-labelledby="scan-h">
+  <div class="sec-inner duo">
+    <div class="duo-device">
+      <div class="device"><div class="island" aria-hidden="true"></div><div class="screen">
+        <picture><source srcset="/assets/screens/tile-dark.jpg" media="(prefers-color-scheme: dark)"><img class="shot" src="/assets/screens/tile-light.jpg" alt="A tile's page: its photos, its labels, and the QR code stuck on the drawer." width="600" height="1303" loading="lazy"></picture>
+      </div></div>
+    </div>
+    <div class="duo-copy">
+      <p class="kicker">Scan</p>
+      <h2 class="h-sec" id="scan-h">Scan a tile. See what's inside.</h2>
+      <p class="lede">Point the camera at a tile and its photos, labels and notes open on the spot. A code it hasn't seen yet can be adopted into a new tile right there.</p>
+      <div class="points">
+        <div class="point"><div><b>Any code can open a tile.</b><p>A tile has its own printed code, and a vendor QR or a label already on the box can open it too once you scan it there.</p></div></div>
+        <div class="point"><div><b>Everything saves itself.</b><p>There is no Save button. Type, and it is kept.</p></div></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="sec" aria-labelledby="photos-h">
+  <div class="sec-inner duo">
+    <div class="duo-copy">
+      <p class="kicker">Photos and labels</p>
+      <h2 class="h-sec" id="photos-h">Photos do the remembering.</h2>
+      <p class="lede">Add photos and videos to a tile. QR Tiles tags what is visible in them, printed words included, so search finds a drawer by what is in it.</p>
+      <div class="points">
+        <div class="point"><div><b>Labels in your own words.</b><p>Add as many as a tile needs. Search matches every one.</p></div></div>
+        <div class="point"><div><b>Filters narrow the view.</b><p>By group, by zone, by media, or by what still needs attention.</p></div></div>
+      </div>
+    </div>
+    <div class="duo-device">
+      <div class="device"><div class="island" aria-hidden="true"></div><div class="screen">
+        <picture><source srcset="/assets/screens/tiles-dark.jpg" media="(prefers-color-scheme: dark)"><img class="shot" src="/assets/screens/tiles-light.jpg" alt="The Tiles page: every tile with its photo, title and labels." width="600" height="1303" loading="lazy"></picture>
+      </div></div>
+    </div>
+  </div>
+</section>
+
+<section class="sec sec-alt" aria-labelledby="ask-h">
+  <div class="sec-inner duo">
+    <div class="duo-device">
+      <div class="device"><div class="island" aria-hidden="true"></div><div class="screen">
+        <picture><source srcset="/assets/screens/ask-dark.jpg" media="(prefers-color-scheme: dark)"><img class="shot" src="/assets/screens/ask-light.jpg" alt="Ask: a question in plain words and the tiles that answer it." width="600" height="1303" loading="lazy"></picture>
+      </div></div>
+    </div>
+    <div class="duo-copy">
+      <p class="kicker">Ask</p>
+      <h2 class="h-sec" id="ask-h">Ask where you put it.</h2>
+      <p class="lede">“Where are the pots?” gets an answer naming the place, not a list of links. Answers come from your tiles, their labels and what their photos show.</p>
+      <div class="points">
+        <div class="point"><div><b>Pick who answers.</b><p>Keyword matching works on every iPhone, and Apple Intelligence picks the best places on iPhones that have it. Pro can also answer through a hosted service; your question and the matching places' names and labels are sent to it to answer.</p></div></div>
+        <div class="point"><div><b>Photos help answer.</b><p>Matching what photos show finds things nobody typed a label for.</p></div></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="sec" aria-labelledby="share-h">
+  <div class="sec-inner duo">
+    <div class="duo-copy">
+      <p class="kicker">Household</p>
+      <h2 class="h-sec" id="share-h">Share a home with the people you live with.</h2>
+      <p class="lede">Invite them by AirDrop, Messages or Mail. Everyone sees the same tiles, and changes reach every phone through iCloud.</p>
+      <div class="points">
+        <div class="point"><div><b>Only the people you invite.</b><p>An invitation admits the person it was sent to. A forwarded link lets nobody else in.</p></div></div>
+        <div class="point"><div><b>The owner subscribes.</b><p>Sharing is part of Plus. The people you invite never pay.</p></div></div>
+      </div>
+    </div>
+    <div class="duo-device">
+      <div class="device"><div class="island" aria-hidden="true"></div><div class="screen">
+        <picture><source srcset="/assets/screens/sharing-dark.jpg" media="(prefers-color-scheme: dark)"><img class="shot" src="/assets/screens/sharing-light.jpg" alt="Sharing a home: what an invited member sees, and the invite button." width="600" height="1303" loading="lazy"></picture>
+      </div></div>
+    </div>
+  </div>
+</section>
+
+<section class="sec sec-alt" aria-labelledby="print-h">
+  <div class="sec-inner duo">
+    <div class="duo-device">
+      <div class="device"><div class="island" aria-hidden="true"></div><div class="screen">
+        <picture><source srcset="/assets/screens/print-dark.jpg" media="(prefers-color-scheme: dark)"><img class="shot" src="/assets/screens/print-light.jpg" alt="A drawer label with its QR code, title and photo, previewed before printing." width="600" height="1303" loading="lazy"></picture>
+      </div></div>
+    </div>
+    <div class="duo-copy">
+      <p class="kicker">Print</p>
+      <h2 class="h-sec" id="print-h">Print your own tiles.</h2>
+      <p class="lede">Print sheets of brand-new QR codes on label stock, 160 to a page, or one bigger label for a single drawer. The preview redraws with every choice.</p>
+      <div class="points">
+        <div class="point"><div><b>Sheets mint new codes.</b><p>They stay blank until scanned. The first scan turns a code into a tile.</p></div></div>
+        <div class="point"><div><b>Reprint the exact sheet.</b><p>A page that jammed comes back with the same codes, not new ones.</p></div></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="sec" aria-labelledby="timeline-h">
+  <div class="sec-inner duo">
+    <div class="duo-copy">
+      <p class="kicker">Timeline</p>
+      <h2 class="h-sec" id="timeline-h">See what changed.</h2>
+      <p class="lede">Every scan, edit, photo and move lands on a timeline, so you can see what changed, when, and on a shared home, who did it.</p>
+      <div class="points">
+        <div class="point"><div><b>Deletes stay gentle.</b><p>A deleted tile waits 30 days in Recently Deleted before it is gone.</p></div></div>
+        <div class="point"><div><b>Your data can always leave.</b><p>Back Up Now builds one zip of your photos, videos and spreadsheet-ready files, and restore fills an empty app from it.</p></div></div>
+      </div>
+    </div>
+    <div class="duo-device">
+      <div class="device"><div class="island" aria-hidden="true"></div><div class="screen">
+        <picture><source srcset="/assets/screens/timeline-dark.jpg" media="(prefers-color-scheme: dark)"><img class="shot" src="/assets/screens/timeline-light.jpg" alt="The Timeline: recent scans, edits and photos, newest first." width="600" height="1303" loading="lazy"></picture>
+      </div></div>
+    </div>
+  </div>
+</section>
+
+<section class="sec sec-alt" aria-labelledby="privacy-h">
+  <div class="sec-inner">
+    <div class="sec-head">
+      <p class="kicker">Privacy</p>
+      <h2 class="h-sec" id="privacy-h">Your things stay yours.</h2>
+      <p class="lede">QR Tiles keeps your inventory on your iPhone and in your own iCloud. There are no accounts and no servers of ours holding your data.</p>
+    </div>
+    <div class="points privacy-points">
+      <div class="point"><div><b>On your phone, in your iCloud.</b><p>Your tiles, photos and labels sync through your private iCloud under your own Apple Account.</p></div></div>
+      <div class="point"><div><b>No sign-up.</b><p>Open the app and start. There is nothing to log into.</p></div></div>
+      <div class="point"><div><b>You decide what leaves.</b><p>Data leaves your phone only when you send it: a backup you share, photos you export to an outside tagging tool, or a question you send to Pro's hosted answers.</p></div></div>
+    </div>
+    <p class="meta privacy-more"><a href="/privacy/">Read the privacy policy</a></p>
+  </div>
+</section>
+
+<section class="sec" aria-labelledby="plans-h">
+  <div class="sec-inner">
+    <div class="sec-head">
+      <p class="kicker">Plans</p>
+      <h2 class="h-sec" id="plans-h">Free to start.</h2>
+    </div>
+    <div class="plans">
+      <div class="plan">
+        <h3 class="h-sub">Basic</h3>
+        <p class="meta">Free</p>
+        <ul>
+          <li>Unlimited tiles, QR codes and printing</li>
+          <li>Photos, videos, scanning and Ask</li>
+          <li>As many sites as you want</li>
+        </ul>
+      </div>
+      <div class="plan">
+        <h3 class="h-sub">Plus</h3>
+        <p class="meta">Subscription</p>
+        <ul>
+          <li>Everything in Basic</li>
+          <li>Household sharing</li>
+        </ul>
+      </div>
+      <div class="plan">
+        <h3 class="h-sub">Pro</h3>
+        <p class="meta">Subscription</p>
+        <ul>
+          <li>Everything in Plus</li>
+          <li>Hosted answers in Ask</li>
+          <li>Lists of tiles for any errand</li>
+        </ul>
+      </div>
+    </div>
+    <p class="meta plans-note">The owner subscribes; the people you invite never pay.</p>
+  </div>
+</section>
+
+<section class="sec sec-alt closing">
+  <div class="sec-inner">
+    <h2 class="h-sec">Coming soon to the App Store.</h2>
+    <p class="lede">QR Tiles is for iPhone.</p>
+    <p class="hero-cta"><a class="cta" href="/get/">Get the app</a></p>
+  </div>
+</section>
+
 </main>
+
+<footer class="foot">
+  <div class="foot-inner">
+    <div class="foot-top">
+      <span class="mark mark-sm" aria-hidden="true"><span class="o"><span class="m"><span class="i"></span></span></span></span>
+      <span class="foot-name">QR Tiles</span>
+      <div class="sw-row sw-sm" role="group" aria-label="Site color">
+        <button class="sw" data-c="clay" aria-label="Clay" aria-pressed="false"><span class="sw-o"><span class="sw-m"><span class="sw-i"></span></span></span></button>
+        <button class="sw" data-c="ink" aria-label="Ink" aria-pressed="false"><span class="sw-o"><span class="sw-m"><span class="sw-i"></span></span></span></button>
+        <button class="sw" data-c="ocean" aria-label="Ocean" aria-pressed="false"><span class="sw-o"><span class="sw-m"><span class="sw-i"></span></span></span></button>
+        <button class="sw" data-c="sage" aria-label="Sage" aria-pressed="false"><span class="sw-o"><span class="sw-m"><span class="sw-i"></span></span></span></button>
+        <button class="sw" data-c="honey" aria-label="Honey" aria-pressed="false"><span class="sw-o"><span class="sw-m"><span class="sw-i"></span></span></span></button>
+        <button class="sw" data-c="plum" aria-label="Plum" aria-pressed="false"><span class="sw-o"><span class="sw-m"><span class="sw-i"></span></span></span></button>
+      </div>
+    </div>
+    <nav class="foot-links" aria-label="Site">
+      <a href="/help/">Help</a>
+      <a href="/privacy/">Privacy</a>
+      <a href="/terms/">Terms</a>
+      <a href="/support/">Support</a>
+    </nav>
+    <p class="foot-fine">© 2026 New Stuff · For iPhone</p>
+  </div>
+</footer>
+
+<script src="/assets/site.js"></script>
 </body>
 </html>
