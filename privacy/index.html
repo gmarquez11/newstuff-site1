@@ -50,7 +50,7 @@
 
 <main id="main" class="prose">
   <h1>Privacy</h1>
-  <p class="prose-date">The QR Tiles privacy policy · Last updated August 9, 2026</p>
+  <p class="prose-date">The QR Tiles privacy policy · Last updated October 6, 2026</p>
 
   <p>QR Tiles is built local-first, and this policy is short because the app simply does not collect much.</p>
 
@@ -62,18 +62,27 @@
 
   <h2>What we don't do</h2>
   <ul>
-    <li>No analytics, no tracking, no advertising, no third-party SDKs.</li>
+    <li>No analytics, no tracking, no advertising. The one third-party component is Anthropic's package for Claude, which sends nothing unless you choose Claude in Pro (see below).</li>
     <li>No selling, sharing, or monetizing of your data in any form.</li>
-    <li>Photos and videos you add never leave your device and your iCloud.</li>
+    <li>Photos and videos you add stay on your device and in your iCloud. They leave only when you send them: a backup you share, an export to an outside tool, or, if you turn on photo reading with Claude in Pro, each photo you add.</li>
   </ul>
 
   <h2>On-device intelligence</h2>
   <ul>
     <li>The camera is used only to scan QR codes and capture photos you choose to add. Processing happens on-device.</li>
     <li>Text recognition on photos (to make them searchable) runs entirely on-device using Apple's Vision framework.</li>
-    <li>The Ask feature uses Apple's on-device intelligence where available; your questions and inventory are not sent to us or to any third-party service.</li>
+    <li>Ask answers with Apple Intelligence on your device by default. Your questions and inventory are not sent to us, and nothing goes to a third party unless you choose Claude in Pro (below).</li>
     <li>Spotlight search integration uses the system's on-device index.</li>
   </ul>
+
+  <h2>Claude in Pro (optional)</h2>
+  <p>Pro subscribers can choose Claude, made by Anthropic, to answer instead of Apple Intelligence. Claude works through Apple's Foundation Models framework. Apple Intelligence stays the default, and nothing is sent to Anthropic until you choose Claude. Each feature that uses it is opt-in:</p>
+  <ul>
+    <li><strong>Answers.</strong> Once you choose Claude in Settings → Ask, each question you ask, in the app, on Apple Watch or through Siri, is sent with the names, rooms and labels of the places that match it. Notes, codes, photos and videos are not sent.</li>
+    <li><strong>Proposed lists.</strong> With Claude chosen, asking for a proposed list sends your request with the names, rooms and labels of the tiles in the site you are in, up to 500 of them.</li>
+    <li><strong>Photo reading.</strong> A separate switch, off until you turn it on, sends each photo you add, reduced in size, with its tile's labels, so Claude can read the words and things in it. Videos are never sent.</li>
+  </ul>
+  <p>These requests go straight from your iPhone to Anthropic and never pass through us. When you choose Claude, Apple's App Attest service confirms to Anthropic that requests come from the genuine app. Anthropic handles what it receives under its own <a href="https://www.anthropic.com/legal/privacy">privacy policy</a>. Choosing Apple Intelligence again, or turning photo reading off, stops anything further from being sent.</p>
 
   <h2>Household sharing (subscription feature)</h2>
   <p>Sharing your inventory with family members uses Apple's iCloud sharing (CloudKit). Shared data moves between participants through Apple's infrastructure under the owner's iCloud account — not through us.</p>
