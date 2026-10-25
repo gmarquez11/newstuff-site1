@@ -14,7 +14,25 @@
     try { localStorage.setItem(KEY, name); } catch (e) { /* private mode: session-only */ }
   }
 
-  /* Apply an accent everywhere: <html data-accent> + every swatch's pressed state. */
+  /* The screens follow the accent: clay's pictures sit at /assets/screens/<file>, every other
+     accent's in /assets/screens/<accent>/<file>, so one rule maps any picture path to any accent. */
+  function screenPath(name, path) {
+    var m = path.match(/^(.*\/assets\/screens\/)(?:(?:clay|ink|ocean|sage|honey|plum)\/)?([^\/]+)$/);
+    if (!m) return path;
+    return m[1] + (name === "clay" ? "" : name + "/") + m[2];
+  }
+  function swapScreens(name) {
+    var parts = document.querySelectorAll("picture img.shot, picture source");
+    for (var i = 0; i < parts.length; i++) {
+      var attr = parts[i].tagName === "SOURCE" ? "srcset" : "src";
+      var now = parts[i].getAttribute(attr);
+      if (!now) continue;
+      var next = screenPath(name, now);
+      if (next !== now) parts[i].setAttribute(attr, next);
+    }
+  }
+
+  /* Apply an accent everywhere: <html data-accent>, every swatch's pressed state, every screen. */
   function applyAccent(name, animate) {
     if (ACCENTS.indexOf(name) === -1) name = "clay";
     if (animate && !reduceMotion.matches) {
@@ -27,6 +45,7 @@
     for (var i = 0; i < sws.length; i++) {
       sws[i].setAttribute("aria-pressed", sws[i].dataset.c === name ? "true" : "false");
     }
+    swapScreens(name);
   }
 
   function wireSwatches() {
@@ -65,6 +84,7 @@
 
   applyAccent(stored() || "clay", false);
   document.addEventListener("DOMContentLoaded", function () {
+    swapScreens(doc.dataset.accent);
     wireSwatches();
     wireHeader();
   });
