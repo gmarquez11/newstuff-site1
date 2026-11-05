@@ -78,11 +78,6 @@
   function wireHeader() {
     var hdr = document.querySelector(".hdr");
     if (!hdr) return;
-    var toggle = function () {
-      hdr.classList.toggle("on", window.scrollY > Math.min(window.innerHeight * 0.55, 480));
-    };
-    window.addEventListener("scroll", toggle, { passive: true });
-    toggle();
     var pick = hdr.querySelector(".hdr-pick");
     if (!pick) return;
     var btn = pick.querySelector(".hdr-dot");

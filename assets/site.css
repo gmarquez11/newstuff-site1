@@ -136,18 +136,15 @@ html.re-theme body *:not(.qr i) { transition: background-color 0.4s ease, color 
 /* ---------- header ---------- */
 
 .hdr {
-  position: fixed; top: 0; left: 0; right: 0; z-index: 60;
+  z-index: 60;
   display: flex; align-items: center; gap: 14px;
   padding: 10px clamp(16px, 3vw, 28px);
   background: color-mix(in srgb, var(--paper) 82%, transparent);
   -webkit-backdrop-filter: saturate(1.4) blur(14px); backdrop-filter: saturate(1.4) blur(14px);
   border-bottom: 1px solid color-mix(in srgb, var(--rule) 70%, transparent);
-  opacity: 0; transform: translateY(-100%); visibility: hidden;
-  transition: opacity 0.35s ease, transform 0.35s ease, visibility 0.35s;
 }
-.hdr.on { opacity: 1; transform: none; visibility: visible; }
-/* subpages pin the header permanently */
-.hdr.hdr-static { position: sticky; opacity: 1 !important; transform: none !important; visibility: visible !important; }
+/* every page pins the header from its first frame */
+.hdr.hdr-static { position: sticky; top: 0; left: 0; right: 0; }
 .hdr .hdr-brand { display: flex; align-items: center; gap: 10px; text-decoration: none; color: var(--ink); font-weight: 650; font-size: 16px; }
 .hdr .spacer { flex: 1; }
 .hdr-cta {
