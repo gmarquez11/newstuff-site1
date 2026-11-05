@@ -14,9 +14,15 @@
 <link rel="stylesheet" href="/assets/site.css">
 <script>
 (function () {
-  var d = document.documentElement, a = null;
-  try { a = localStorage.getItem("qrt-accent"); } catch (e) {}
+  var d = document.documentElement, s = null, a = null, l = null;
+  try { s = localStorage; a = s.getItem("qrt-accent"); l = s.getItem("qrt-lang"); } catch (e) { s = null; }
   if (a) { d.dataset.accent = a; }
+  if (!s || l === "en") return;
+  var n = navigator, f = (n.languages && n.languages[0]) || n.language || "";
+  if (l !== "es" && !/^es(?:[-_]|$)/i.test(f)) return;
+  try { s.setItem("qrt-lang-probe", "1"); s.removeItem("qrt-lang-probe"); } catch (e) { return; }
+  var t = document.querySelector('link[rel="alternate"][hreflang="es"]');
+  if (t && t.href) location.replace(t.href.replace(/^[a-z]+:\/\/[^\/]+/i, "") + location.search + location.hash);
 })();
 </script>
 </head>
