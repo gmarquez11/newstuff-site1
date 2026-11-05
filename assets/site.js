@@ -83,7 +83,7 @@
     });
   }
 
-  /* Any link marked data-lang (the header's language link, a legal page's link to its English text):
+  /* Any link marked data-lang (the footer's language link, a legal page's link to its English text):
      following it remembers that language the way the accent is remembered, and every English page's
      head script reads the choice before it sends anyone to Spanish. */
   function wireLanguage() {
