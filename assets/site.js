@@ -1,9 +1,10 @@
-/* QR Tiles — newstuff.app shared behavior: the visitor's accent and the header's color picker. */
+/* QR Tiles — newstuff.app shared behavior: the visitor's accent, the header's color picker and its language link. */
 (function () {
   "use strict";
 
   var doc = document.documentElement;
   var KEY = "qrt-accent";
+  var LANG = "qrt-lang";
   var ACCENTS = ["clay", "ink", "ocean", "sage", "honey", "plum"];
   var reduceMotion = window.matchMedia("(prefers-reduced-motion: reduce)");
 
@@ -13,13 +14,17 @@
   function store(name) {
     try { localStorage.setItem(KEY, name); } catch (e) { /* private mode: session-only */ }
   }
+  function storeLang(code) {
+    try { localStorage.setItem(LANG, code); } catch (e) { /* storage refused: the head script's probe fails too, so no page redirects */ }
+  }
 
   /* The screens follow the accent: clay's pictures sit at /assets/screens/<file>, every other
-     accent's in /assets/screens/<accent>/<file>, so one rule maps any picture path to any accent. */
+     accent's in /assets/screens/<accent>/<file>, and a Spanish page's under /assets/screens/es/ the
+     same way, so one rule maps any picture path to any accent and keeps its language. */
   function screenPath(name, path) {
-    var m = path.match(/^(.*\/assets\/screens\/)(?:(?:clay|ink|ocean|sage|honey|plum)\/)?([^\/]+)$/);
+    var m = path.match(/^(.*\/assets\/screens\/)(es\/)?(?:(?:clay|ink|ocean|sage|honey|plum)\/)?([^\/]+)$/);
     if (!m) return path;
-    return m[1] + (name === "clay" ? "" : name + "/") + m[2];
+    return m[1] + (m[2] || "") + (name === "clay" ? "" : name + "/") + m[3];
   }
   function swapScreens(name) {
     var parts = document.querySelectorAll("picture img.shot, picture source");
@@ -57,6 +62,18 @@
     });
   }
 
+  /* Any link marked data-lang (the header's language link, a legal page's link to its English text):
+     following it remembers that language the way the accent is remembered, and every English page's
+     head script reads the choice before it sends anyone to Spanish. */
+  function wireLanguage() {
+    var remember = function (ev) {
+      var a = ev.target.closest ? ev.target.closest("a[data-lang]") : null;
+      if (a) storeLang(a.dataset.lang);
+    };
+    document.addEventListener("click", remember);
+    document.addEventListener("auxclick", function (ev) { if (ev.button === 1) remember(ev); });
+  }
+
   /* The header's discreet color picker. */
   function wireHeader() {
     var hdr = document.querySelector(".hdr");
@@ -87,5 +104,6 @@
     swapScreens(doc.dataset.accent);
     wireSwatches();
     wireHeader();
+    wireLanguage();
   });
 })();

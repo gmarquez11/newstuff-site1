@@ -1,0 +1,133 @@
+<!doctype html>
+<html lang="es" data-accent="clay">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Privacidad — QR Tiles</title>
+<meta name="description" content="Cómo maneja QR Tiles tus datos: en tu dispositivo y en tu propio iCloud — nada en nuestros servidores.">
+<link rel="alternate" hreflang="en" href="https://newstuff.app/privacy/">
+<link rel="alternate" hreflang="es" href="https://newstuff.app/es/privacy/">
+<link rel="alternate" hreflang="x-default" href="https://newstuff.app/privacy/">
+<link rel="icon" href="/favicon.png" type="image/png" sizes="64x64">
+<link rel="apple-touch-icon" href="/apple-touch-icon.png">
+<link rel="stylesheet" href="/assets/tokens.css">
+<link rel="stylesheet" href="/assets/site.css">
+<script>
+(function () {
+  var d = document.documentElement, a = null;
+  try { a = localStorage.getItem("qrt-accent"); } catch (e) {}
+  if (a) { d.dataset.accent = a; }
+})();
+</script>
+</head>
+<body>
+<a class="skip-link" href="#main">Saltar al contenido</a>
+
+<style>
+.hdr-static { position: sticky; opacity: 1; transform: none; }
+</style>
+<header class="hdr on hdr-static">
+  <a class="hdr-brand" href="/es/">
+    <picture class="mark-pic" aria-hidden="true"><source srcset="/assets/app-icon-dark.png" media="(prefers-color-scheme: dark)"><img class="mark mark-sm" src="/assets/app-icon.png" alt="" width="34" height="34"></picture>
+    QR Tiles
+  </a>
+  <span class="spacer"></span>
+  <a class="hdr-lang" href="/privacy/" lang="en" hreflang="en" data-lang="en">English</a>
+  <div class="hdr-pick">
+    <button class="hdr-dot" aria-label="Cambiar color" aria-expanded="false"><span class="d"></span></button>
+    <div class="hdr-pop">
+      <div class="sw-row sw-sm">
+        <button class="sw" data-c="clay" aria-label="Arcilla" aria-pressed="false"><span class="sw-o"><span class="sw-m"><span class="sw-i"></span></span></span></button>
+        <button class="sw" data-c="ink" aria-label="Tinta" aria-pressed="false"><span class="sw-o"><span class="sw-m"><span class="sw-i"></span></span></span></button>
+        <button class="sw" data-c="ocean" aria-label="Océano" aria-pressed="false"><span class="sw-o"><span class="sw-m"><span class="sw-i"></span></span></span></button>
+        <button class="sw" data-c="sage" aria-label="Salvia" aria-pressed="false"><span class="sw-o"><span class="sw-m"><span class="sw-i"></span></span></span></button>
+        <button class="sw" data-c="honey" aria-label="Miel" aria-pressed="false"><span class="sw-o"><span class="sw-m"><span class="sw-i"></span></span></span></button>
+        <button class="sw" data-c="plum" aria-label="Ciruela" aria-pressed="false"><span class="sw-o"><span class="sw-m"><span class="sw-i"></span></span></span></button>
+      </div>
+    </div>
+  </div>
+  <a class="hdr-cta" href="/es/get/">
+    <svg class="ic ic-fill" viewBox="0 0 24 24" aria-hidden="true"><path d="M17.05 20.28c-.98.95-2.05.8-3.08.35-1.09-.46-2.09-.48-3.24 0-1.44.62-2.2.44-3.06-.35C2.79 15.25 3.51 7.59 9.05 7.31c1.35.07 2.29.74 3.08.8.79.05 2.28-.86 3.85-.73 1.31.11 2.5.62 3.28 1.72-3.24 1.94-2.71 6.21.79 7.66-.63 1.61-1.44 3.2-3 3.52zM12.03 7.25c-.15-2.23 1.66-4.07 3.74-4.25.29 2.58-2.34 4.5-3.74 4.25z"/></svg>
+    Obtén la app
+  </a>
+</header>
+
+<main id="main" class="prose">
+  <h1>Privacidad</h1>
+  <p class="prose-date">La política de privacidad de QR Tiles · Última actualización: 25 de octubre de 2026</p>
+
+  <p>Esta política es una traducción: donde difiera de la <a href="/privacy/" hreflang="en" data-lang="en">versión en inglés</a>, prevalece la versión en inglés.</p>
+
+  <p>QR Tiles está diseñada para funcionar de forma local primero, y esta política es breve porque la app simplemente no recopila mucho.</p>
+
+  <h2>Qué guardamos y dónde</h2>
+  <ul>
+    <li><strong>Tu inventario</strong> — fichas, etiquetas, grupos, zonas, fotos y videos — se guarda <strong>en tu dispositivo</strong>. Si iniciaste sesión en iCloud, se sincroniza con <strong>tu base de datos privada de iCloud</strong> con tu propio ID de Apple. Nosotros (el desarrollador) no podemos leer, acceder ni recuperar esos datos; pertenecen a tu cuenta de Apple.</li>
+    <li><strong>No se guarda nada en nuestros servidores.</strong> QR Tiles no tiene cuentas de usuario, ni inicio de sesión, ni una base de datos de tu contenido operada por el desarrollador.</li>
+  </ul>
+
+  <h2>Lo que no hacemos</h2>
+  <ul>
+    <li>Sin análisis, sin rastreo, sin publicidad, y ningún servicio de terceros recibe tus datos.</li>
+    <li>Sin vender, compartir ni monetizar tus datos de ninguna forma.</li>
+    <li>Las fotos y los videos que agregas se quedan en tu dispositivo y en tu iCloud. Solo salen cuando tú los envías: una copia de seguridad que compartes o una exportación a una herramienta externa.</li>
+  </ul>
+
+  <h2>Inteligencia en el dispositivo</h2>
+  <ul>
+    <li>La cámara se usa solo para escanear códigos QR y tomar las fotos que decides agregar. El procesamiento ocurre en el dispositivo.</li>
+    <li>El reconocimiento de texto en las fotos (para que se puedan buscar) se ejecuta por completo en el dispositivo con el framework Vision de Apple.</li>
+    <li>Preguntar responde con Apple Intelligence en tu dispositivo. Tus preguntas y tu inventario no se envían a nosotros ni a nadie.</li>
+    <li>La integración con la búsqueda de Spotlight usa el índice del sistema en el dispositivo.</li>
+  </ul>
+
+  <h2>Compartir el hogar (función de suscripción)</h2>
+  <p>Compartir tu inventario con familiares usa la función para compartir de iCloud de Apple (CloudKit). Los datos compartidos viajan entre los participantes a través de la infraestructura de Apple, con la cuenta de iCloud del propietario — no a través de nosotros.</p>
+  <p>Una persona que invitas ve todo el hogar: cada ficha, foto, video, etiqueta y nota, incluido lo que se agregue después, y la Cronología muestra quién cambió qué. Tú eliges si un miembro puede editar o solo ver, y puedes quitar a un miembro en cualquier momento desde el Administrador del sitio; a partir de entonces, los registros compartidos dejan de sincronizarse con sus dispositivos. Compartir requiere una suscripción a Plus, y si caduca, los miembros dejan de ver el hogar hasta que se renueve o se quiten los usos compartidos.</p>
+
+  <h2>Compras</h2>
+  <p>Apple procesa las suscripciones. Nunca vemos tus datos de pago. Consulta la política de privacidad de Apple para las transacciones del App Store.</p>
+
+  <h2>Funciones futuras</h2>
+  <p>Si lanzamos funciones opcionales que impliquen subir contenido seleccionado a un servicio alojado (por ejemplo, ver una ficha en un navegador web mediante un código para compartir), esta política se actualizará <strong>antes</strong> de que esa función se lance, y esa subida siempre será explícita y solo ocurrirá si tú la activas.</p>
+
+  <h2>Eliminar tus datos</h2>
+  <p>Elimina la app para borrar los datos locales. Los datos sincronizados con tu iCloud se pueden eliminar en Configuración → tu cuenta de Apple → iCloud → Administrar almacenamiento de la cuenta, o desde la app. Como no guardamos nada, no hay nada que eliminar de nuestro lado.</p>
+
+  <h2>Niños</h2>
+  <p>QR Tiles es una herramienta para el hogar y no recopila a sabiendas información personal de nadie, incluidos los niños.</p>
+
+  <h2>Cambios</h2>
+  <p>Los cambios importantes a esta política se indicarán en las notas de la versión de la app y se reflejarán en esta página con una fecha actualizada.</p>
+
+  <h2>Contacto</h2>
+  <p>¿Preguntas sobre privacidad? Empieza en <a href="/es/support/">Soporte</a>.</p>
+</main>
+
+<footer class="foot">
+  <div class="foot-inner">
+    <div class="foot-top">
+      <picture class="mark-pic" aria-hidden="true"><source srcset="/assets/app-icon-dark.png" media="(prefers-color-scheme: dark)"><img class="mark mark-sm" src="/assets/app-icon.png" alt="" width="34" height="34"></picture>
+      <span class="foot-name">QR Tiles</span>
+      <div class="sw-row sw-sm" role="group" aria-label="Color del sitio">
+        <button class="sw" data-c="clay" aria-label="Arcilla" aria-pressed="false"><span class="sw-o"><span class="sw-m"><span class="sw-i"></span></span></span></button>
+        <button class="sw" data-c="ink" aria-label="Tinta" aria-pressed="false"><span class="sw-o"><span class="sw-m"><span class="sw-i"></span></span></span></button>
+        <button class="sw" data-c="ocean" aria-label="Océano" aria-pressed="false"><span class="sw-o"><span class="sw-m"><span class="sw-i"></span></span></span></button>
+        <button class="sw" data-c="sage" aria-label="Salvia" aria-pressed="false"><span class="sw-o"><span class="sw-m"><span class="sw-i"></span></span></span></button>
+        <button class="sw" data-c="honey" aria-label="Miel" aria-pressed="false"><span class="sw-o"><span class="sw-m"><span class="sw-i"></span></span></span></button>
+        <button class="sw" data-c="plum" aria-label="Ciruela" aria-pressed="false"><span class="sw-o"><span class="sw-m"><span class="sw-i"></span></span></span></button>
+      </div>
+    </div>
+    <nav class="foot-links" aria-label="Sitio">
+      <a href="/es/help/">Ayuda</a>
+      <a href="/es/privacy/">Privacidad</a>
+      <a href="/es/terms/">Términos</a>
+      <a href="/es/support/">Soporte</a>
+    </nav>
+    <p class="foot-fine">© 2026 New Stuff · Para iPhone</p>
+  </div>
+</footer>
+
+<script src="/assets/site.js"></script>
+</body>
+</html>

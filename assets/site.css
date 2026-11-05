@@ -156,6 +156,12 @@ html.re-theme body *:not(.qr i) { transition: background-color 0.4s ease, color 
   font-size: 14px; font-weight: 600; padding: 8px 16px; border-radius: 999px; text-decoration: none;
 }
 .hdr-cta .ic { width: 14px; height: 14px; }
+/* the link to this page in the other language */
+.hdr-lang { font-size: 14px; font-weight: 600; color: var(--dim); text-decoration: none; white-space: nowrap; }
+.hdr-lang:hover { color: var(--ink); }
+/* phones: the header carries brand, language link, dot and pill on one line */
+@media (max-width: 440px) { .hdr { gap: 10px; } .hdr-cta { padding: 8px 12px; } }
+@media (max-width: 380px) { .hdr .hdr-brand { font-size: 0; gap: 0; } }
 
 /* discreet color edit: a dot that expands into the row */
 .hdr-pick { position: relative; }
