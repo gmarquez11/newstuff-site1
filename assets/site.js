@@ -1,4 +1,4 @@
-/* QR Tiles — newstuff.app shared behavior: the visitor's accent, the header's color picker and its language link. */
+/* QR Tiles — newstuff.app shared behavior: the visitor's accent, which the screens and the app icons follow, the header's color picker and its language link. */
 (function () {
   "use strict";
 
@@ -37,7 +37,27 @@
     }
   }
 
-  /* Apply an accent everywhere: <html data-accent>, every swatch's pressed state, every screen. */
+  /* The marks and the tab's icons follow the accent the same way: clay's are the defaults at
+     /assets/app-icon.png, /assets/app-icon-dark.png, /favicon.png and /apple-touch-icon.png, every
+     other accent's sit in /assets/icons/<accent>/ under the same names. Each swatch keeps its own icon. */
+  function iconPath(name, path) {
+    var m = path.match(/^(.*?)\/(?:assets\/icons\/(?:clay|ink|ocean|sage|honey|plum)\/|assets\/)?(app-icon(?:-dark)?\.png|favicon\.png|apple-touch-icon\.png)$/);
+    if (!m) return path;
+    if (name !== "clay") return m[1] + "/assets/icons/" + name + "/" + m[2];
+    return m[1] + (m[2].indexOf("app-icon") === 0 ? "/assets/" : "/") + m[2];
+  }
+  function swapIcons(name) {
+    var parts = document.querySelectorAll("picture.mark-pic img, picture.mark-pic source, link[rel='icon'], link[rel='apple-touch-icon']");
+    for (var i = 0; i < parts.length; i++) {
+      var attr = parts[i].tagName === "SOURCE" ? "srcset" : parts[i].tagName === "LINK" ? "href" : "src";
+      var now = parts[i].getAttribute(attr);
+      if (!now) continue;
+      var next = iconPath(name, now);
+      if (next !== now) parts[i].setAttribute(attr, next);
+    }
+  }
+
+  /* Apply an accent everywhere: <html data-accent>, every swatch's pressed state, every screen, every mark and the tab's icons. */
   function applyAccent(name, animate) {
     if (ACCENTS.indexOf(name) === -1) name = "clay";
     if (animate && !reduceMotion.matches) {
@@ -51,6 +71,7 @@
       sws[i].setAttribute("aria-pressed", sws[i].dataset.c === name ? "true" : "false");
     }
     swapScreens(name);
+    swapIcons(name);
   }
 
   function wireSwatches() {
@@ -97,6 +118,7 @@
   applyAccent(stored() || "clay", false);
   document.addEventListener("DOMContentLoaded", function () {
     swapScreens(doc.dataset.accent);
+    swapIcons(doc.dataset.accent);
     wireSwatches();
     wireHeader();
     wireLanguage();

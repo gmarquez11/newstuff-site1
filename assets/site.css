@@ -109,19 +109,14 @@ html.re-theme body *:not(.qr i) { transition: background-color 0.4s ease, color 
 }
 .sw:hover { transform: translateY(-2px); }
 .sw:active { transform: scale(0.94); }
-.sw .sw-o { width: 22.5px; height: 22.5px; background: var(--sw); display: grid; place-items: center; }
-.sw .sw-m { width: 13.75px; height: 13.75px; background: var(--paper); display: grid; place-items: center; }
-.sw .sw-i { width: 6.25px; height: 6.25px; background: var(--sw); }
+/* each swatch shows its own accent's app icon */
+.sw .sw-pic { display: block; width: 30px; line-height: 0; }
+.sw .sw-pic img { width: 100%; height: auto; }
 .sw[aria-pressed="true"] { border: 2px solid var(--sw); box-shadow: 0 0 0 3px color-mix(in srgb, var(--sw) 18%, transparent); }
 .sw-row { display: flex; gap: 12px; }
 .sw-lg .sw { width: 56px; height: 56px; border-radius: 13px; }
-.sw-lg .sw .sw-o { width: 31.5px; height: 31.5px; }
-.sw-lg .sw .sw-m { width: 19.25px; height: 19.25px; }
-.sw-lg .sw .sw-i { width: 8.75px; height: 8.75px; }
 .sw-sm .sw { width: 30px; height: 30px; border-radius: 7px; }
-.sw-sm .sw .sw-o { width: 17px; height: 17px; }
-.sw-sm .sw .sw-m { width: 10.4px; height: 10.4px; }
-.sw-sm .sw .sw-i { width: 4.7px; height: 4.7px; }
+.sw-sm .sw .sw-pic { width: 22px; }
 
 /* ---------- skip link ---------- */
 
