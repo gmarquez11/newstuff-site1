@@ -226,11 +226,11 @@
           <dt>A code that's on a tile</dt>
           <dd>Opens the tile. <a href="#scan-settings">Scan Redirect</a> decides where you land on its page.</dd>
           <dt>A tile in Recently Deleted</dt>
-          <dd>Comes back and opens: <b>This tile was in Recently Deleted. Opening it restored it.</b></dd>
+          <dd>Comes back and opens: <b>This tile was in Recently Deleted. Opening it restored it.</b> For a tile deleted a day or more ago, the note says how many days ago instead.</dd>
           <dt>A code from another of your sites</dt>
-          <dd>QR Tiles tells you it belongs elsewhere (<b>That QR code belongs to another home</b>) and offers to switch to that site.</dd>
+          <dd>QR Tiles tells you it's elsewhere (<b>That QR code is in another home</b>) and offers <b>Switch to “…”</b>. A blank label printed in another site reads <b>That QR code belongs to another home</b>: QR Tiles switches over and starts its tile there.</dd>
           <dt>A code in more than one of your sites</dt>
-          <dd>This usually follows a restore. <b>That code is in more than one home</b> lets you choose which one to open.</dd>
+          <dd>This usually follows a restore. If one copy is in the site you're in, that one opens. Otherwise <b>That code is in more than one home</b> lets you choose which one to open.</dd>
           <dt>A retired code</dt>
           <dd><b>That label was retired — it no longer stands for anything.</b> See <a href="#codes">Reprint, retire or move a code</a>.</dd>
           <dt>A QR Tiles code none of your sites printed</dt>
@@ -244,7 +244,7 @@
           <p class="help-label">Good to know</p>
           <ul>
             <li>QR Tiles reads QR codes, not bar codes.</li>
-            <li>Scanning needs the camera. If you see <b>Camera needed</b>, allow the camera for QR Tiles in the iPhone Settings app.</li>
+            <li>Scanning needs the camera. If you see <b>Camera couldn't start</b>, tap <b>Open Settings</b> and allow the camera for QR Tiles. <b>Camera needed</b> means this iPhone can't scan live; type the code instead.</li>
             <li>QR Tiles codes have six letters and numbers and never use the letters I, L, O or U. When you type a code, I and L are read as 1, and O as 0.</li>
             <li>Only QR Tiles codes can be typed. Custom codes have to be scanned.</li>
             <li>If you see <b>Couldn't check that code just now — try the scan again.</b>, wait a moment and scan again.</li>
@@ -273,19 +273,19 @@
         <ol class="help-steps">
           <li>On the <b>Scan</b> tab, switch to <b>CAPTURE</b> and take the photo.</li>
           <li>The scanner shows <b>Photo attaches to the next scan</b>.</li>
-          <li>Scan the container's code. The photo is added to that tile, and you see <b>Photo added to “…”.</b></li>
+          <li>Scan the container's code. The photo is added to that tile, and the tile opens.</li>
         </ol>
         <ul>
           <li>Changed your mind? Tap <b>Drop the photo</b>.</li>
           <li>If you leave the scanner while a photo is waiting, QR Tiles asks <b>Discard the waiting photo?</b> Choose <b>Discard</b> or <b>Keep scanning</b>.</li>
-          <li>If the next scan can't take the photo — a retired code, for example — the photo is let go and the message says so.</li>
+          <li>If the next scan can't take the photo — a retired code, for example — the photo keeps waiting for the scan after it. A code with nothing readable in it lets the photo go, and the message says so.</li>
         </ul>
         <p class="help-top"><a href="#contents">Back to contents</a></p>
       </section>
 
       <section class="help-sec" aria-labelledby="tile">
         <h2 id="tile">Fill in a tile</h2>
-        <p>A tile's page shows its photos and videos at the top, then its title, its group and its labels. In a shared site where you can only view, these controls are turned off.</p>
+        <p>A tile's page shows its title and its group at the top, then its labels, then its photos and videos. In a shared site where you can only view, these controls are turned off.</p>
         <dl class="help-dl">
           <dt>Title</dt>
           <dd>Tap it to type; it's saved when you leave the field. If you see <b>✱ another tile has this title</b>, that's allowed, but different titles make search and Ask answers clearer.</dd>
@@ -301,7 +301,7 @@
           <li>After you change or delete a label, <b>Undo</b> appears for a few seconds.</li>
         </ul>
         <h3 id="draft-labels">Draft labels</h3>
-        <p>Labels suggested by an outside tool (see <a href="#retag">Retag photos with an outside tool</a>) arrive as drafts. They don't count as your labels until you accept them: use <b>Accept label</b> to keep one or <b>Delete label</b> to drop it. To find every tile with drafts, use the <b>Draft labels</b> filter under <b>Needs attention</b>.</p>
+        <p>Labels suggested by an outside tool (see <a href="#retag">Retag photos with an outside tool</a>) arrive as drafts. Search, Ask and printing use them right away, and they stay marked as drafts until you accept them: use <b>Accept label</b> to keep one or <b>Delete label</b> to drop it. To find every tile with drafts, use the <b>Draft labels</b> filter under <b>Needs attention</b>.</p>
         <p>If a change can't be saved, QR Tiles tells you: <b>Couldn't save that change — try again.</b></p>
         <p class="help-top"><a href="#contents">Back to contents</a></p>
       </section>
@@ -317,7 +317,7 @@
         <h3 id="media-tags">Media tags</h3>
         <p>On your iPhone, QR Tiles tags each photo with what it sees and reads any printed words in it. Search and Ask use these tags and words even when they're hidden.</p>
         <ul>
-          <li>To see them under each photo and in List rows, turn on <b>Show media tags</b> in <b>Settings</b> → <b>Tiles display</b>, or tap <b>More</b> (•••) → <b>Show Media Tags</b> on a tile.</li>
+          <li>To see them in List rows, turn on <b>Show media tags</b> in <b>Settings</b> → <b>Tiles display</b>. To see them under each photo on a tile's page, tap <b>More</b> (•••) → <b>Show Media Tags</b> there.</li>
           <li>To fix them, choose <b>Edit Media Tags</b> and edit <b>Tags, one per line</b> and <b>Text in the photo</b>.</li>
           <li>If photo matches make Ask guess too much, turn off <b>Match photo tags &amp; text</b> in <a href="#ask-settings">Ask settings</a>.</li>
         </ul>
@@ -327,7 +327,7 @@
 
       <section class="help-sec" aria-labelledby="find">
         <h2 id="find">Search and filter</h2>
-        <p>The <b>Search</b> tab lists every tile in the site you're in. Choose how to see them: <b>Photo</b>, <b>List</b>, <b>Labels</b> (each label with the tile it's on) or <b>Ask</b>.</p>
+        <p>The <b>Search</b> tab shows the tiles in the site you're in. Choose how to see them: <b>Photo</b> (the tiles that have a photo or video), <b>List</b> (every tile), <b>Labels</b> (each label with the tile it's on) or <b>Ask</b>.</p>
         <h3 id="search">Search</h3>
         <ul>
           <li>Type in the <b>Search tiles, labels, codes…</b> field. QR Tiles looks in titles, labels, codes, group and zone names, and the tags and words found in photos.</li>
@@ -392,7 +392,7 @@
             <ul>
               <li><b>Print</b> prints a tile label for each one, using your last <a href="#print-label">Print Label</a> choices.</li>
               <li><b>Move</b> puts them all in one group. Zones are reached through groups, so you pick a group.</li>
-              <li><b>Add to List</b> adds them to a list you pick; tap <b>Save to List</b>.</li>
+              <li><b>Add to List</b> adds them to the list you tap.</li>
               <li><b>Delete</b> asks first, then moves them to Recently Deleted. <b>Undo</b> appears for a few seconds.</li>
             </ul>
           </li>
@@ -471,7 +471,7 @@
 
       <section class="help-sec" aria-labelledby="codes">
         <h2 id="codes">Reprint, retire or move a code</h2>
-        <p>Each tile has one QR Tiles code, and every code belongs to the batch it was printed in. To manage a code, open <b>Home</b> → <b>QR Code Batches</b> and tap its batch. Codes are listed under <b>Claimed</b> (on a tile — tap one to open the tile), <b>Blank</b> and <b>Retired</b>. Touch and hold a code for:</p>
+        <p>A tile has at most one QR Tiles code, and every code belongs to a batch: the one it was printed in, or the one it was adopted into. To manage a code, open <b>Home</b> → <b>QR Code Batches</b> and tap its batch. Codes are listed under <b>Claimed</b> (on a tile — tap one to open the tile), <b>Blank</b> and <b>Retired</b>. Touch and hold a code for:</p>
         <dl class="help-dl">
           <dt>Reprint</dt>
           <dd>Prints that same code again, for a damaged label. Nothing about the tile changes.</dd>
@@ -512,7 +512,7 @@
         <p>You may scan a QR Tiles code that none of your sites printed — for example, labels printed on another iPhone, or a sheet someone gave you.</p>
         <ol class="help-steps">
           <li>Scan it. QR Tiles says <b>That code isn't recognized</b>.</li>
-          <li>Tap <b>Add to “…”</b> to add it to the site you're in.</li>
+          <li>Tap <b>Add to this home</b> (with more than one site, <b>Add to “…”</b>) to add it to the site you're in.</li>
         </ol>
         <p class="help-result"><span class="help-label">Result</span> The code becomes a new tile, just like a blank code from your own sheet.</p>
         <ul>
@@ -651,7 +651,7 @@
         <ol class="help-steps">
           <li>Make sure you're in the site you want to back up. A backup covers one site.</li>
           <li>Open <b>Settings</b> and tap <b>Back Up Now</b> (it's in the Sites menu too).</li>
-          <li>If some photos haven't finished downloading, QR Tiles waits for them: <b>Waiting for photos to finish syncing…</b></li>
+          <li>If some photos haven't finished downloading, QR Tiles waits for them before it builds the zip.</li>
           <li>When the share sheet appears, save the zip — for example, with <b>Save to Files</b>.</li>
         </ol>
         <ul>
@@ -675,7 +675,7 @@
           <p class="help-label">Before you restore</p>
           <ul>
             <li>Restoring the same backup twice makes two sites. You can delete the one you don't need.</li>
-            <li>If the original site is still on this iPhone, both sites have the same QR Tiles codes. Scanning one of them asks which site to open (<b>That code is in more than one home</b>).</li>
+            <li>If the original site is still on this iPhone, both sites have the same QR Tiles codes. Scanning one opens the copy in the site you're in; from any other site, QR Tiles asks which to open (<b>That code is in more than one home</b>).</li>
             <li>Custom QR codes go with the restored tiles. If one is still attached to a tile in another site on this iPhone, it moves to the restored tile, so scanning it opens the restored copy.</li>
             <li>If you see <b>Restore failed</b>, your other sites are left as they were.</li>
           </ul>
@@ -685,7 +685,7 @@
 
       <section class="help-sec" aria-labelledby="retag">
         <h2 id="retag">Retag photos with an outside tool</h2>
-        <p>If you want better photo tags than QR Tiles finds on its own, you can export a site's photos to a tool you choose — an AI assistant, a service or a person — and import the tags it writes. Look for it in <b>Settings</b> → <b>Site Manager</b> → <b>External Tools</b>.</p>
+        <p>If you want better photo tags than QR Tiles finds on its own, you can export a site's photos to a tool you choose — an AI assistant, a service or a person — and import the tags it writes. Look for it in <b>Settings</b> → <b>Site Manager</b> → <b>External Tools</b>, on a site you own.</p>
         <div class="help-need">
           <p class="help-label">Before you start</p>
           <ul>
@@ -694,9 +694,9 @@
           </ul>
         </div>
         <ol class="help-steps">
-          <li>In <b>External Tools</b>, choose which photos to include and whether to ask for label suggestions too.</li>
+          <li>In <b>External Tools</b>, tap <b>Export</b>. <b>Before you export</b> lets you keep to <b>Only photos added since a date</b> and turn on <b>Also ask for label recommendations?</b>, then tap <b>Export</b> again.</li>
           <li>Tap <b>Export</b> and give the file to your tool. It includes the photos, instructions for the tool, and a template for its answers.</li>
-          <li>When the tool returns its file, tap <b>Import</b>, choose the file and confirm with <b>Replace Media Tags</b>.</li>
+          <li>When the tool returns its file, tap <b>Import</b>, choose the file and confirm with <b>Import</b>.</li>
           <li>Review any suggested labels; they arrive as <a href="#draft-labels">draft labels</a>.</li>
         </ol>
         <ul>
@@ -747,7 +747,7 @@
           <dt>Ask</dt>
           <dd>Tap the field and say what you're looking for. The watch asks your iPhone (<b>Asking your iPhone…</b>) and shows the answer. <b>Recent questions</b> lets you <b>Ask again</b>.</dd>
           <dt>Recent</dt>
-          <dd>Tiles you scanned recently with your iPhone.</dd>
+          <dd>The site's recent tiles, the same list Home shows on your iPhone.</dd>
           <dt>Places</dt>
           <dd>Your zones and groups, and the tiles in each.</dd>
           <dt>Lists</dt>
@@ -801,7 +801,7 @@
       <section class="help-sec" aria-labelledby="privacy">
         <h2 id="privacy">Privacy and permissions</h2>
         <ul>
-          <li><b>Where your data lives.</b> Tiles, photos and labels are stored on your iPhone and in your private iCloud. We don't run a server that holds your inventory.</li>
+          <li><b>Where your data lives.</b> Tiles, photos and labels are stored on your iPhone and in your private iCloud, or for a site shared with you, the owner's. We don't run a server that holds your inventory.</li>
           <li><b>When it leaves.</b> When you share a site, save or send a backup, export photos to an outside tool, or share an answer or a link.</li>
           <li><b>Camera.</b> For scanning and taking photos. If you said no earlier, allow it for QR Tiles in the iPhone Settings app.</li>
           <li><b>Photos.</b> You choose which photos and videos to add; QR Tiles gets only those, with location data removed.</li>
@@ -819,11 +819,11 @@
         <p>These tools in <b>Site Manager</b> help when something seems off, or when we ask for details.</p>
         <dl class="help-dl">
           <dt>Logs</dt>
-          <dd>A record of what the app did. It's off until you turn on <b>Logging</b>, and starts the next time QR Tiles opens. <b>Copy all</b> copies it so you can paste it into an email. Logs can include the names of your tiles and labels, so read before you send.</dd>
+          <dd>A record of what the app did. It's off until you turn on <b>Logging</b>, and starts the next time the app launches. <b>Copy all</b> copies it so you can paste it into an email. Logs can include the names of your tiles and labels, so read before you send.</dd>
           <dt>Store Check</dt>
-          <dd>Checks the site's data and reports anything out of place, such as one code claimed by two tiles or photos with no file. The only repair it offers files stray records into this site; it doesn't delete or merge anything.</dd>
+          <dd>Checks the data of every site on this iPhone and reports anything out of place, such as one code claimed by two tiles or photos with no file. The only repair it offers files stray records into this site; it doesn't delete or merge anything.</dd>
           <dt>iCloud sync</dt>
-          <dd>Shows whether the site is syncing with iCloud.</dd>
+          <dd>Shows what this run of the app knows: the last download from iCloud, any upload iCloud refused or postponed, your iCloud account and whether you own the site. iCloud can't confirm that every change reached the cloud, so the app doesn't claim it.</dd>
         </dl>
         <p class="help-top"><a href="#contents">Back to contents</a></p>
       </section>
@@ -831,14 +831,14 @@
       <section class="help-sec" aria-labelledby="troubleshooting">
         <h2 id="troubleshooting">Troubleshooting</h2>
         <dl class="help-dl help-faq">
-          <dt>The camera doesn't start, or I see “Camera needed”</dt>
-          <dd>Allow the camera for QR Tiles in the iPhone Settings app, then go back to <b>Scan</b>.</dd>
+          <dt>The camera doesn't start, or I see “Camera couldn't start”</dt>
+          <dd>Tap <b>Open Settings</b> and allow the camera for QR Tiles, then go back to <b>Scan</b>. If you see <b>Camera needed</b> instead, this iPhone can't scan live: type the code.</dd>
           <dt>A code won't scan</dt>
-          <dd>Add light, hold the iPhone steady and a little farther away, and flatten the label. If it's damaged, type its six-character code under <b>Or type a code</b>, then <a href="#codes">reprint it</a>.</dd>
+          <dd>Add light, hold the iPhone steady and a little farther away, and flatten the label. If it's damaged, type its six-character code in the <b>Or type a code</b> field and tap <b>Go</b>, then <a href="#codes">reprint it</a>.</dd>
           <dt>“That code isn't recognized”</dt>
           <dd>None of your sites printed this code. You can add it — see <a href="#adopt">Codes QR Tiles didn't print</a>. If it should be yours, check you're in the right site and that iCloud has finished syncing.</dd>
-          <dt>“That QR code belongs to another home” or “That code is in more than one home”</dt>
-          <dd>The code is on a tile in another of your sites, or in two sites after a restore. Switch to the site you mean; see <a href="#restore">Restore from a backup</a>.</dd>
+          <dt>“That QR code is in another home” or “That code is in more than one home”</dt>
+          <dd>The code is on a tile in another of your sites, or in two sites after a restore. Switch to the site you mean; see <a href="#restore">Restore from a backup</a>. <b>That QR code belongs to another home</b> is a blank label printed in another site; QR Tiles switches over and starts its tile there.</dd>
           <dt>“Nothing readable in that code.”</dt>
           <dd>It's not a QR Tiles code and isn't attached to a tile. To use it, <a href="#custom-qr">attach it to a tile</a>.</dd>
           <dt>Printed codes don't line up with the labels</dt>
@@ -854,7 +854,7 @@
           <dt>I can't edit something in a shared site</dt>
           <dd>The owner may have made you view-only. For lists, you need Plus on your own Apple Account.</dd>
           <dt>Apple Intelligence is dimmed in Ask settings</dt>
-          <dd>This iPhone doesn't support it, or it isn't turned on. The note under the setting says which. Ask still works with <b>Off</b>.</dd>
+          <dd>This iPhone doesn't support it, or it's turned off in the iPhone Settings app; the note under the setting reads the same either way. Ask still works with <b>Off</b>.</dd>
           <dt>I deleted something by mistake</dt>
           <dd>Tap <b>Undo</b> if it's still showing, or look in <a href="#deleted">Recently Deleted</a>.</dd>
         </dl>
@@ -868,7 +868,7 @@
           <li>What you were doing, what you tapped and what you saw — the exact message, if there was one.</li>
           <li>Your iPhone model and iOS version.</li>
           <li>Whether the site is shared, and whether you're its owner.</li>
-          <li>If we ask for a log: turn on <b>Logging</b> in Site Manager → <b>Logs</b>, reopen QR Tiles, repeat the problem, then use <b>Copy all</b> and paste it into your email.</li>
+          <li>If we ask for a log: turn on <b>Logging</b> in Site Manager → <b>Logs</b>, quit and relaunch QR Tiles, repeat the problem, then use <b>Copy all</b> and paste it into your email.</li>
         </ul>
         <p>We can't see or recover your inventory — it lives on your iPhone and in your iCloud. Don't send a backup unless you choose to; it contains all your photos. More on the <a href="/support/">Support</a> page.</p>
         <p class="help-top"><a href="#contents">Back to contents</a></p>
