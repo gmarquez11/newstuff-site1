@@ -4,7 +4,7 @@
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <title>Ayuda — QR Tiles</title>
-<meta name="description" content="Cómo funciona QR Tiles: escanear, fichas, Preguntar, imprimir, compartir un hogar y tus datos.">
+<meta name="description" content="Ayuda paso a paso para QR Tiles: imprimir y escanear códigos QR, completar fichas, buscar y Preguntar, listas, sitios y compartir, copias de seguridad y qué hacer cuando algo falla.">
 <link rel="alternate" hreflang="en" href="https://newstuff.app/help/">
 <link rel="alternate" hreflang="es" href="https://newstuff.app/es/help/">
 <link rel="alternate" hreflang="x-default" href="https://newstuff.app/help/">
@@ -40,150 +40,836 @@
   <a class="hdr-cta" href="/es/get/">Obtén la app</a>
 </header>
 
-<main id="main" class="prose">
-  <h1>Ayuda</h1>
-  <p class="prose-date">La misma ayuda que la app muestra detrás de sus marcas ⓘ.</p>
+<main id="main" class="prose help">
+  <div class="help-head">
+    <h1>Ayuda</h1>
+    <p class="prose-date">Actualizada el 6 de noviembre de 2026 · QR Tiles 1.0.1 para iPhone</p>
+    <p class="help-lede">Ayuda paso a paso para QR Tiles, desde tu primera hoja de códigos hasta compartir, hacer copias de seguridad y resolver problemas. Las marcas ⓘ de la app dan una nota corta sobre la pantalla en la que estás; esta página explica las tareas completas.</p>
+  </div>
 
-  <h2>Primeros pasos</h2>
-  <h3>Los códigos QR empiezan en papel.</h3>
-  <p>En Lotes de códigos QR imprimes hojas de códigos nuevos; el primer escaneo de un código lo convierte en una ficha.</p>
-  <h3>Cualquier otro código puede abrir esta ficha.</h3>
-  <p>Un QR de un fabricante o una etiqueta que ya viene en la caja: escanéalo una vez aquí y, desde entonces, escanearlo en cualquier parte abrirá esta ficha. Un código impreso de QR Tiles es la identidad de una ficha, permanentemente — escanéalos desde la página Escanear. Y las repeticiones están contempladas: los códigos de barras del mundo se repiten, así que si un código ya está en otra ficha, QR Tiles la nombra y pregunta antes de moverlo aquí.</p>
+  <div class="help-layout">
+    <nav class="help-toc" id="contents" aria-labelledby="contents-title">
+      <p class="help-toc-title" id="contents-title">Contenido</p>
+      <div class="help-toc-group">
+        <p class="help-toc-h">Para empezar</p>
+        <ul>
+          <li><a href="#start">Primeros pasos</a></li>
+          <li><a href="#around">Cómo moverte por la app</a></li>
+        </ul>
+      </div>
+      <div class="help-toc-group">
+        <p class="help-toc-h">Escanear</p>
+        <ul>
+          <li><a href="#scan">Escanear un código</a></li>
+          <li><a href="#scan-settings">Ajustes de escaneo</a></li>
+          <li><a href="#capture-first">Primero la foto, luego el escaneo</a></li>
+        </ul>
+      </div>
+      <div class="help-toc-group">
+        <p class="help-toc-h">Fichas</p>
+        <ul>
+          <li><a href="#tile">Completar una ficha</a></li>
+          <li><a href="#photos">Fotos y videos</a></li>
+          <li><a href="#find">Buscar y filtrar</a></li>
+          <li><a href="#ask">Preguntar dónde está algo</a></li>
+          <li><a href="#bulk">Trabajar con varias fichas</a></li>
+          <li><a href="#lists">Listas</a></li>
+        </ul>
+      </div>
+      <div class="help-toc-group">
+        <p class="help-toc-h">Códigos QR e impresión</p>
+        <ul>
+          <li><a href="#print">Imprimir hojas de códigos QR</a></li>
+          <li><a href="#print-label">Imprimir un rótulo para una ficha</a></li>
+          <li><a href="#codes">Reimprimir, retirar o mover un código</a></li>
+          <li><a href="#custom-qr">Usar un código QR que ya está en la caja</a></li>
+          <li><a href="#adopt">Códigos que QR Tiles no imprimió</a></li>
+        </ul>
+      </div>
+      <div class="help-toc-group">
+        <p class="help-toc-h">Organizar</p>
+        <ul>
+          <li><a href="#organize">Zonas y grupos</a></li>
+          <li><a href="#sites">Sitios</a></li>
+        </ul>
+      </div>
+      <div class="help-toc-group">
+        <p class="help-toc-h">Compartir</p>
+        <ul>
+          <li><a href="#share">Compartir un sitio</a></li>
+          <li><a href="#join">Unirte a un sitio compartido</a></li>
+          <li><a href="#members">Administrar miembros</a></li>
+          <li><a href="#plus-ends">Si Plus termina</a></li>
+        </ul>
+      </div>
+      <div class="help-toc-group">
+        <p class="help-toc-h">Historial, copias y recuperación</p>
+        <ul>
+          <li><a href="#timeline">Cronología</a></li>
+          <li><a href="#deleted">Eliminados recientemente y Deshacer</a></li>
+          <li><a href="#backup">Hacer una copia de seguridad</a></li>
+          <li><a href="#restore">Restaurar desde una copia de seguridad</a></li>
+          <li><a href="#retag">Reetiquetar fotos con una herramienta externa</a></li>
+        </ul>
+      </div>
+      <div class="help-toc-group">
+        <p class="help-toc-h">Fuera de la app</p>
+        <ul>
+          <li><a href="#siri">Siri, Atajos y Spotlight</a></li>
+          <li><a href="#controls">Controles y widgets</a></li>
+          <li><a href="#watch">Apple Watch</a></li>
+        </ul>
+      </div>
+      <div class="help-toc-group">
+        <p class="help-toc-h">Ajustes, planes y privacidad</p>
+        <ul>
+          <li><a href="#settings">Los Ajustes, de un vistazo</a></li>
+          <li><a href="#plans">Planes</a></li>
+          <li><a href="#privacy">Privacidad y permisos</a></li>
+          <li><a href="#diagnostics">Registros y Comprobación del almacén</a></li>
+        </ul>
+      </div>
+      <div class="help-toc-group">
+        <p class="help-toc-h">Si algo falla</p>
+        <ul>
+          <li><a href="#troubleshooting">Solución de problemas</a></li>
+          <li><a href="#contact">¿Sigues con dudas?</a></li>
+        </ul>
+      </div>
+    </nav>
 
-  <h2>Escaneo</h2>
-  <h3>Escanear está arriba a la derecha.</h3>
-  <p>En cada pantalla. Esta página solo decide qué pasa después de escanear.</p>
-  <h3>Pasa directo a la cámara.</h3>
-  <p>Un código QR en blanco se convierte en una ficha nueva al escanearlo. Activa esto para pasar directo a tomar su primera foto.</p>
-  <h3>Adopta códigos desconocidos.</h3>
-  <p>Los códigos que este hogar nunca imprimió pueden unirse — en hojas de Varios o en un lote que elijas.</p>
-  <h3>Adoptar en</h3>
-  <p>Un código que ninguno de tus hogares imprimió pregunta antes de unirse, salvo que lo desactives arriba. Este ajuste decide a dónde va: a hojas automáticas de Varios (reimprimibles, 160 por hoja) o a un lote que elijas. Un código impreso por otro de TUS hogares siempre pregunta, sin importar este ajuste, y en vez de unirlo, la app te lleva a ese hogar.</p>
-  <h3>Redirección de escaneo.</h3>
-  <p>Qué pasa después de escanear una ficha ya configurada. El escaneo abre la página de esa ficha de todos modos; estas opciones definen a dónde llegas: solo a verla, a escribirle el título o directo a agregarle una etiqueta.</p>
-  <h3>Necesita foto.</h3>
-  <p>Qué pasa al reclamar un código QR en blanco. Reclamarlo crea una ficha nueva, todavía vacía — su foto suele ser lo primero que agregas, y esta sección decide si la cámara se abre sola para tomarla.</p>
-  <h3>Código externo.</h3>
-  <p>Qué pasa cuando un escaneo encuentra un código que ninguno de tus hogares imprimió. Normalmente pregunta antes de que algo se una; estas opciones pueden dejar que esos códigos se unan solos y elegir a qué lote van.</p>
+    <div class="help-body">
 
-  <h2>Fichas</h2>
-  <h3>Todo se guarda solo.</h3>
-  <p>Escribe un título o una etiqueta y toca fuera — el cambio se guarda apenas el campo pierde el foco. No hay botón de guardar.</p>
-  <h3>Los filtros reducen la vista.</h3>
-  <p>Por zona o grupo, o fichas a las que aún les falta una foto o título. Recientes muestra lo escaneado o agregado en los últimos 30 días, lo más nuevo primero, y fija el orden mientras está activo. “Borrar” está dentro del panel.</p>
-  <h3>Tú decides qué se ve en las filas de la lista.</h3>
-  <p>Desactiva las etiquetas o las etiquetas de contenido y esa línea ya no aparece en modo Lista. El título de una ficha siempre se muestra: es lo que distingue una fila de la siguiente.</p>
-  <h3>Las etiquetas de contenido muestran lo que la app detecta.</h3>
-  <p>Activa “Mostrar etiquetas de contenido” para ver las etiquetas de una foto y cualquier palabra impresa justo debajo, en la galería de la ficha y en su fila en modo Lista.</p>
-  <h3>La búsqueda las usa de todos modos.</h3>
-  <p>La búsqueda y Preguntar usan las etiquetas, las etiquetas de contenido y el texto de las fotos, se muestren o no.</p>
-  <h3>Las zonas contienen grupos.</h3>
-  <p>Una zona es un piso o una habitación; un grupo es el estante, gabinete o rincón donde vive una ficha.</p>
-  <h3>Eliminar no es tan drástico como parece.</h3>
-  <p>Eliminar un grupo deja sus fichas sin grupo; eliminar una zona conserva sus grupos.</p>
+      <section class="help-sec" aria-labelledby="start">
+        <h2 id="start">Primeros pasos</h2>
+        <p>QR Tiles te ayuda a saber qué hay dentro de tus cajones, cajas y canastas. Pegas un código QR en cada contenedor. Al escanearlo se abre una página para ese contenedor —una <b>ficha</b>— con fotos de lo que hay adentro, un título y etiquetas que puedes buscar.</p>
+        <div class="help-need">
+          <p class="help-label">Lo que necesitas</p>
+          <ul>
+            <li>Un iPhone con iOS 27 o posterior, y QR Tiles desde el <a href="/es/get/">App Store</a>.</li>
+            <li>Una impresora y hojas de etiquetas tamaño carta (US Letter): R001 (160 etiquetas pequeñas por hoja) o etiquetas de dirección tamaño 5160 (30 por hoja, como las Avery 5160). Para una página de prueba basta con papel normal.</li>
+            <li>Para usar más de un dispositivo, o para compartir, inicia sesión en iCloud.</li>
+          </ul>
+        </div>
+        <h3 id="words">Palabras que usa la app</h3>
+        <dl class="help-dl">
+          <dt>Ficha</dt>
+          <dd>Un contenedor y lo que sabes de él: fotos y videos, un título, etiquetas y dónde está.</dd>
+          <dt>Etiqueta</dt>
+          <dd>Una palabra o frase que le agregas a una ficha, como “pilas” o “guantes de invierno”. Buscar y Preguntar revisan las etiquetas. (El adhesivo que va en la caja es el código QR).</dd>
+          <dt>Grupo y zona</dt>
+          <dd>Dónde está una ficha. Un grupo es un estante, un mueble o un rincón; una zona es el cuarto o el piso que reúne grupos.</dd>
+          <dt>Sitio</dt>
+          <dd>Un lugar del que llevas el control, como tu casa, un taller o una bodega. Cada sitio tiene sus propias fichas, códigos y listas, y lo que compartes con otras personas es un sitio. Algunas pantallas de la app lo llaman tu hogar.</dd>
+          <dt>Lote</dt>
+          <dd>Una impresión de códigos QR nuevos.</dd>
+        </dl>
+        <h3 id="first-tile">Crea tu primera ficha</h3>
+        <ol class="help-steps">
+          <li>En <b>Inicio</b>, toca <b>Lotes de códigos QR</b>.</li>
+          <li>En <b>Papel de etiquetas</b>, elige <b>R001</b> o <b>5160</b> según tus hojas.</li>
+          <li>Toca <b>+</b> (Lote nuevo) y luego <b>Crear lote nuevo</b>. Se abre la hoja de códigos nuevos para imprimirla.</li>
+          <li>Imprímela y pega un código en un contenedor.</li>
+          <li>Toca la pestaña <b>Escanear</b> y apunta la cámara a ese código.</li>
+          <li>La ficha nueva se abre con el título listo para escribir. Escribe un título, como “Garaje, estante 2 — pintura”.</li>
+          <li>Toca <b>Tomar foto</b> para fotografiar lo que hay adentro, o <b>Agregar foto o vídeo</b> para elegir de tu fototeca.</li>
+          <li>Toca <b>+</b> en la tarjeta <b>Etiquetas</b>, escribe unas palabras sobre lo que hay adentro (una por línea) y toca <b>Agregar</b>.</li>
+          <li>Para indicar dónde está, toca <b>Sin grupo</b> debajo del título y elige un grupo, o <b>Nuevo grupo…</b>.</li>
+        </ol>
+        <p class="help-result"><span class="help-label">Resultado</span> El título se guarda al salir del campo, y las etiquetas, las fotos y el grupo se guardan a medida que los agregas: no hay botón de Guardar. Si vuelves a escanear el código, se abre esta ficha, y Buscar y Preguntar la encuentran por su título, sus etiquetas y sus fotos.</p>
+        <p class="help-tip"><span class="help-label">Consejo</span> Antes de usar tus hojas de etiquetas, imprime una página de prueba en papel normal y revisa que coincida. Consulta <a href="#calibrate">Alinear las etiquetas</a>.</p>
+        <p class="help-top"><a href="#contents">Volver al contenido</a></p>
+      </section>
 
-  <h2>El panel de filtros</h2>
-  <h3>Esto define el panel de filtros.</h3>
-  <p>Desactiva una sección aquí y desaparece del panel en la página de Fichas — no cambia lo que el panel encuentra.</p>
-  <h3>Oculta las filas vacías.</h3>
-  <p>“Ocultar filas sin fichas” mantiene el panel corto; si lo dejas desactivado, las filas vacías se muestran en gris.</p>
-  <h3>Ordenar tiene su propia sección.</h3>
-  <p>Desactívalo y la fila Ordenar desaparece del panel. El orden que elegiste sigue aplicándose — ocultar una sección nunca cambia lo que el panel encuentra.</p>
-  <h3>Necesita atención contiene dos filtros.</h3>
-  <p>Sin fotos y Sin título. Desactívalo y ambas filas desaparecen del panel; lo que ya esté marcado sigue filtrando.</p>
-  <h3>Contenido multimedia contiene el filtro de video.</h3>
-  <p>Una sola fila, Con video. Desactívalo si nunca filtras por video y el panel se acorta.</p>
-  <h3>Las zonas pueden desaparecer del panel.</h3>
-  <p>Oculta toda la sección Zonas si prefieres filtrar por grupo. Las zonas que dejaste marcadas siguen acotando los grupos de abajo.</p>
-  <h3>Los grupos pueden desaparecer del panel.</h3>
-  <p>Oculta toda la sección Grupos si te bastan las zonas. No desagrupa nada — solo deja de listarlos en el panel.</p>
+      <section class="help-sec" aria-labelledby="around">
+        <h2 id="around">Cómo moverte por la app</h2>
+        <p>En la parte de abajo de la pantalla hay cuatro pestañas:</p>
+        <dl class="help-dl">
+          <dt>Inicio</dt>
+          <dd>Tu sitio de un vistazo: cifras, fichas recientes y accesos a <b>Preguntar</b>, <b>Lotes de códigos QR</b>, <b>Listas</b> y <b>Organizar</b>. La campana, arriba a la derecha, abre la <a href="#timeline">Cronología</a>.</dd>
+          <dt>Escanear</dt>
+          <dd>La cámara, para escanear códigos y tomar fotos. Consulta <a href="#scan">Escanear un código</a>.</dd>
+          <dt>Ajustes</dt>
+          <dd>Tu sitio, las copias de seguridad, la apariencia, el escaneo, Preguntar, los planes y el soporte. Consulta <a href="#settings">Los Ajustes, de un vistazo</a>.</dd>
+          <dt>Buscar</dt>
+          <dd>Todas las fichas del sitio en el que estás, con búsqueda, filtros, Preguntar y selección. Consulta <a href="#find">Buscar y filtrar</a>.</dd>
+        </dl>
+        <p>El nombre del sitio, arriba a la izquierda en <b>Inicio</b>, abre el menú <b>Sitios</b>. Ahí cambias de sitio y llegas al Administrador del sitio, la Cronología, las copias de seguridad, Eliminados recientemente y la restauración. Consulta <a href="#sites">Sitios</a>.</p>
+        <p>Donde veas ⓘ en la app, tócala para leer una nota corta sobre esa parte de la pantalla.</p>
+        <h3 id="accessibility">Accesibilidad</h3>
+        <ul>
+          <li>QR Tiles respeta el tamaño de texto de tu iPhone. En los tamaños más grandes, las filas se acomodan en vertical para que nada quede cortado.</li>
+          <li>Con VoiceOver, los comandos de los menús que aparecen al mantener presionado y de las acciones al deslizar —en fotos, etiquetas, elementos de listas y códigos— están disponibles como acciones del elemento.</li>
+          <li>Preguntar puede leer sus respuestas en voz alta. Para una voz más natural, descarga una voz mejorada en la app Configuración del iPhone, en las opciones de voz de Accesibilidad.</li>
+        </ul>
+        <p class="help-top"><a href="#contents">Volver al contenido</a></p>
+      </section>
 
-  <h2>Preguntar</h2>
-  <h3>Pregunta con tus propias palabras.</h3>
-  <p>Si preguntas “¿Dónde están las ollas?”, la respuesta te dice el lugar, no una lista de enlaces.</p>
-  <h3>Las fotos ayudan a responder.</h3>
-  <p>Las fotos se etiquetan con lo que se ve en ellas, incluyendo palabras impresas. Buscar en ellas encuentra cosas para las que nadie escribió una etiqueta — desactívalo si adivina demasiado.</p>
-  <h3>Las respuestas se pueden ajustar.</h3>
-  <p>Elige cuántos lugares nombra una respuesta. El formato de lista da una línea por lugar; si no, la respuesta se lee como una oración.</p>
-  <h3>Elige quién responde.</h3>
-  <p>Si eliges Desactivado, responde por coincidencia de palabras clave: todos los lugares que coinciden, en orden. Apple Intelligence elige cuáles de esos lugares responden mejor a la pregunta, en este iPhone. Tu pregunta y tus fichas se quedan en tu iPhone en ambos casos.</p>
+      <section class="help-sec" aria-labelledby="scan">
+        <h2 id="scan">Escanear un código</h2>
+        <p>La pestaña <b>Escanear</b> es la forma principal de escanear. La página de cada ficha también tiene un botón <b>Escanear</b>.</p>
+        <ol class="help-steps">
+          <li>Toca <b>Escanear</b>.</li>
+          <li>Apunta la cámara a un código QR y mantén el iPhone quieto hasta que lo lea.</li>
+          <li>Si una etiqueta está dañada o no alcanzas a escanearla, escribe su código de seis caracteres en <b>O escribe un código (ej. SP1CE6)</b> y toca <b>Ir</b>.</li>
+        </ol>
+        <h3 id="scan-results">Qué pasa al escanear</h3>
+        <dl class="help-dl">
+          <dt>Un código en blanco de este sitio</dt>
+          <dd>Se convierte en una ficha nueva, que se abre con el título listo para escribir.</dd>
+          <dt>Un código que ya está en una ficha</dt>
+          <dd>Abre la ficha. La <a href="#scan-settings">Redirección</a> decide en qué parte de la página quedas.</dd>
+          <dt>Una ficha que está en Eliminados recientemente</dt>
+          <dd>Vuelve y se abre: <b>Esta ficha estaba en Eliminados recientemente. Al abrirla, se restauró.</b></dd>
+          <dt>Un código de otro de tus sitios</dt>
+          <dd>QR Tiles te avisa que es de otro lugar (<b>Ese código QR pertenece a otro hogar</b>) y te ofrece cambiar a ese sitio.</dd>
+          <dt>Un código que está en más de uno de tus sitios</dt>
+          <dd>Suele pasar después de una restauración. <b>Ese código está en más de un hogar</b> te deja elegir cuál abrir.</dd>
+          <dt>Un código retirado</dt>
+          <dd><b>Esa etiqueta fue retirada — ya no representa nada.</b> Consulta <a href="#codes">Reimprimir, retirar o mover un código</a>.</dd>
+          <dt>Un código de QR Tiles que ninguno de tus sitios imprimió</dt>
+          <dd>QR Tiles te pregunta antes de agregarlo. Consulta <a href="#adopt">Códigos que QR Tiles no imprimió</a>.</dd>
+          <dt>Un código personalizado que adjuntaste a una ficha</dt>
+          <dd>Abre esa ficha. Consulta <a href="#custom-qr">Usar un código QR que ya está en la caja</a>.</dd>
+          <dt>Cualquier otro código QR</dt>
+          <dd><b>No hay nada legible en ese código.</b> Para usarlo, primero adjúntalo a una ficha.</dd>
+        </dl>
+        <div class="help-note">
+          <p class="help-label">Ten en cuenta</p>
+          <ul>
+            <li>QR Tiles lee códigos QR, no códigos de barras.</li>
+            <li>Para escanear se necesita la cámara. Si ves <b>Se necesita la cámara</b>, permite el acceso a la cámara para QR Tiles en la app Configuración del iPhone.</li>
+            <li>Los códigos de QR Tiles tienen seis letras y números, y nunca usan las letras I, L, O ni U. Si escribes un código, la I y la L se leen como 1, y la O como 0.</li>
+            <li>Solo se pueden escribir códigos de QR Tiles. Los códigos personalizados hay que escanearlos.</li>
+            <li>Si ves <b>No se pudo consultar ese código en este momento — vuelve a escanearlo.</b>, espera un momento y escanéalo de nuevo.</li>
+          </ul>
+        </div>
+        <p class="help-top"><a href="#contents">Volver al contenido</a></p>
+      </section>
 
-  <h2>Impresión</h2>
-  <h3>Las hojas crean códigos nuevos.</h3>
-  <p>Una hoja es una página de códigos QR totalmente nuevos. Imprímela, córtala o desprende cada uno, y pégalos en los contenedores — quedan en blanco hasta que se escanean. Un lote es una hoja impresa de 160 códigos en papel R001 (Spartan Industrial R001 / clase OL1930, etiquetas de 1&quot; × ½&quot;, 8 × 20), y una reimpresión siempre respeta la codificación original de ese lote.</p>
-  <h3>Primero, papel normal.</h3>
-  <p>Regla de la casa: imprime una página en papel normal y escanéala antes de gastar las hojas de etiquetas de verdad. Sostén esa página contra una ventana con una hoja de etiquetas real detrás — si las filas se desvían, ajusta primero el margen superior de la fila 1 y después el paso. Los valores predeterminados corresponden a la impresora con la que se calibró.</p>
-  <h3>Los rótulos de cajón son por ficha.</h3>
-  <p>Abre cualquier ficha ▸ ••• ▸ Imprimir rótulo para obtener una sola etiqueta con el nombre de la ficha — elige el diseño en la vista previa, en el momento.</p>
-  <h3>Una ficha, un rótulo.</h3>
-  <p>Esto diseña el rótulo grande de esta ficha — las hojas de códigos QR están en Inicio ▸ Lotes de códigos QR.</p>
-  <h3>La vista previa es en tiempo real.</h3>
-  <p>Cada cambio la actualiza al instante, y tus elecciones se mantienen para la próxima ficha.</p>
-  <h3>Imprime varias copias.</h3>
-  <p>1, 2 o 4 copias por página — córtalas después de imprimir.</p>
-  <h3>Un lote es una impresión.</h3>
-  <p>Todos los códigos QR de esa hoja están aquí, para que veas cuáles ya se usaron y cuáles siguen disponibles.</p>
-  <h3>Los códigos reclamados llevan a su ficha.</h3>
-  <p>Toca cualquier fila reclamada para abrir la ficha de ese código QR.</p>
-  <h3>Reimprime la hoja exacta.</h3>
-  <p>El PDF de la hoja reconstruye la página original — los mismos códigos, no unos nuevos. Reimprime una página que se atascó sin crear duplicados.</p>
+      <section class="help-sec" aria-labelledby="scan-settings">
+        <h2 id="scan-settings">Ajustes de escaneo</h2>
+        <p>Abre <b>Ajustes</b> → <b>Escaneo</b>, o toca <b>Ajustes de escaneo</b> arriba a la derecha del escáner. Estas opciones aplican en este iPhone.</p>
+        <dl class="help-dl">
+          <dt>Redirección</dt>
+          <dd>Qué pasa al escanear una ficha que ya está configurada. La ficha siempre se abre; elige <b>Solo abrir la ficha</b>, <b>Enfocar el título</b> para empezar a escribir, o <b>Abrir agregar etiquetas</b>.</dd>
+          <dt>Necesita foto</dt>
+          <dd>Qué pasa cuando un código en blanco se convierte en una ficha nueva. Normalmente el título queda listo para escribir. Activa <b>Directo a la cámara</b> para tomar primero su foto.</dd>
+          <dt>Código externo</dt>
+          <dd>Qué pasa con los códigos de QR Tiles que ninguno de tus sitios imprimió. Normalmente QR Tiles pregunta antes; activa <b>Agregar códigos desconocidos sin preguntar</b> para saltarte la pregunta. <b>Adoptar en</b> elige a dónde van esos códigos: <b>Varios (automático)</b> o uno de tus lotes.</dd>
+        </dl>
+        <p class="help-top"><a href="#contents">Volver al contenido</a></p>
+      </section>
 
-  <h2>Compartir un hogar</h2>
-  <h3>Lee esto antes de invitar.</h3>
-  <p>Un miembro invitado ve todo el hogar — cada ficha, foto, video, etiqueta y nota, incluido todo lo que se agregue después.</p>
-  <h3>Invitar abre la pantalla de uso compartido.</h3>
-  <p>La invitación, sus permisos y el reenvío están todos ahí.</p>
-  <h3>Tu nombre es para las personas con las que compartes.</h3>
-  <p>Te saluda en Inicio y, en un sitio compartido, acompaña tus cambios para que el otro teléfono vea quién hizo qué. Se guarda con los datos del sitio, así que viaja a los teléfonos con los que compartes y te sigue a un teléfono nuevo.</p>
+      <section class="help-sec" aria-labelledby="capture-first">
+        <h2 id="capture-first">Primero la foto, luego el escaneo</h2>
+        <p>A veces es más fácil fotografiar un cajón antes de encontrar su etiqueta. El escáner puede guardar una foto y agregarla a la próxima ficha que escanees.</p>
+        <ol class="help-steps">
+          <li>En la pestaña <b>Escanear</b>, cambia a <b>CAPTURAR</b> y toma la foto.</li>
+          <li>El escáner muestra <b>La foto se adjunta al próximo escaneo</b>.</li>
+          <li>Escanea el código del contenedor. La foto se agrega a esa ficha y ves <b>Foto añadida a «…».</b></li>
+        </ol>
+        <ul>
+          <li>¿Cambiaste de idea? Toca <b>Descartar la foto</b>.</li>
+          <li>Si sales del escáner con una foto en espera, QR Tiles pregunta <b>¿Descartar la foto en espera?</b> Elige <b>Descartar</b> o <b>Seguir escaneando</b>.</li>
+          <li>Si el siguiente escaneo no puede recibir la foto —por ejemplo, un código retirado—, la foto se descarta y el mensaje te lo indica.</li>
+        </ul>
+        <p class="help-top"><a href="#contents">Volver al contenido</a></p>
+      </section>
 
-  <h2>Sitios</h2>
-  <h3>El cambio de nombre ocurre aquí.</h3>
-  <p>Este es el único lugar donde se cambia el nombre de un sitio, y el nombre nuevo se sincroniza con todos los miembros.</p>
-  <h3>Eliminar un sitio es permanente.</h3>
-  <p>Elimina todo lo que hay en el sitio, en todos los lugares donde se sincroniza, después de una copia de seguridad obligatoria.</p>
-  <h3>El registro es la constancia de lo que hizo la app.</h3>
-  <p>Cuando una sincronización se detuvo o una foto nunca llegó, el motivo queda escrito aquí — pero solo si el registro estaba activado, y empieza en el próximo inicio.</p>
-  <h3>La comprobación lee el almacén e informa, nada más.</h3>
-  <p>Un código reclamado por dos fichas, fotos sin archivo, filas que no pertenecen a ningún sitio — la única reparación que ofrece archiva las filas sueltas en este sitio y no cambia nada más.</p>
-  <h3>Tus fotos salen de la app y vuelven modificadas.</h3>
-  <p>Exportar crea un archivo con las fotos de este sitio y sus etiquetas; al importar el resultado, esas etiquetas se REEMPLAZAN, no se combinan.</p>
-  <h3>Reemplazar etiquetas de fotos envía tus fotos y devuelve etiquetas.</h3>
-  <p>Exportar guarda todas las fotos de este sitio en un archivo que entregas a una herramienta externa. Esa herramienta lee las imágenes y devuelve una descripción y el texto que alcance a leer en ellas. Importar lee ese archivo y REEMPLAZA las etiquetas y el texto OCR de cada foto: lo que hubiera antes se pierde, incluso lo que la app dedujo por su cuenta. No se toca nada más: tus títulos, etiquetas, grupos y las fotos mismas quedan igual. Esto no es una copia de seguridad ni una forma de mover un sitio.</p>
-  <h3>Las recomendaciones de etiquetas son una segunda petición opcional.</h3>
-  <p>Con esto activado, el archivo también lleva las etiquetas que ya tienen tus contenedores, para que quien lo lea sugiera las que faltan en vez de repetir las existentes. Cada sugerencia vuelve como borrador: aparece en la ficha con un botón para aceptarla y otro para eliminarla, y nada se convierte en etiqueta real hasta que tú lo digas. Déjalo desactivado y el archivo llevará solo fotos y etiquetas de contenido.</p>
+      <section class="help-sec" aria-labelledby="tile">
+        <h2 id="tile">Completar una ficha</h2>
+        <p>La página de una ficha muestra arriba sus fotos y videos, y luego su título, su grupo y sus etiquetas. En un sitio compartido donde solo puedes ver, estos controles están desactivados.</p>
+        <dl class="help-dl">
+          <dt>Título</dt>
+          <dd>Tócalo para escribir; se guarda al salir del campo. Si ves <b>✱ otra ficha tiene este título</b>, está permitido, pero los títulos distintos hacen más claras las búsquedas y las respuestas de Preguntar.</dd>
+          <dt>Grupo</dt>
+          <dd>Toca la línea debajo del título (<b>Sin grupo</b> en una ficha nueva) y elige un grupo, <b>Ninguno</b> o <b>Nuevo grupo…</b>. Un grupo creado así todavía no tiene zona; puedes asignársela en <a href="#organize">Organizar</a>.</dd>
+          <dt>Más (•••)</dt>
+          <dd>Incluye <b>Mostrar etiquetas de contenido</b>, <b>Imprimir rótulo</b>, <b>Adjuntar código QR personalizado</b>, <b>Añadir a una lista</b> y <b>Eliminar ficha</b>. Una ficha eliminada espera 30 días en <a href="#deleted">Eliminados recientemente</a>.</dd>
+        </dl>
+        <h3 id="labels">Etiquetas</h3>
+        <ul>
+          <li>Toca <b>+</b> en la tarjeta <b>Etiquetas</b>, escribe una etiqueta por línea y toca <b>Agregar</b>.</li>
+          <li>Toca una etiqueta para cambiar su texto. Desliza una etiqueta hacia la izquierda para eliminarla.</li>
+          <li>Después de cambiar o eliminar una etiqueta, aparece <b>Deshacer</b> durante unos segundos.</li>
+        </ul>
+        <h3 id="draft-labels">Etiquetas en borrador</h3>
+        <p>Las etiquetas que sugiere una herramienta externa (consulta <a href="#retag">Reetiquetar fotos con una herramienta externa</a>) llegan como borradores. No cuentan como etiquetas tuyas hasta que las aceptes: usa <b>Aceptar etiqueta</b> para conservar una o <b>Eliminar etiqueta</b> para descartarla. Para encontrar todas las fichas con borradores, usa el filtro <b>Etiquetas en borrador</b> en <b>Necesita atención</b>.</p>
+        <p>Si un cambio no se puede guardar, QR Tiles te avisa: <b>No se pudo guardar el cambio — inténtalo de nuevo.</b></p>
+        <p class="help-top"><a href="#contents">Volver al contenido</a></p>
+      </section>
 
-  <h2>Ajustes</h2>
-  <h3>Tus datos siempre pueden salir.</h3>
-  <p>Hacer copia de seguridad ahora crea un solo archivo zip — fotos, videos y archivos listos para hojas de cálculo — y lo pasa a la hoja para compartir.</p>
-  <h3>Claro, oscuro o lo que elija el teléfono.</h3>
-  <p>El tema se aplica de inmediato. Automático sigue la apariencia de tu iPhone, de día y de noche.</p>
-  <h3>Hazla tuya.</h3>
-  <p>Elige un color y el ícono de la app y toda la app lo siguen; cada sitio conserva el acento que elijas para él.</p>
-  <h3>Lo que guarda la app, y dónde.</h3>
-  <p>Política de privacidad abre la política completa en newstuff.app en tu navegador: lo que se queda en este iPhone, lo que se sincroniza a través de tu propio iCloud y lo que nunca sale de ahí.</p>
-  <h3>Los términos con los que se ofrece la app.</h3>
-  <p>Términos del servicio los abre en newstuff.app en tu navegador. El acuerdo estándar de Apple para las suscripciones está enlazado en la página Mejoras.</p>
-  <h3>Escríbele al desarrollador.</h3>
-  <p>Soporte abre un mensaje nuevo en tu app de correo, ya dirigido y con la versión de la app en el asunto. Si ninguna app de correo puede abrirlo, la dirección aparece debajo de Soporte para que la copies.</p>
-  <h3>English, Español o el idioma del teléfono.</h3>
-  <p>El idioma se aplica de inmediato en toda la app. Automático sigue el idioma de tu iPhone.</p>
+      <section class="help-sec" aria-labelledby="photos">
+        <h2 id="photos">Fotos y videos</h2>
+        <ul>
+          <li><b>Tomar foto</b> abre la cámara. <b>Agregar foto o vídeo</b> (<b>Agregar más</b> cuando la ficha ya tiene alguna) abre tu fototeca.</li>
+          <li>Mantén presionada una foto o un video para ver <b>Mover a la izquierda</b>, <b>Mover a la derecha</b>, <b>Editar etiquetas de contenido</b> y <b>Eliminar foto</b> o <b>Eliminar vídeo</b>. Las fotos también tienen <b>Girar</b> y <b>Recortar…</b>.</li>
+          <li>Después de recortar, toca <b>Usar</b>. Se conserva la foto recortada y la original pasa a Eliminados recientemente.</li>
+          <li>Las fotos y los videos eliminados esperan 30 días en <a href="#deleted">Eliminados recientemente</a>.</li>
+        </ul>
+        <h3 id="media-tags">Etiquetas de contenido</h3>
+        <p>En tu iPhone, QR Tiles etiqueta cada foto con lo que ve en ella y lee las palabras impresas que aparezcan. Buscar y Preguntar usan esas etiquetas y palabras aunque estén ocultas.</p>
+        <ul>
+          <li>Para verlas debajo de cada foto y en las filas de Lista, activa <b>Mostrar etiquetas de contenido</b> en <b>Ajustes</b> → <b>Visualización de fichas</b>, o toca <b>Más</b> (•••) → <b>Mostrar etiquetas de contenido</b> en una ficha.</li>
+          <li>Para corregirlas, elige <b>Editar etiquetas de contenido</b> y edita <b>Etiquetas, una por línea</b> y <b>Texto en la foto</b>.</li>
+          <li>Si las coincidencias en fotos hacen que Preguntar adivine de más, desactiva <b>Coincidir con etiquetas y texto de fotos</b> en los <a href="#ask-settings">ajustes de Preguntar</a>.</li>
+        </ul>
+        <p class="help-tip"><span class="help-label">Ten en cuenta</span> Las fotos se guardan con un máximo de 2048 píxeles en su lado más largo, y los videos hasta 1080p. A las fotos que eliges de tu fototeca se les quita la ubicación.</p>
+        <p class="help-top"><a href="#contents">Volver al contenido</a></p>
+      </section>
 
-  <h2>Tus datos y el almacenamiento</h2>
-  <h3>Restaurar llena una app vacía.</h3>
-  <p>Nunca sobrescribe — si esta app ya tiene datos, indica lo que encontró y puede poner la copia de seguridad en un hogar aparte.</p>
-  <h3>Eliminados recientemente espera 30 días.</h3>
-  <p>Las fichas eliminadas conservan su espacio hasta la limpieza — puedes rescatar cualquier cosa dentro de ese plazo.</p>
-  <h3>Toca el número de contenido.</h3>
-  <p>Abre un desglose ficha por ficha de dónde están los megabytes. Todos los números de esta página son solo informativos, y el total de contenido incluye los elementos en Eliminados recientemente — ocupan su espacio hasta la purga de 30 días.</p>
-  <h3>Después de 30 días, desaparece.</h3>
-  <p>Una vez al día la app elimina lo que ya cumplió 30 días —al abrirla, al volver a ella o en una actualización en segundo plano— y es entonces cuando bajan los números de almacenamiento.</p>
-  <h3>Dónde están los megabytes.</h3>
-  <p>Ficha por ficha, de mayor a menor — la forma más rápida de encontrar el cajón que tiene un video.</p>
-  <h3>Las fotos ya están comprimidas.</h3>
-  <p>Cada foto se guarda a un máximo de 2048px y cada video en 1080p, y de cada uno se puede guardar además una vista previa pequeña y una miniatura. Este número cuenta todo lo almacenado.</p>
+      <section class="help-sec" aria-labelledby="find">
+        <h2 id="find">Buscar y filtrar</h2>
+        <p>La pestaña <b>Buscar</b> muestra todas las fichas del sitio en el que estás. Elige cómo verlas: <b>Foto</b>, <b>Lista</b>, <b>Etiquetas</b> (cada etiqueta con la ficha en la que está) o <b>Preguntar</b>.</p>
+        <h3 id="search">Buscar</h3>
+        <ul>
+          <li>Escribe en <b>Buscar fichas, etiquetas, códigos…</b>. QR Tiles busca en los títulos, las etiquetas, los códigos, los nombres de grupos y zonas, y las etiquetas y palabras encontradas en las fotos.</li>
+          <li>Lo que escribes se busca como un solo texto: “guantes” encuentra “guantes de invierno”, pero “guantes de lana” solo encuentra fichas con esa frase exacta. Las mayúsculas no importan; las tildes sí: “cafe” no encuentra “café”.</li>
+          <li>Para hacer una pregunta, consulta <a href="#ask">Preguntar dónde está algo</a>.</li>
+        </ul>
+        <h3 id="filters">Filtros</h3>
+        <p>Toca <b>Filtros</b> y marca lo que quieres ver. <b>Borrar</b> los quita todos.</p>
+        <dl class="help-dl">
+          <dt>Ordenar</dt>
+          <dd><b>Zona · Grupo · Título</b>, <b>Título A–Z</b> o <b>Más recientes primero</b>.</dd>
+          <dt>Recientes</dt>
+          <dd>Fichas escaneadas o agregadas en los últimos 30 días, de la más reciente a la más antigua. Mientras está activado, define el orden.</dd>
+          <dt>Necesita atención</dt>
+          <dd><b>Sin fotos</b>, <b>Sin título</b> y <b>Etiquetas en borrador</b>.</dd>
+          <dt>Contenido multimedia</dt>
+          <dd><b>Con vídeo</b>.</dd>
+          <dt>Zonas y Grupos</dt>
+          <dd>Marca una o varias.</dd>
+        </dl>
+        <p>Dentro de Zonas o de Grupos, una ficha aparece si coincide con cualquiera de las que marques. Los distintos tipos de filtro se combinan: una zona más <b>Sin fotos</b> muestra solo las fichas de esa zona que no tienen fotos. La búsqueda funciona dentro de los filtros; Preguntar siempre revisa todo el sitio.</p>
+        <p>Para acortar el panel, abre <b>Ajustes</b> → <b>Visualización de fichas</b>. Si desactivas una sección ahí, desaparece del panel, pero no cambia lo que se está filtrando. <b>Ocultar filas sin fichas</b> quita las filas vacías, y <b>Mostrar etiquetas</b> y <b>Mostrar etiquetas de contenido</b> eligen qué muestran las filas de Lista.</p>
+        <p class="help-top"><a href="#contents">Volver al contenido</a></p>
+      </section>
 
-  <hr>
-  <p>¿Sigues sin resolverlo? <a href="/es/support/">Obtén soporte</a>.</p>
+      <section class="help-sec" aria-labelledby="ask">
+        <h2 id="ask">Preguntar dónde está algo</h2>
+        <p>Preguntar responde preguntas como “¿Dónde están las ollas?” nombrando los lugares donde es más probable que esté lo que buscas.</p>
+        <ol class="help-steps">
+          <li>En <b>Inicio</b>, toca <b>Preguntar</b>, o elige <b>Preguntar</b> en la pestaña <b>Buscar</b>.</li>
+          <li>Escribe tu pregunta en la barra de búsqueda.</li>
+          <li>Lee la respuesta y toca un lugar en <b>Lugares que abrir</b> para abrir esa ficha.</li>
+        </ol>
+        <ul>
+          <li><b>Leer en voz alta</b> lee la respuesta; <b>Compartir respuesta</b> la envía.</li>
+          <li>Un lugar marcado <b>De una foto</b> se encontró solo en lo que QR Tiles leyó en sus fotos, así que revísalo antes de confiar en él.</li>
+          <li>Preguntar busca en todo el sitio en el que estás, sin importar los filtros.</li>
+          <li>Funcionan mejor las preguntas cortas que nombran la cosa: muchas veces basta con escribir “ollas”.</li>
+        </ul>
+        <h3 id="ask-settings">Ajustes de Preguntar</h3>
+        <p>En <b>Ajustes</b> → <b>Preguntar</b>:</p>
+        <dl class="help-dl">
+          <dt>Lugares por respuesta</dt>
+          <dd><b>Mejor coincidencia</b>, <b>Hasta 3</b> (la opción inicial) o <b>Hasta 5</b>.</dd>
+          <dt>Responder como lista</dt>
+          <dd>Una línea por lugar en vez de una oración.</dd>
+          <dt>Coincidir con etiquetas y texto de fotos</dt>
+          <dd>Activado al principio. Desactívalo si las coincidencias en fotos traen demasiadas suposiciones.</dd>
+          <dt>Responder con</dt>
+          <dd><b>Apple Intelligence</b> elige los mejores lugares entre los que coinciden, en tu iPhone. <b>Desactivado</b> responde buscando coincidencias de palabras. Si Apple Intelligence aparece atenuado, la nota debajo explica por qué; por ejemplo, que este iPhone no es compatible.</dd>
+        </dl>
+        <p>En ambos casos, tus preguntas y tus fichas se quedan en tu iPhone. También puedes preguntar desde <a href="#siri">Siri</a>, el <a href="#controls">Centro de control</a> y el <a href="#watch">Apple Watch</a>.</p>
+        <p class="help-top"><a href="#contents">Volver al contenido</a></p>
+      </section>
+
+      <section class="help-sec" aria-labelledby="bulk">
+        <h2 id="bulk">Trabajar con varias fichas</h2>
+        <ol class="help-steps">
+          <li>En la pestaña <b>Buscar</b>, si quieres, acota con la búsqueda o los filtros, y toca <b>Seleccionar</b>.</li>
+          <li>Toca las fichas para seleccionarlas, o usa <b>Seleccionar todo</b>.</li>
+          <li>Elige una acción en los botones de abajo:
+            <ul>
+              <li><b>Imprimir</b> imprime un rótulo para cada una, con tus últimas opciones de <a href="#print-label">Imprimir rótulo</a>.</li>
+              <li><b>Mover</b> las pone todas en un mismo grupo. A una zona se llega por sus grupos, así que eliges un grupo.</li>
+              <li><b>Añadir a una lista</b> las agrega a la lista que elijas; toca <b>Guardar en la lista</b>.</li>
+              <li><b>Eliminar</b> pregunta antes y luego las pasa a Eliminados recientemente. Aparece <b>Deshacer</b> durante unos segundos.</li>
+            </ul>
+          </li>
+          <li>Toca <b>Listo</b> cuando termines.</li>
+        </ol>
+        <p class="help-top"><a href="#contents">Volver al contenido</a></p>
+      </section>
+
+      <section class="help-sec" aria-labelledby="lists">
+        <h2 id="lists">Listas</h2>
+        <p>Una lista reúne fichas para una tarea, como empacar para un viaje u ordenar el garaje, y te deja marcarlas a medida que avanzas. Crear y editar listas es parte de Plus; con Básico puedes seguir leyéndolas.</p>
+        <ol class="help-steps">
+          <li>En <b>Inicio</b>, toca <b>Listas</b>, luego <b>Nueva lista</b>, y ponle un nombre.</li>
+          <li>Toca <b>Añadir fichas</b> y elige las fichas. También puedes agregarlas desde una ficha (<b>Más</b> → <b>Añadir a una lista</b>) o desde una <a href="#bulk">selección</a>.</li>
+          <li>A medida que avanzas, mantén presionado un elemento y elige <b>Cerrar</b>. Elige <b>Reabrir</b> para deshacerlo.</li>
+        </ol>
+        <ul>
+          <li>Desliza un elemento hacia la derecha para agregar una <b>Nota</b>, o hacia la izquierda para sacarlo con <b>Quitar</b>.</li>
+          <li><b>Quitar</b> saca la ficha de la lista; <b>Cerrar</b> la deja en la lista como hecha. Ninguna de las dos cambia la ficha.</li>
+          <li><b>Mostrar las cerradas</b> muestra lo que ya terminaste. Los elementos se cuentan en <b>Abiertas</b> y <b>Cerradas</b>.</li>
+          <li><b>Añade una nota sobre esta lista</b> guarda una nota para toda la lista.</li>
+          <li><b>Eliminar lista</b> borra la lista y su avance. Las fichas se quedan donde están.</li>
+          <li>Las listas son de un sitio, así que las personas con las que lo compartes las ven. Para editarlas, cada persona necesita Plus en su propia cuenta de Apple; si no, ve <b>Puedes leer estas listas</b>.</li>
+        </ul>
+        <p class="help-top"><a href="#contents">Volver al contenido</a></p>
+      </section>
+
+      <section class="help-sec" aria-labelledby="print">
+        <h2 id="print">Imprimir hojas de códigos QR</h2>
+        <div class="help-need">
+          <p class="help-label">Antes de empezar</p>
+          <ul>
+            <li>Hojas de etiquetas tamaño carta (US Letter): <b>R001</b> (160 etiquetas de 1 × ½ pulgada, 8 de ancho por 20 de alto) o <b>5160</b> (30 etiquetas de dirección de 2⅝ × 1 pulgada, como las Avery 5160).</li>
+            <li>Una impresora en la que tu iPhone pueda imprimir.</li>
+          </ul>
+        </div>
+        <ol class="help-steps">
+          <li>En <b>Inicio</b>, toca <b>Lotes de códigos QR</b>.</li>
+          <li>En <b>Papel de etiquetas</b>, elige <b>R001</b> o <b>5160</b>. La línea de abajo indica cuántas etiquetas tiene una hoja.</li>
+          <li>Toca <b>+</b> (Lote nuevo). QR Tiles te dice cuántos códigos en blanco tienes y pregunta <b>¿Crear un lote nuevo?</b></li>
+          <li>Toca <b>Crear lote nuevo</b>. Los códigos nuevos se guardan y la hoja se abre para imprimirla.</li>
+          <li>Imprímela y pega un código en cada contenedor. Los códigos quedan en blanco hasta que los escaneas.</li>
+        </ol>
+        <p class="help-result"><span class="help-label">Resultado</span> El lote aparece en <b>Lotes</b>, donde ves cuáles de sus códigos están reclamados, en blanco o retirados.</p>
+        <div class="help-note">
+          <p class="help-label">Ten en cuenta</p>
+          <ul>
+            <li>Un lote nuevo siempre trae códigos nuevos: tantos como caben en una hoja del papel elegido. Para imprimir los mismos códigos otra vez, abre el lote y toca <b>PDF de la hoja</b> en vez de crear otro lote.</li>
+            <li><b>PDF de la hoja</b> usa el papel de etiquetas elegido en ese momento y agrega páginas si el lote tiene más códigos de los que caben en una hoja.</li>
+            <li>Si la hoja no se imprimió, el lote y sus códigos igual quedan guardados. Ábrelo en <b>Lotes</b> y toca <b>PDF de la hoja</b>.</li>
+            <li>Si las opciones de tu impresora permiten cambiar la escala, imprime al 100 % para que los códigos coincidan con las etiquetas.</li>
+          </ul>
+        </div>
+        <h3 id="calibrate">Alinear las etiquetas</h3>
+        <ol class="help-steps">
+          <li>En <b>Lotes de códigos QR</b>, elige tu <b>Papel de etiquetas</b>.</li>
+          <li>Toca <b>Más</b> (•••) → <b>Imprimir una página de prueba</b> e imprímela en papel normal.</li>
+          <li>Pon la página contra una ventana con una hoja de etiquetas detrás.</li>
+          <li>Si los códigos quedan muy arriba o muy abajo, ajusta <b>Fila 1 arriba</b> en <b>Calibración</b>. Si se van corriendo a medida que bajan por la página, ajusta <b>Paso de fila</b>. Imprime otra página de prueba para revisar.</li>
+        </ol>
+        <p><b>Restablecer la calibración</b>, en el mismo menú <b>Más</b>, vuelve a los valores iniciales. Cada papel de etiquetas guarda su propia calibración en este iPhone.</p>
+        <p class="help-top"><a href="#contents">Volver al contenido</a></p>
+      </section>
+
+      <section class="help-sec" aria-labelledby="print-label">
+        <h2 id="print-label">Imprimir un rótulo para una ficha</h2>
+        <p>Además de los códigos QR pequeños, puedes imprimir un rótulo más grande para una ficha, con sus fotos, su título y su código QR. Es útil para cajas y canastas.</p>
+        <ol class="help-steps">
+          <li>Abre la ficha y toca <b>Más</b> (•••) → <b>Imprimir rótulo</b>.</li>
+          <li>Elige <b>Por página</b> (1, 2 o 4), cuántas <b>Fotos</b> (de 0 a 4) y dónde <b>Las fotos van</b>, y si quieres mostrar <b>Título</b>, <b>Código QR</b>, <b>Zona</b>, <b>Grupo</b>, <b>Fecha</b>, <b>Etiquetas</b> y <b>Líneas en blanco</b> para escribir.</li>
+          <li>La vista previa se actualiza mientras eliges. Imprime y luego recorta las copias.</li>
+        </ol>
+        <p>Tus opciones se guardan para el próximo rótulo y para imprimir rótulos de <a href="#bulk">varias fichas a la vez</a>.</p>
+        <p class="help-top"><a href="#contents">Volver al contenido</a></p>
+      </section>
+
+      <section class="help-sec" aria-labelledby="codes">
+        <h2 id="codes">Reimprimir, retirar o mover un código</h2>
+        <p>Cada ficha tiene un código de QR Tiles, y cada código pertenece al lote en el que se imprimió. Para administrar un código, abre <b>Inicio</b> → <b>Lotes de códigos QR</b> y toca su lote. Los códigos aparecen en <b>Reclamados</b> (en una ficha; toca uno para abrirla), <b>En blanco</b> y <b>Retirados</b>. Mantén presionado un código para:</p>
+        <dl class="help-dl">
+          <dt>Reimprimir</dt>
+          <dd>Imprime ese mismo código otra vez, para reemplazar una etiqueta dañada. La ficha no cambia.</dd>
+          <dt>Retirar</dt>
+          <dd>Saca un código de servicio, por ejemplo si la etiqueta se perdió o quedó en la caja equivocada. Al escanearlo, dirá <b>Esa etiqueta fue retirada — ya no representa nada.</b> La ficha y todo lo que tiene se conservan.</dd>
+          <dt>Reactivar</dt>
+          <dd>Vuelve a poner en servicio un código retirado.</dd>
+          <dt>Mover</dt>
+          <dd>Pasa un código reclamado a una ficha que no tiene código: <b>Mover este código QR</b> muestra las <b>Fichas aún sin código QR</b>. La ficha que lo recibe se queda con él desde entonces.</dd>
+        </dl>
+        <ul>
+          <li>Una ficha tiene un solo código de QR Tiles. Para mover un código a una ficha que ya tiene uno, primero retira el de esa ficha.</li>
+          <li>Un código retirado no se puede mover; primero reactívalo.</li>
+          <li>Los códigos QR personalizados no se reimprimen ni se mueven de esta forma. Consulta <a href="#custom-qr">Usar un código QR que ya está en la caja</a>.</li>
+        </ul>
+        <p class="help-top"><a href="#contents">Volver al contenido</a></p>
+      </section>
+
+      <section class="help-sec" aria-labelledby="custom-qr">
+        <h2 id="custom-qr">Usar un código QR que ya está en la caja</h2>
+        <p>Puede que una caja ya traiga un código QR: de una tienda, de una empresa de trasteos o de otra app. Adjúntalo a una ficha y, al escanearlo, se abrirá esa ficha.</p>
+        <ol class="help-steps">
+          <li>Abre la ficha y toca <b>Más</b> (•••) → <b>Adjuntar código QR personalizado</b>.</li>
+          <li>Escanea el código con la cámara del iPhone.</li>
+        </ol>
+        <p class="help-result"><span class="help-label">Resultado</span> Desde ese momento, al escanear ese código en la pestaña <b>Escanear</b> se abre esta ficha. La ficha conserva también su propio código de QR Tiles.</p>
+        <ul>
+          <li>Si el código ya está en otra ficha, QR Tiles te dice en cuál y pregunta antes de moverlo aquí.</li>
+          <li>Los códigos de QR Tiles (de seis caracteres) no se adjuntan así. Escanéalos en la pestaña <b>Escanear</b>.</li>
+          <li>Usa códigos que sean de una sola caja. Un código impreso en todas las unidades de un producto abriría la misma ficha con cualquiera de ellas.</li>
+          <li>Los códigos personalizados se incluyen en las copias de seguridad. Al restaurar, uno puede pasar a la ficha restaurada; consulta <a href="#restore">Restaurar desde una copia de seguridad</a>.</li>
+        </ul>
+        <p class="help-top"><a href="#contents">Volver al contenido</a></p>
+      </section>
+
+      <section class="help-sec" aria-labelledby="adopt">
+        <h2 id="adopt">Códigos que QR Tiles no imprimió</h2>
+        <p>Puede que escanees un código de QR Tiles que ninguno de tus sitios imprimió: por ejemplo, etiquetas impresas desde otro iPhone o una hoja que alguien te regaló.</p>
+        <ol class="help-steps">
+          <li>Escanéalo. QR Tiles muestra <b>Aún no está en este hogar</b>.</li>
+          <li>Toca <b>Agregar … a este hogar</b> para agregarlo al sitio en el que estás.</li>
+        </ol>
+        <p class="help-result"><span class="help-label">Resultado</span> El código se convierte en una ficha nueva, igual que un código en blanco de tu propia hoja.</p>
+        <ul>
+          <li>Los códigos agregados van a un lote automático <b>Varios</b> (de hasta 160 códigos cada uno), o al lote que elegiste en <b>Adoptar en</b>, en los <a href="#scan-settings">Ajustes de escaneo</a>.</li>
+          <li>Para agregarlos sin que te pregunte, activa <b>Agregar códigos desconocidos sin preguntar</b>.</li>
+          <li>Un código de otro de tus sitios no se agrega aquí; QR Tiles te ofrece cambiar a ese sitio.</li>
+          <li>Si ves <b>No se pudo añadir ese código</b>, vuelve a intentarlo.</li>
+        </ul>
+        <p class="help-top"><a href="#contents">Volver al contenido</a></p>
+      </section>
+
+      <section class="help-sec" aria-labelledby="organize">
+        <h2 id="organize">Zonas y grupos</h2>
+        <p>Un grupo es donde está una ficha: un estante, un mueble o un rincón. Una zona es un cuarto o un piso que reúne grupos. Las fichas pertenecen a grupos, y la zona de una ficha es la zona de su grupo.</p>
+        <ol class="help-steps">
+          <li>En <b>Inicio</b>, toca <b>Organizar</b>.</li>
+          <li>Toca <b>+</b>, elige <b>Nueva zona</b> o <b>Nuevo grupo</b> y escribe un nombre.</li>
+          <li>Junto a cada grupo, toca su zona (al principio, <b>Sin zona</b>) para elegir una.</li>
+        </ol>
+        <ul>
+          <li>Toca un nombre para cambiarlo.</li>
+          <li>Desliza hacia la izquierda para eliminar. Si eliminas un grupo, sus fichas quedan sin grupo; si eliminas una zona, sus grupos se conservan. Aparece <b>Deshacer</b> durante unos segundos.</li>
+          <li>Para poner una ficha en un grupo, usa la línea debajo de su título. Para varias fichas, <a href="#bulk">selecciónalas</a> y toca <b>Mover</b>.</li>
+        </ul>
+        <p class="help-top"><a href="#contents">Volver al contenido</a></p>
+      </section>
+
+      <section class="help-sec" aria-labelledby="sites">
+        <h2 id="sites">Sitios</h2>
+        <p>Un sitio es un lugar del que llevas el control. Cada sitio tiene sus propias fichas, códigos, grupos, zonas, listas y color de acento, y se comparte completo. Algunas pantallas de la app llaman al sitio tu hogar.</p>
+        <ul>
+          <li><b>Cambiar de sitio:</b> toca el nombre del sitio arriba a la izquierda en <b>Inicio</b> y luego toca otro sitio. Buscar, Preguntar y Siri funcionan con el sitio en el que estás.</li>
+          <li><b>Agregar un sitio:</b> en el mismo menú, toca <b>+</b> (<b>Nuevo sitio</b>) y ponle un nombre. El sitio nuevo empieza vacío; tus otros sitios no cambian.</li>
+          <li><b>Administrador del sitio:</b> toca el engranaje en el menú Sitios, o ve a <b>Ajustes</b> → <b>Administrador del sitio</b>. Ahí cambias el nombre del sitio, ves lo que contiene, administras el <a href="#share">uso compartido</a>, revisas la <b>Sincronización con iCloud</b> y abres <a href="#diagnostics">Registros y Comprobación del almacén</a> y las <a href="#retag">Herramientas externas</a>.</li>
+          <li><b>Eliminar un sitio:</b> Administrador del sitio → <b>Eliminar sitio</b>. Antes, QR Tiles te pide guardar una copia de seguridad (<b>Primero, copia de seguridad</b>). Eliminar es permanente en todos los dispositivos donde se sincroniza el sitio, y la copia de seguridad es la única forma de recuperarlo. No puedes eliminar tu único sitio.</li>
+          <li>En un sitio compartido, solo el propietario puede cambiarle el nombre o eliminarlo. Los miembros pueden usar <b>Salir del sitio</b>.</li>
+        </ul>
+        <p class="help-top"><a href="#contents">Volver al contenido</a></p>
+      </section>
+
+      <section class="help-sec" aria-labelledby="share">
+        <h2 id="share">Compartir un sitio</h2>
+        <p>Compartir invita a otras personas a un sitio completo: todas las fichas, fotos, videos, etiquetas y listas, incluido todo lo que se agregue después. No se puede compartir solo una parte de un sitio.</p>
+        <div class="help-need">
+          <p class="help-label">Antes de empezar</p>
+          <ul>
+            <li>Necesitas Plus. Solo se suscribe el propietario; las personas que invitas no pagan por unirse. Consulta <a href="#plans">Planes</a>.</li>
+            <li>Tú y cada persona que invites necesitan iCloud.</li>
+            <li>Revisa las fotos del sitio. Las fotos de cajones pueden mostrar documentos, medicamentos u objetos de valor.</li>
+            <li>Las fotos y los videos que agregan los miembros ocupan el almacenamiento de iCloud del propietario.</li>
+          </ul>
+        </div>
+        <ol class="help-steps">
+          <li>Abre <b>Ajustes</b> → <b>Administrador del sitio</b>.</li>
+          <li>En <b>Compartir</b>, toca <b>Invitar por AirDrop, Mensajes o Mail…</b>.</li>
+          <li>Lee lo que significa compartir, activa <b>Entiendo lo que significa compartir</b> y vuelve a tocar <b>Invitar por AirDrop, Mensajes o Mail…</b>.</li>
+          <li>La primera vez, QR Tiles te pide <b>Primero, copia de seguridad</b>. Toca <b>Guardar copia de seguridad ahora</b> y guarda el zip en un lugar que controles, como Archivos o iCloud Drive. No se comparte nada hasta que la copia quede guardada.</li>
+          <li>Luego QR Tiles prepara el sitio para compartirlo. Esto pasa una sola vez y puede tardar unos minutos si el sitio es grande, así que deja la app abierta.</li>
+          <li>Elige cómo enviar la invitación y a quién. En las opciones para compartir puedes permitir que hagan cambios o que solo vean.</li>
+        </ol>
+        <p class="help-result"><span class="help-label">Resultado</span> Cuando alguien acepta, aparece en <b>Compartir</b> en el Administrador del sitio, y el sitio aparece en su iPhone.</p>
+        <p class="help-top"><a href="#contents">Volver al contenido</a></p>
+      </section>
+
+      <section class="help-sec" aria-labelledby="join">
+        <h2 id="join">Unirte a un sitio compartido</h2>
+        <ol class="help-steps">
+          <li>Instala QR Tiles y verifica que tengas sesión iniciada en iCloud.</li>
+          <li>Abre la invitación y toca su enlace. QR Tiles se abre y la acepta.</li>
+          <li>Deja la app abierta mientras se descarga el sitio. Hasta que llegue, Inicio muestra <b>Tu hogar aún está llegando</b>. Las fotos pueden seguir llegando después de las fichas.</li>
+        </ol>
+        <ul>
+          <li>No necesitas Plus para unirte, ni para hacer cambios si el propietario lo permite. Las listas son la excepción: para editarlas necesitas Plus en tu propia cuenta de Apple.</li>
+          <li>Si el propietario te dio acceso de solo lectura, puedes ver pero no cambiar nada.</li>
+          <li>QR Tiles puede avisarte cuando otra persona cambie algo. Pide el permiso una sola vez; puedes desactivarlo con <b>Avisarme cuando otra persona cambie algo</b> en el Administrador del sitio.</li>
+          <li>Para salir, abre el Administrador del sitio y toca <b>Salir del sitio</b>. El sitio desaparece de tus dispositivos; para volver necesitarás una invitación nueva.</li>
+        </ul>
+        <p class="help-top"><a href="#contents">Volver al contenido</a></p>
+      </section>
+
+      <section class="help-sec" aria-labelledby="members">
+        <h2 id="members">Administrar miembros</h2>
+        <p>En <b>Ajustes</b> → <b>Administrador del sitio</b>, <b>Compartir</b> muestra a todas las personas con su estado: <b>Propietario</b>, <b>Invitado</b>, <b>Aceptado</b> o <b>Eliminado</b>.</p>
+        <ul>
+          <li><b>Invitar o administrar miembros…</b> invita a más personas o cambia lo que pueden hacer.</li>
+          <li><b>Revocar</b>, junto a una persona, la saca del sitio. El sitio desaparece de sus dispositivos, pero lo que ya vio o copió se queda con ella.</li>
+          <li>La <a href="#timeline">Cronología</a> muestra quién cambió qué. El nombre de cada persona sale de <b>Tu nombre</b> en sus Ajustes.</li>
+        </ul>
+        <p class="help-top"><a href="#contents">Volver al contenido</a></p>
+      </section>
+
+      <section class="help-sec" aria-labelledby="plus-ends">
+        <h2 id="plus-ends">Si Plus termina</h2>
+        <p>El uso compartido depende de la suscripción a Plus del propietario. Si termina:</p>
+        <ol class="help-steps">
+          <li>Durante los primeros 7 días, compartir sigue funcionando.</li>
+          <li>Después, se deja de compartir. QR Tiles, en el iPhone del propietario, saca a los miembros, y el sitio desaparece de sus dispositivos. Los miembros ven <b>Ya no está compartido</b>.</li>
+          <li>Mientras queden miembros, el propietario ve <b>Este sitio está compartido y Plus ha terminado.</b> con dos opciones: <b>Volver a activar Plus</b>, o <b>Quitar todos los usos compartidos</b> y seguir usando el sitio gratis.</li>
+        </ol>
+        <p class="help-result"><span class="help-label">Resultado</span> No se elimina nada del sitio. Todas las fichas, fotos y etiquetas se quedan con el propietario.</p>
+        <p>Volver a activar Plus no trae de vuelta a los miembros por sí solo: todas las personas que invitaste tendrán que aceptar una invitación nueva, que envías desde <a href="#share">Administrador del sitio → Compartir</a>.</p>
+        <p class="help-top"><a href="#contents">Volver al contenido</a></p>
+      </section>
+
+      <section class="help-sec" aria-labelledby="timeline">
+        <h2 id="timeline">Cronología</h2>
+        <p>La Cronología muestra lo que pasó en el sitio en el que estás y, en un sitio compartido, quién lo hizo. Ábrela con la campana de <b>Inicio</b> o desde el menú Sitios.</p>
+        <ul>
+          <li>Los botones de arriba eligen qué mostrar: <b>Crear</b>, <b>Actualizar</b>, <b>Eliminar</b> y <b>Ver</b>. Ver incluye actividad como escaneos, búsquedas y preguntas, y está oculto hasta que lo actives.</li>
+          <li>Toca una entrada para ver sus detalles.</li>
+          <li><b>Los cambios se conservan mientras exista el sitio. La actividad se conserva 90 días.</b></li>
+          <li>Se registra la mayoría de los cambios: fichas, etiquetas, fotos y videos, códigos, grupos, zonas, listas y lotes. Algunas ediciones pequeñas, como girar una foto o cambiar un orden, pueden no aparecer.</li>
+        </ul>
+        <p class="help-top"><a href="#contents">Volver al contenido</a></p>
+      </section>
+
+      <section class="help-sec" aria-labelledby="deleted">
+        <h2 id="deleted">Eliminados recientemente y Deshacer</h2>
+        <p>Las fichas, fotos y videos eliminados esperan 30 días en Eliminados recientemente y luego se borran definitivamente.</p>
+        <ol class="help-steps">
+          <li>Abre <b>Ajustes</b> → <b>Eliminados recientemente</b>, o toca la papelera en el menú Sitios.</li>
+          <li>Busca la ficha, la foto o el video y toca <b>Restaurar</b>.</li>
+        </ol>
+        <ul>
+          <li>Escanear el código de una ficha eliminada también la recupera.</li>
+          <li>Lo que está en Eliminados recientemente sigue ocupando espacio hasta que se borra.</li>
+          <li>Las etiquetas, los grupos y las zonas no pasan por Eliminados recientemente. Cuando eliminas uno —o eliminas fichas desde una <a href="#bulk">selección</a>—, aparece <b>Deshacer</b> durante unos segundos. Pasado ese tiempo, la eliminación de etiquetas, grupos y zonas es definitiva.</li>
+          <li>Eliminar una lista pide confirmación y no se puede deshacer.</li>
+        </ul>
+        <p class="help-top"><a href="#contents">Volver al contenido</a></p>
+      </section>
+
+      <section class="help-sec" aria-labelledby="backup">
+        <h2 id="backup">Hacer una copia de seguridad</h2>
+        <p>Una copia de seguridad es un solo archivo zip con todas las fotos y videos del sitio y todos sus datos en archivos CSV. Es la copia que tú controlas: guárdala en Archivos, iCloud Drive o donde prefieras.</p>
+        <ol class="help-steps">
+          <li>Verifica que estés en el sitio que quieres respaldar. Cada copia cubre un sitio.</li>
+          <li>Abre <b>Ajustes</b> y toca <b>Hacer copia de seguridad ahora</b> (también está en el menú Sitios).</li>
+          <li>Si algunas fotos no han terminado de descargarse, QR Tiles las espera: <b>Esperando a que las fotos terminen de sincronizarse…</b></li>
+          <li>Cuando aparezca la hoja para compartir, guarda el zip; por ejemplo, con <b>Guardar en Archivos</b>.</li>
+        </ol>
+        <ul>
+          <li>Si después de esperar todavía faltan fotos, la copia se detiene en vez de guardar un archivo incompleto. Deja QR Tiles abierto con Wi-Fi un rato y vuelve a intentarlo.</li>
+          <li>Una copia de seguridad tiene todo lo del sitio, incluidas las fotos de lo que hay en tus cajones. Guárdala y envíala con cuidado.</li>
+          <li>QR Tiles también te pide una copia antes de compartir un sitio por primera vez y antes de eliminar uno.</li>
+        </ul>
+        <p class="help-top"><a href="#contents">Volver al contenido</a></p>
+      </section>
+
+      <section class="help-sec" aria-labelledby="restore">
+        <h2 id="restore">Restaurar desde una copia de seguridad</h2>
+        <p>Restaurar crea un <strong>sitio nuevo y separado</strong> a partir de un zip de copia de seguridad. No reemplaza ni se mezcla con un sitio que ya tengas.</p>
+        <ol class="help-steps">
+          <li>Abre <b>Ajustes</b> → <b>Restaurar desde una copia de seguridad</b>, o usa la restauración del menú Sitios.</li>
+          <li>Toca <b>Elegir zip de copia de seguridad</b> y elige el archivo.</li>
+          <li>Espera mientras QR Tiles muestra <b>Restaurando…</b>. Al terminar, te muestra lo que se recuperó.</li>
+          <li>Toca <b>Cambiar a él</b> para abrir el sitio nuevo, o <b>Quedarme aquí</b>.</li>
+        </ol>
+        <div class="help-note">
+          <p class="help-label">Antes de restaurar</p>
+          <ul>
+            <li>Si restauras la misma copia dos veces, tendrás dos sitios. Puedes eliminar el que no necesites.</li>
+            <li>Si el sitio original sigue en este iPhone, los dos sitios tienen los mismos códigos de QR Tiles. Al escanear uno, te pregunta cuál abrir (<b>Ese código está en más de un hogar</b>).</li>
+            <li>Los códigos QR personalizados van con las fichas restauradas. Si uno sigue adjunto a una ficha de otro sitio en este iPhone, pasa a la ficha restaurada, y al escanearlo se abre la copia restaurada.</li>
+            <li>Si ves <b>Falló la restauración</b>, tus otros sitios quedan como estaban.</li>
+          </ul>
+        </div>
+        <p class="help-top"><a href="#contents">Volver al contenido</a></p>
+      </section>
+
+      <section class="help-sec" aria-labelledby="retag">
+        <h2 id="retag">Reetiquetar fotos con una herramienta externa</h2>
+        <p>Si quieres mejores etiquetas de las que QR Tiles encuentra por su cuenta, puedes exportar las fotos de un sitio a una herramienta que elijas —un asistente de IA, un servicio o una persona— e importar las etiquetas que escriba. Está en <b>Ajustes</b> → <b>Administrador del sitio</b> → <b>Herramientas externas</b>.</p>
+        <div class="help-need">
+          <p class="help-label">Antes de empezar</p>
+          <ul>
+            <li>Las fotos salen de QR Tiles. Quien reciba el archivo puede verlas, así que trátalo como una copia de seguridad.</li>
+            <li>Solo se exportan fotos, no videos.</li>
+          </ul>
+        </div>
+        <ol class="help-steps">
+          <li>En <b>Herramientas externas</b>, elige qué fotos incluir y si también quieres pedir sugerencias de etiquetas.</li>
+          <li>Toca <b>Exportar</b> y entrégale el archivo a tu herramienta. Incluye las fotos, instrucciones para la herramienta y una plantilla para sus respuestas.</li>
+          <li>Cuando la herramienta te devuelva su archivo, toca <b>Importar</b>, elige el archivo y confirma.</li>
+          <li>Revisa las etiquetas sugeridas; llegan como <a href="#draft-labels">etiquetas en borrador</a>.</li>
+        </ol>
+        <ul>
+          <li>Importar <strong>reemplaza</strong> las etiquetas y el texto de esas fotos, incluido lo que QR Tiles había encontrado por su cuenta. Los títulos, las etiquetas, los grupos y las fotos en sí no cambian.</li>
+          <li>Esto no es una copia de seguridad y no sirve para mover un sitio.</li>
+        </ul>
+        <p class="help-top"><a href="#contents">Volver al contenido</a></p>
+      </section>
+
+      <section class="help-sec" aria-labelledby="siri">
+        <h2 id="siri">Siri, Atajos y Spotlight</h2>
+        <p>QR Tiles agrega estas acciones a Siri y a la app Atajos. Funcionan con el sitio en el que estás.</p>
+        <dl class="help-dl">
+          <dt>Escanear una ficha</dt>
+          <dd>Abre el escáner. Di “Escanear QR Tiles” o “Escáner de QR Tiles”.</dd>
+          <dt>Preguntar</dt>
+          <dd>Pregunta dónde está algo. Di “Preguntar a QR Tiles” o “Buscar algo en QR Tiles”.</dd>
+          <dt>Dónde está una ficha</dt>
+          <dd>Te dice dónde está una ficha: “Dónde está mi equipo de camping en QR Tiles”. Si la ficha todavía no tiene grupo, Siri te lo dice.</dd>
+          <dt>Buscar fichas</dt>
+          <dd>Abre las fichas que coinciden. Di “Buscar en QR Tiles” o “Buscar mis fichas en QR Tiles”.</dd>
+          <dt>Abrir ficha</dt>
+          <dd>Abre una ficha por su nombre: “Abrir equipo de camping en QR Tiles”.</dd>
+        </dl>
+        <p>Las fichas del sitio en el que estás también aparecen en la búsqueda de Spotlight del iPhone.</p>
+        <p class="help-top"><a href="#contents">Volver al contenido</a></p>
+      </section>
+
+      <section class="help-sec" aria-labelledby="controls">
+        <h2 id="controls">Controles y widgets</h2>
+        <p>Agrégalos como de costumbre: edita el Centro de control, la pantalla bloqueada o la pantalla de inicio, y busca QR Tiles.</p>
+        <dl class="help-dl">
+          <dt>Control Escanear</dt>
+          <dd>Escanea un código QR desde el Centro de control o la pantalla bloqueada, incluso sin desbloquear. Después de escanear desde la pantalla bloqueada verás <b>Escaneado. Desbloquea para continuar.</b></dd>
+          <dt>Control Preguntar</dt>
+          <dd>Abre Preguntar.</dd>
+          <dt>Widget Último cambio</dt>
+          <dd>Muestra el cambio más reciente en tu sitio y cuándo ocurrió, en la pantalla de inicio (pequeño o mediano) o en la pantalla bloqueada.</dd>
+        </dl>
+        <p>Los widgets muestran nombres de fichas y pueden mostrar una foto, así que cualquiera que vea tu pantalla también los verá.</p>
+        <p class="help-top"><a href="#contents">Volver al contenido</a></p>
+      </section>
+
+      <section class="help-sec" aria-labelledby="watch">
+        <h2 id="watch">Apple Watch</h2>
+        <p>La app del reloj funciona con QR Tiles en tu iPhone y necesita watchOS 26 o posterior. Para escanear se usa el iPhone.</p>
+        <dl class="help-dl">
+          <dt>Preguntar</dt>
+          <dd>Toca el campo y di lo que buscas. El reloj le pregunta a tu iPhone (<b>Preguntando a tu iPhone…</b>) y muestra la respuesta. En <b>Preguntas recientes</b> puedes <b>Preguntar de nuevo</b>.</dd>
+          <dt>Recientes</dt>
+          <dd>Las fichas que escaneaste hace poco con tu iPhone.</dd>
+          <dt>Lugares</dt>
+          <dd>Tus zonas y grupos, y las fichas de cada uno.</dd>
+          <dt>Listas</dt>
+          <dd>Tus listas y cuántos elementos están abiertos o cerrados.</dd>
+        </dl>
+        <p>Las esferas del reloj pueden mostrar <b>Último cambio</b> (el cambio más reciente o el avance de una lista), <b>Elementos pendientes</b> y un acceso a Preguntar.</p>
+        <p>Si ves <b>No se puede contactar con tu iPhone. Acércalo y vuelve a intentarlo.</b> o <b>Tu iPhone no respondió a tiempo. Vuelve a intentarlo.</b>, acerca tu iPhone y toca <b>Reintentar</b>.</p>
+        <p class="help-top"><a href="#contents">Volver al contenido</a></p>
+      </section>
+
+      <section class="help-sec" aria-labelledby="settings">
+        <h2 id="settings">Los Ajustes, de un vistazo</h2>
+        <dl class="help-dl">
+          <dt>Administrador del sitio</dt>
+          <dd>El sitio en el que estás: su nombre, el uso compartido, la sincronización con iCloud, los Registros, la Comprobación del almacén, las Herramientas externas, y eliminarlo o salir de él. Consulta <a href="#sites">Sitios</a>.</dd>
+          <dt>Datos</dt>
+          <dd><a href="#backup">Hacer copia de seguridad ahora</a>, <a href="#restore">Restaurar desde una copia de seguridad</a>, <a href="#deleted">Eliminados recientemente</a> y <b>Contenido en iCloud</b>, que muestra cuánto espacio ocupan las fotos y los videos, ficha por ficha, de mayor a menor. Ese total incluye lo que está en Eliminados recientemente.</dd>
+          <dt>Apariencia</dt>
+          <dd><b>Tema</b> (Automático, Claro u Oscuro) e <b>Idioma</b> (Automático, English o Español).</dd>
+          <dt>Ícono de la app y color de acento</dt>
+          <dd>Seis colores. La app y su ícono siguen el que elijas, y cada sitio conserva el suyo.</dd>
+          <dt>Escaneo, Preguntar y Visualización de fichas</dt>
+          <dd>Consulta <a href="#scan-settings">Ajustes de escaneo</a>, <a href="#ask-settings">Ajustes de Preguntar</a> y <a href="#filters">Filtros</a>.</dd>
+          <dt>Mejoras</dt>
+          <dd>Los planes, <b>Restaurar compras</b> y <b>Administrar la suscripción</b>. Consulta <a href="#plans">Planes</a>.</dd>
+          <dt>Soporte, Política de privacidad y Términos del servicio</dt>
+          <dd><b>Soporte</b> abre un correo para nosotros con la versión de la app en el asunto. Las otras dos opciones abren este sitio web.</dd>
+          <dt>Tu nombre</dt>
+          <dd>Te saluda en Inicio y aparece junto a tus cambios en un sitio compartido.</dd>
+        </dl>
+        <p class="help-top"><a href="#contents">Volver al contenido</a></p>
+      </section>
+
+      <section class="help-sec" aria-labelledby="plans">
+        <h2 id="plans">Planes</h2>
+        <dl class="help-dl">
+          <dt>Básico (gratis)</dt>
+          <dd>Fichas, códigos QR e impresión ilimitados, además de escanear, buscar, Preguntar, la Cronología, las copias de seguridad y la restauración. Puedes unirte a sitios que otras personas compartan contigo y leer listas.</dd>
+          <dt>Plus (mensual o anual)</dt>
+          <dd>Agrega compartir tus sitios, y crear y editar listas.</dd>
+        </dl>
+        <ul>
+          <li>Solo el propietario paga por compartir; las personas invitadas se unen gratis. Eso sí, para crear o editar listas, cada persona necesita Plus en su propia cuenta de Apple.</li>
+          <li>Los precios aparecen en la app y en el App Store antes de comprar.</li>
+          <li>Administra o cancela en <b>Ajustes</b> → <b>Mejoras</b> → <b>Administrar la suscripción</b>. <b>Restaurar compras</b> recupera una suscripción si reinstalas la app o cambias de iPhone.</li>
+          <li>Si Plus termina, no se elimina nada y las listas se pueden seguir leyendo. Para los sitios compartidos, consulta <a href="#plus-ends">Si Plus termina</a>.</li>
+        </ul>
+        <p class="help-top"><a href="#contents">Volver al contenido</a></p>
+      </section>
+
+      <section class="help-sec" aria-labelledby="privacy">
+        <h2 id="privacy">Privacidad y permisos</h2>
+        <ul>
+          <li><b>Dónde están tus datos.</b> Las fichas, fotos y etiquetas se guardan en tu iPhone y en tu iCloud privado. No tenemos un servidor que guarde tu inventario.</li>
+          <li><b>Cuándo salen.</b> Cuando compartes un sitio, guardas o envías una copia de seguridad, exportas fotos a una herramienta externa, o compartes una respuesta o un enlace.</li>
+          <li><b>Cámara.</b> Para escanear y tomar fotos. Si antes dijiste que no, permítela para QR Tiles en la app Configuración del iPhone.</li>
+          <li><b>Fotos.</b> Tú eliges qué fotos y videos agregar; QR Tiles recibe solo esos, sin la ubicación.</li>
+          <li><b>Notificaciones.</b> Se piden una vez, cuando hay otra persona en un sitio contigo, y se usan para los cambios que hacen otros.</li>
+          <li><b>En tu iPhone.</b> El reconocimiento de texto, las etiquetas de las fotos y Preguntar funcionan en el dispositivo. Con Apple Intelligence activado, Preguntar usa el modelo de Apple en el dispositivo.</li>
+          <li><b>Notas de ayuda.</b> Las notas ⓘ pueden actualizarse desde una base de datos pública de iCloud que publicamos nosotros. No contiene ninguna información tuya.</li>
+          <li><b>Los widgets y el Apple Watch</b> obtienen lo que muestran de tu iPhone.</li>
+        </ul>
+        <p>Los detalles completos están en la <a href="/es/privacy/">Política de privacidad</a>.</p>
+        <p class="help-top"><a href="#contents">Volver al contenido</a></p>
+      </section>
+
+      <section class="help-sec" aria-labelledby="diagnostics">
+        <h2 id="diagnostics">Registros y Comprobación del almacén</h2>
+        <p>Estas herramientas del <b>Administrador del sitio</b> sirven cuando algo parece raro, o cuando te pedimos detalles.</p>
+        <dl class="help-dl">
+          <dt>Registros</dt>
+          <dd>Un registro de lo que hizo la app. Está apagado hasta que activas <b>Registro</b>, y empieza la próxima vez que abras QR Tiles. <b>Copiar todo</b> lo copia para que lo pegues en un correo. Los registros pueden incluir los nombres de tus fichas y etiquetas, así que léelos antes de enviarlos.</dd>
+          <dt>Comprobación del almacén</dt>
+          <dd>Revisa los datos del sitio y muestra lo que esté fuera de lugar, como un código reclamado por dos fichas o fotos sin archivo. La única reparación que ofrece archiva registros sueltos en este sitio; no borra ni mezcla nada.</dd>
+          <dt>Sincronización con iCloud</dt>
+          <dd>Muestra si el sitio se está sincronizando con iCloud.</dd>
+        </dl>
+        <p class="help-top"><a href="#contents">Volver al contenido</a></p>
+      </section>
+
+      <section class="help-sec" aria-labelledby="troubleshooting">
+        <h2 id="troubleshooting">Solución de problemas</h2>
+        <dl class="help-dl help-faq">
+          <dt>La cámara no arranca, o veo “Se necesita la cámara”</dt>
+          <dd>Permite la cámara para QR Tiles en la app Configuración del iPhone y vuelve a <b>Escanear</b>.</dd>
+          <dt>Un código no se deja escanear</dt>
+          <dd>Busca más luz, mantén quieto el iPhone un poco más lejos y alisa la etiqueta. Si está dañada, escribe su código de seis caracteres en <b>O escribe un código</b> y luego <a href="#codes">reimprímelo</a>.</dd>
+          <dt>“Aún no está en este hogar”</dt>
+          <dd>Ninguno de tus sitios imprimió este código. Puedes agregarlo; consulta <a href="#adopt">Códigos que QR Tiles no imprimió</a>. Si debería ser tuyo, revisa que estés en el sitio correcto y que iCloud haya terminado de sincronizar.</dd>
+          <dt>“Ese código QR pertenece a otro hogar” o “Ese código está en más de un hogar”</dt>
+          <dd>El código está en una ficha de otro de tus sitios, o en dos sitios después de una restauración. Cambia al sitio que buscas; consulta <a href="#restore">Restaurar desde una copia de seguridad</a>.</dd>
+          <dt>“No hay nada legible en ese código.”</dt>
+          <dd>No es un código de QR Tiles y no está adjunto a ninguna ficha. Para usarlo, <a href="#custom-qr">adjúntalo a una ficha</a>.</dd>
+          <dt>Los códigos impresos no coinciden con las etiquetas</dt>
+          <dd>Revisa el <b>Papel de etiquetas</b>, imprime al 100 % y <a href="#calibrate">calibra</a> con una página de prueba.</dd>
+          <dt>Faltan fotos en otro dispositivo</dt>
+          <dd>Las fotos se sincronizan por iCloud y pueden llegar después de las fichas. Abre QR Tiles con Wi-Fi y dale tiempo. Revisa la <b>Sincronización con iCloud</b> en el Administrador del sitio y usa la <a href="#diagnostics">Comprobación del almacén</a>.</dd>
+          <dt>La copia de seguridad no terminó</dt>
+          <dd>Algunas fotos todavía se estaban descargando. Deja QR Tiles abierto con Wi-Fi unos minutos y vuelve a intentarlo.</dd>
+          <dt>Una invitación no se abre</dt>
+          <dd>Verifica que QR Tiles esté instalado y que tengas sesión iniciada en iCloud, y vuelve a tocar el enlace. Si sigue fallando, pídele al propietario una invitación nueva.</dd>
+          <dt>Desapareció un sitio compartido</dt>
+          <dd>Si viste <b>Ya no está compartido</b>, el propietario te sacó, dejó de compartir o su Plus terminó. No se eliminó nada tuyo; pídele al propietario una invitación nueva.</dd>
+          <dt>No puedo editar algo en un sitio compartido</dt>
+          <dd>Puede que el propietario te haya dado acceso de solo lectura. Para las listas, necesitas Plus en tu propia cuenta de Apple.</dd>
+          <dt>Apple Intelligence aparece atenuado en los ajustes de Preguntar</dt>
+          <dd>Este iPhone no es compatible o Apple Intelligence no está activado. La nota debajo del ajuste dice cuál de las dos. Preguntar sigue funcionando con <b>Desactivado</b>.</dd>
+          <dt>Eliminé algo por error</dt>
+          <dd>Toca <b>Deshacer</b> si todavía aparece, o busca en <a href="#deleted">Eliminados recientemente</a>.</dd>
+        </dl>
+        <p class="help-top"><a href="#contents">Volver al contenido</a></p>
+      </section>
+
+      <section class="help-sec" aria-labelledby="contact">
+        <h2 id="contact">¿Sigues con dudas?</h2>
+        <p>En la app, ve a <b>Ajustes</b> → <b>Soporte</b> para escribirnos un correo con la versión de la app ya en el asunto, o escribe a <a href="mailto:info@newstuff.app">info@newstuff.app</a>. Ayuda mucho que incluyas:</p>
+        <ul>
+          <li>Qué estabas haciendo, qué tocaste y qué viste: el mensaje exacto, si hubo uno.</li>
+          <li>El modelo de tu iPhone y la versión de iOS.</li>
+          <li>Si el sitio es compartido y si eres el propietario.</li>
+          <li>Si te pedimos un registro: activa <b>Registro</b> en Administrador del sitio → <b>Registros</b>, vuelve a abrir QR Tiles, repite el problema y usa <b>Copiar todo</b> para pegarlo en tu correo.</li>
+        </ul>
+        <p>No podemos ver ni recuperar tu inventario: está en tu iPhone y en tu iCloud. No envíes una copia de seguridad a menos que así lo decidas; contiene todas tus fotos. Encuentra más en la página de <a href="/es/support/">Soporte</a>.</p>
+        <p class="help-top"><a href="#contents">Volver al contenido</a></p>
+      </section>
+
+    </div>
+  </div>
 </main>
 
 <footer class="foot">
