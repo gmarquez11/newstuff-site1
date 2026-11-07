@@ -349,3 +349,71 @@ html.gate-leaving .page, html:not(.gate-on) .page { opacity: 1; visibility: visi
 .closing { text-align: center; }
 .closing .sec-inner { max-width: 640px; }
 .closing .lede { margin-top: 12px; }
+
+/* ---------- help ---------- */
+
+/* Help words sit on --paper and --card, so links take --accent-ink-surface,
+   not the base --accent rule. */
+.help { overflow-wrap: break-word; }
+.help a { color: var(--accent-ink-surface); text-underline-offset: 2px; }
+.help a:focus-visible { outline: 2px solid var(--accent); outline-offset: 2px; border-radius: 4px; }
+.help b { font-weight: 600; color: var(--ink); }
+.help h2, .help h3, .help-toc { scroll-margin-top: 76px; }
+.help-head { max-width: 680px; }
+.help .help-head .prose-date { margin-bottom: 14px; }
+.help .help-lede { font-size: 17px; margin-bottom: 32px; }
+
+.help-toc {
+  display: grid; grid-template-columns: repeat(auto-fill, minmax(210px, 1fr)); column-gap: 28px;
+  background: var(--card); border: 1px solid var(--rule); border-radius: 18px;
+  padding: 20px 22px 16px; margin-bottom: 44px;
+}
+.help .help-toc .help-toc-title { grid-column: 1 / -1; font-size: 13px; font-weight: 650; letter-spacing: 0.06em; text-transform: uppercase; color: var(--ink); margin-bottom: 4px; }
+.help .help-toc .help-toc-h { font-size: 14px; font-weight: 650; color: var(--ink); margin: 12px 0 2px; }
+.help .help-toc ul { list-style: none; padding: 0; margin: 0; }
+.help .help-toc li { font-size: 15px; line-height: 1.35; margin: 0; }
+.help .help-toc a { display: block; padding: 5px 0; text-decoration: none; }
+.help .help-toc a:hover { text-decoration: underline; }
+
+.help-sec + .help-sec { border-top: 1px solid var(--rule); margin-top: 40px; }
+.help .help-sec > h2 { margin-top: 36px; }
+.help .help-sec:first-child > h2 { margin-top: 0; }
+.help .help-steps li::marker { color: var(--accent-ink-surface); font-weight: 650; }
+.help .help-steps ul { margin: 8px 0 4px; }
+
+.help-dl { margin-bottom: 16px; }
+.help-dl dt { font-size: 16px; font-weight: 650; line-height: 1.45; color: var(--ink); margin-top: 14px; }
+.help-dl dt:first-child { margin-top: 0; }
+.help-dl dd { font-size: 16px; line-height: 1.65; color: color-mix(in srgb, var(--ink) 88%, var(--dim)); margin-top: 2px; }
+.help-faq dt { margin-top: 20px; }
+
+.help-need, .help-note {
+  background: var(--card); border: 1px solid var(--rule); border-left: 3px solid var(--accent);
+  border-radius: 12px; padding: 14px 18px 4px; margin-bottom: 18px;
+}
+.help .help-need ul, .help .help-note ul { margin-bottom: 10px; }
+.help .help-result, .help .help-tip {
+  background: var(--card); border: 1px solid var(--rule); border-radius: 12px; padding: 12px 16px;
+}
+.help .help-label { font-size: 13px; font-weight: 650; letter-spacing: 0.05em; text-transform: uppercase; color: var(--ink); }
+.help p.help-label { margin-bottom: 6px; }
+.help span.help-label { margin-right: 8px; }
+.help .help-top { font-size: 14px; margin: 18px 0 0; }
+.help .help-top a { text-decoration: none; }
+.help .help-top a:hover { text-decoration: underline; }
+
+@media (min-width: 1000px) {
+  .prose.help { max-width: 1080px; }
+  .help-layout { display: grid; grid-template-columns: 248px minmax(0, 680px); gap: 56px; justify-content: space-between; align-items: start; }
+  .help-toc {
+    position: sticky; top: 80px; max-height: calc(100vh - 104px); overflow-y: auto;
+    grid-template-columns: 1fr; padding: 18px 20px 14px; margin-bottom: 0;
+  }
+  .help .help-toc li { font-size: 14px; }
+  .help .help-toc a { padding: 4px 0; }
+  .help .help-top { display: none; }
+}
+@media (max-width: 640px) {
+  .help-toc { padding: 18px 18px 14px; }
+  .help-need, .help-note { padding: 12px 14px 2px; }
+}
